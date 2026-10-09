@@ -2,6 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mai Văn Hưng — Full CV Chi Tiết</title>
     <meta name="description" content="13+ năm điều hành chuỗi bán lẻ quy mô lớn & Tiên phong ứng dụng AI Workforce.">
     
@@ -24,18 +25,18 @@
             height: 100%;
             overflow: hidden;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: #1e293b;
+            background: #0f172a;
             display: flex;
             flex-direction: column;
         }
         .topbar {
-            height: 54px;
+            height: 56px;
             background: #0f172a;
             color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 20px;
+            padding: 0 16px;
             border-bottom: 1px solid #334155;
             flex-shrink: 0;
             z-index: 10;
@@ -43,9 +44,12 @@
         .topbar-left {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 0.95rem;
+            gap: 10px;
+            font-size: 0.92rem;
             font-weight: 700;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         .badge {
             background: #0284c7;
@@ -55,17 +59,26 @@
             border-radius: 4px;
             font-weight: 700;
             text-transform: uppercase;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .title-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         .topbar-actions {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            flex-shrink: 0;
         }
         .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 6px;
-            padding: 7px 14px;
+            padding: 8px 14px;
             border-radius: 6px;
             font-size: 0.84rem;
             font-weight: 600;
@@ -73,6 +86,7 @@
             cursor: pointer;
             transition: all 0.2s ease;
             border: none;
+            white-space: nowrap;
         }
         .btn-back {
             background: #334155;
@@ -89,10 +103,45 @@
             background: #0369a1;
             transform: translateY(-1px);
         }
+
+        /* Mobile Notice Bar */
+        .mobile-banner {
+            display: none;
+            background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 10px 14px;
+            color: #e2e8f0;
+            font-size: 0.82rem;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .mobile-banner-text {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            line-height: 1.35;
+        }
+        .mobile-banner-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #0284c7;
+            color: #ffffff;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.78rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
         .pdf-viewer-container {
             flex: 1;
             width: 100%;
-            height: calc(100vh - 54px);
+            height: calc(100vh - 56px);
             background: #334155;
             position: relative;
         }
@@ -121,6 +170,34 @@
             margin-bottom: 16px;
             max-width: 500px;
         }
+
+        @media (max-width: 768px) {
+            .mobile-banner {
+                display: flex;
+            }
+            .title-text {
+                display: none;
+            }
+            .topbar-left::after {
+                content: "Mai Văn Hưng — CV Chi Tiết";
+                font-size: 0.88rem;
+                font-weight: 700;
+                color: #ffffff;
+            }
+            .btn span:last-child {
+                display: none;
+            }
+            .btn {
+                padding: 8px 10px;
+                min-width: 38px;
+            }
+        }
+
+        @media (min-width: 480px) and (max-width: 768px) {
+            .btn span:last-child {
+                display: inline;
+            }
+        }
     </style>
 </head>
 <body>
@@ -129,19 +206,29 @@
     <header class="topbar">
         <div class="topbar-left">
             <span class="badge">Bản Gốc PDF</span>
-            <span>MAI VĂN HƯNG — QUẢN LÝ KINH DOANH KHU VỰC | QUẢN LÝ VẬN HÀNH</span>
+            <span class="title-text">MAI VĂN HƯNG — QUẢN LÝ KINH DOANH KHU VỰC | QUẢN LÝ VẬN HÀNH</span>
         </div>
         <div class="topbar-actions">
-            <a href="index.html" class="btn btn-back">
+            <a href="index.html" class="btn btn-back" title="Quay lại Portfolio">
                 <span>←</span>
-                <span>Quay Lại Portfolio</span>
+                <span>Về Portfolio</span>
             </a>
-            <a href="assets/images/Quan_Ly_Khu_Vuc_Mai_Van_Hung.pdf" target="_blank" download="Quan_Ly_Khu_Vuc_Mai_Van_Hung.pdf" class="btn btn-download">
+            <a href="assets/images/Quan_Ly_Khu_Vuc_Mai_Van_Hung.pdf" target="_blank" download="Quan_Ly_Khu_Vuc_Mai_Van_Hung.pdf" class="btn btn-download" title="Tải file PDF gốc">
                 <span>⬇</span>
-                <span>Tải File PDF Gốc</span>
+                <span>Tải PDF Gốc</span>
             </a>
         </div>
     </header>
+
+    <!-- MOBILE DIRECT ACTION BANNER -->
+    <div class="mobile-banner">
+        <div class="mobile-banner-text">
+            <span>📱 <strong>Thiết bị di động:</strong> Mở trực tiếp để xem đầy đủ các trang không bị giới hạn iframe.</span>
+        </div>
+        <a href="assets/images/Quan_Ly_Khu_Vuc_Mai_Van_Hung.pdf" target="_blank" class="mobile-banner-btn">
+            <span>↗ Mở Toàn Màn Hình</span>
+        </a>
+    </div>
 
     <!-- NATIVE FULLSCREEN PDF VIEWER -->
     <main class="pdf-viewer-container">

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maihungkd1p-rgb.github.io/Hungmv-portfolio89/sitemap.xml
