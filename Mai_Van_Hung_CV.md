@@ -9,75 +9,75 @@
 - 📞 **Điện thoại:** 0987 918 119
 - ✉️ **Email:** maihung89@gmail.com
 - 🎂 **Năm sinh:** 1989
-- 📍 **Địa chỉ:** 683 Nguyễn Khoái, Lĩnh Nam, Hà Nội
+- 📍 **Địa chỉ:** Phường Vĩnh Hưng, Hà Nội
 
 ---
 
 ## 🎯 TÓM TẮT NĂNG LỰC ĐIỀU HÀNH
 
-- **13+ năm kinh nghiệm** điều hành chuỗi bán lẻ đa ngành (*FPT Long Châu, 5S Fashion, 30Shine*), trực tiếp quản lý mạng lưới **15+ showroom/cửa hàng**, dẫn dắt đội ngũ **50–100+ nhân sự**, chịu trách nhiệm doanh số khu vực **10 – 15 tỷ VNĐ/tháng**.
+- **13+ năm kinh nghiệm** điều hành chuỗi bán lẻ đa ngành (*FPT Long Châu, 5S Fashion, 30Shine*), trực tiếp quản lý mạng lưới **15+ showroom/cửa hàng**, dẫn dắt đội ngũ **50–100+ nhân sự**, chịu trách nhiệm doanh số khu vực **08 – 12 tỷ VNĐ/tháng**.
 - Sở hữu năng lực **chuẩn hóa quy trình tiêu chuẩn (SOP)**, thiết lập hệ thống kiểm tra chất lượng Store Audit định kỳ đạt tỷ lệ tuân thủ **>90% toàn chuỗi**, thành tích trực tiếp tham gia setup hình ảnh quầy kệ (VM) và đưa vào vận hành chuẩn **40+ điểm bán mới** trên toàn quốc.
-- Đạt danh hiệu **Giám đốc Kinh doanh Khu vực Xuất sắc – Top 1 KPI Miền Bắc FPT Long Châu** *(T12/2022 & T01/2023)*. Tiên phong ứng dụng **AI & Automation** vào phân tích dữ liệu kinh doanh nhằm tối ưu hiệu quả vận hành và bứt phá doanh số.
+- Đạt danh hiệu **Giám đốc Kinh doanh Khu vực Xuất sắc – Top KPI Miền Bắc FPT Long Châu** *(tháng 12/2022 & 01/2023)*. Tiên phong ứng dụng **AI & Automation** vào phân tích dữ liệu kinh doanh nhằm tối ưu hiệu quả vận hành và bứt phá doanh số.
 
 ---
 
 ## 💼 KINH NGHIỆM LÀM VIỆC CHI TIẾT
 
-### 03/2025 - Hiện tại: Công ty Cổ Phần Lifetech
-**Co-Founder Kiêm Trưởng Phòng Vận Hành**  
-*Hệ thống Cơ Điện Lạnh & Giải pháp Công nghệ*
-- **Quản trị Vận hành & Dự án:** Điều hành toàn diện hoạt động vận hành, phân bổ nguồn lực (nhân sự, ngân sách, thiết bị) và kiểm soát tiến độ cho 100% dự án, đảm bảo bàn giao đúng tiến độ, đạt tiêu chuẩn kỹ thuật chất lượng công trình.
-- **Kiểm soát ngân sách thi công:** Quản lý tỷ lệ hao hụt vật tư (ống gió, bảo ôn) dưới mức quy định.
-- **Chuẩn hóa Dịch vụ & Chăm sóc khách hàng:** Xây dựng quy trình bảo dưỡng định kỳ và thiết lập cơ chế phản ứng nhanh giải quyết sự cố sau bán hàng, duy trì chỉ số hài lòng khách hàng ở mức cao.
-- **Nhận diện thương hiệu & Tiếp cận thị trường:** Triển khai đồng bộ nhận diện thương hiệu trực tiếp tại công trường (biển bảng, băng rôn), khai thác dữ liệu thực tế tại dự án để tiếp cận các khách hàng tiềm năng xung quanh.
-- **Ứng dụng AI & Tự động hóa:** Tiên phong ứng dụng AI Agent và tự động hóa vào quy trình theo dõi tiến độ dự án, báo cáo dữ liệu thực địa và chăm sóc khách hàng.
+### 03/2025 - Hiện tại: Công ty Cổ Phần Lifetech (Hợp đồng Tư vấn Độc lập)
+**Chuyên Gia Tư Vấn Vận Hành (Freelance Consultant)**  
+*Giải pháp cung cấp khí tươi & không khí sạch cho ngôi nhà Việt*
+- **Điều hành vận hành & dự án:** Trực tiếp điều phối hoạt động chung, sắp xếp nhân sự, ngân sách, thiết bị và theo sát tiến độ cho **100% dự án**, đảm bảo bàn giao đúng hẹn và đạt chuẩn kỹ thuật, chất lượng công trình.
+- **Kiểm soát chi phí thi công:** Quản lý chặt mức sử dụng vật tư thực tế tại công trình, giữ tỷ lệ hao hụt luôn nằm dưới định mức quy định.
+- **Chuẩn hóa dịch vụ & chăm sóc sau bán:** Xây dựng lịch bảo dưỡng định kỳ và quy trình tiếp nhận, xử lý nhanh sự cố phát sinh sau lắp đặt, giữ mức độ hài lòng cao từ khách hàng.
+- **Hình ảnh thương hiệu & mở rộng khách hàng:** Triển khai đồng bộ biển bảng, băng rôn nhận diện trực tiếp tại công trường đang thi công, kết hợp nắm bắt nhu cầu thực tế quanh dự án để tiếp cận các hộ khách hàng tiềm năng lân cận.
+- **Ứng dụng AI & tự động hóa:** Đưa công cụ AI và quy trình tự động vào việc theo dõi tiến độ dự án, tổng hợp báo cáo số liệu từ công trường và nhắc lịch chăm sóc khách hàng.
 
 ---
 
 ### 09/2023 - 02/2025: Công ty Cổ Phần 5S Fashion
 **Quản Lý Kinh Doanh Khu Vực**  
 *Chuỗi Thời trang Nam toàn quốc*
-- Quản lý **17 cửa hàng bán lẻ**, đảm bảo doanh thu tăng trưởng **~10%/năm**.
-- Xây dựng và chuẩn hóa quy trình vận hành tiêu chuẩn (SOP) cho 17 cửa hàng bán lẻ. Thiết lập hệ thống bảng kiểm tra chất lượng hoạt động và trực tiếp thực hiện kiểm định cửa hàng định kỳ hàng tháng, đảm bảo tỷ lệ tuân thủ quy trình đạt trung bình **>95% toàn hệ thống**.
-- Đào tạo & phát triển **>50 nhân sự** bán hàng, nâng cao hiệu suất làm việc.
-- Giám sát và tối ưu hóa quy chuẩn trưng bày Visual Merchandising (VM) tại điểm bán lẻ, duy trì tính đồng nhất của nhận diện thương hiệu.
-- Trực tiếp thiết lập hình ảnh, quầy kệ, trưng bày sản phẩm và chuẩn bị hàng hóa cho **8 cửa hàng mới khai trương** đạt chuẩn thiết kế trước ngày mở bán.
-- Lập báo cáo chất lượng vận hành định kỳ, tổng hợp lỗi hệ thống và đề xuất tối ưu hóa quy trình.
+- Trực tiếp quản lý hoạt động kinh doanh của cụm **17 cửa hàng bán lẻ**, duy trì mức tăng trưởng doanh thu ổn định **~10%/năm**.
+- Xây dựng và chuẩn hóa quy trình làm việc tiêu chuẩn (SOP) cùng hệ thống bảng chấm điểm chất lượng cho **17 cửa hàng bán lẻ**; trực tiếp đi kiểm tra cửa hàng định kỳ hằng tháng, giữ tỷ lệ thực hiện đúng quy trình đạt trung bình **>95% toàn hệ thống**.
+- Trực tiếp đào tạo, kèm cặp và phát triển đội ngũ **>50 nhân sự bán hàng**, nâng cao hiệu suất tư vấn và phục vụ tại điểm bán.
+- Giám sát và hoàn thiện quy chuẩn bố trí, trưng bày sản phẩm tại từng cửa hàng, duy trì hình ảnh nhận diện thương hiệu luôn đồng nhất và chỉn chu.
+- Trực tiếp dàn dựng hình ảnh, lắp đặt quầy kệ, trưng bày sản phẩm và chuẩn bị đầy đủ hàng hóa cho **8 cửa hàng mới khai trương** đạt chuẩn thiết kế trước ngày mở bán.
+- Lập báo cáo đánh giá chất lượng vận hành định kỳ, tổng hợp các lỗi phát sinh trên hệ thống và đề xuất phương án cải tiến quy trình làm việc.
 
 ---
 
 ### 04/2022 - 08/2023: Công ty Cổ Phần Dược Phẩm FPT Long Châu
 **Giám Đốc Kinh Doanh Khu Vực**  
 *Chuỗi Bán lẻ Dược phẩm Hàng đầu Việt Nam (~3.000 Nhà thuốc)*
-- **Giám đốc kinh doanh khu vực xuất sắc:** Đạt KPI cao nhất toàn hệ thống vào **tháng 12/2022 & tháng 01/2023**, dẫn đầu doanh thu miền.
-- Đạt **95% – 110% KPI** doanh số mỗi tháng liên tục.
-- Thực hiện kiểm tra định kỳ tiêu chuẩn vận hành và trưng bày sản phẩm tại các nhà thuốc khu vực phụ trách, thiết lập và theo dõi lộ trình khắc phục lỗi vận hành tại điểm bán để nâng cao trải nghiệm khách hàng.
-- Tổng hợp dữ liệu kiểm tra định kỳ hàng tháng, xuất báo cáo phân tích chất lượng vận hành khu vực nhằm cung cấp thông tin thực địa hỗ trợ ban lãnh đạo tối ưu hóa tiêu chuẩn quản lý chuỗi.
-- Xây dựng kế hoạch tiếp thị tại điểm bán (Trade Marketing), giúp gia tăng lưu lượng khách hàng đến nhà thuốc.
-- Đào tạo tại chỗ về tiêu chuẩn vận hành. Trực tiếp thiết lập hình ảnh quầy kệ, sắp xếp hàng hóa cho các nhà thuốc mới mở đúng tiêu chuẩn thiết kế GPP.
+- **Giám đốc Kinh doanh Khu vực Xuất sắc:** Đạt **Top KPI Miền Bắc** vào **tháng 12/2022 & tháng 01/2023**, dẫn đầu kết quả doanh thu toàn miền.
+- Duy trì hoàn thành đều đặn từ **95% – 110% KPI doanh số** mỗi tháng liên tục trong suốt thời gian phụ trách.
+- Kiểm tra định kỳ tiêu chuẩn vận hành và cách trưng bày sản phẩm tại các nhà thuốc trong khu vực phụ trách; lập kế hoạch và theo sát việc khắc phục dứt điểm các lỗi tại điểm bán để nâng cao trải nghiệm khách hàng.
+- Tổng hợp số liệu kiểm tra định kỳ hằng tháng thành báo cáo phân tích chất lượng vận hành khu vực, cung cấp thông tin thực tế từ điểm bán giúp Ban lãnh đạo hoàn thiện tiêu chuẩn quản lý chuỗi.
+- Xây dựng kế hoạch thu hút và quảng bá trực tiếp tại điểm bán, giúp gia tăng lượng khách hàng ghé mua tại hệ thống nhà thuốc.
+- Đào tạo trực tiếp tại quầy về tiêu chuẩn vận hành; trực tiếp thiết lập hình ảnh quầy kệ và sắp xếp thuốc, hàng hóa cho các nhà thuốc mới mở đúng chuẩn thiết kế **GPP**.
 
 ---
 
 ### 05/2015 - 03/2022: Công ty CP TM–DV 30Shine
 **Quản Lý Khu Vực & Phát Triển Hệ Thống**  
 *Chuỗi Cắt tóc nam với 100+ Cửa hàng trên toàn quốc*
-- **Giải thưởng "Người Dẫn Lối":** Vinh danh 3 năm liên tiếp (2017 – 2020) ghi nhận năng lực dẫn dắt và gắn kết đội ngũ.
-- **Xây dựng văn hóa phục vụ xuất sắc:** Tăng tỷ lệ khách hàng quay lại, nâng cao trải nghiệm dịch vụ & mức độ hài lòng khách hàng.
-- Tham gia thiết lập tiêu chuẩn quản lý dịch vụ chuỗi và giám sát kiểm tra định kỳ tình hình thực hiện tại **10+ cửa hàng phụ trách**, đảm bảo tính đồng bộ và chất lượng dịch vụ.
-- Trực tiếp tham gia thiết lập hình ảnh thương hiệu và chuẩn bị vận hành trong chiến dịch mở rộng hệ thống **30+ cửa hàng mới**.
-- Xây dựng chương trình đào tạo nghiệp vụ dịch vụ khách hàng và trực tiếp huấn luyện nhân sự mới dựa trên các lỗi thực tế phát hiện qua kiểm tra định kỳ.
-- Triển khai kênh chăm sóc khách hàng giúp tăng tỷ lệ khách quay lại sau 21–30 ngày đạt **33%**.
+- **Giải thưởng "Người Dẫn Lối":** Được vinh danh **3 năm liên tiếp (2017 – 2020)** ghi nhận năng lực dẫn dắt, kèm cặp và gắn kết đội ngũ nhân sự.
+- **Xây dựng văn hóa phục vụ tận tâm:** Gia tăng tỷ lệ khách hàng quay lại, nâng cao trải nghiệm dịch vụ và mức độ hài lòng của khách hàng tại salon.
+- Tham gia xây dựng bộ tiêu chuẩn quản lý dịch vụ chuỗi và trực tiếp kiểm tra định kỳ việc thực hiện tại **10+ cửa hàng phụ trách**, đảm bảo tính đồng bộ và chất lượng phục vụ.
+- Trực tiếp tham gia thiết lập hình ảnh thương hiệu và chuẩn bị đầy đủ điều kiện vận hành trong chiến dịch mở rộng hệ thống **30+ cửa hàng mới**.
+- Xây dựng chương trình đào tạo nghiệp vụ phục vụ khách hàng và trực tiếp huấn luyện nhân sự mới dựa trên chính các lỗi thực tế phát hiện qua những đợt kiểm tra định kỳ.
+- Triển khai kênh hỏi thăm, chăm sóc khách hàng sau dịch vụ giúp nâng tỷ lệ khách hàng quay lại sau 21 ngày đạt **~43% cho toàn khu vực**.
 
 ---
 
 ### 09/2010 - 04/2015: Công ty CP Linh Trung Tín (Hkphone)
 **Quản Lý Cửa Hàng**  
 *Hệ thống Cửa hàng Điện thoại & Công nghệ*
-- Quản lý & điều phối hoạt động kinh doanh tại cửa hàng, đảm bảo doanh thu tăng trưởng ổn định.
-- Tư vấn & hỗ trợ khách hàng, giúp tỷ lệ khách quay lại mua hàng.
-- Quản lý & đào tạo đội ngũ **10+ nhân viên**, tối ưu hiệu suất làm việc & dịch vụ khách hàng.
-- Kiểm soát hàng tồn kho & trưng bày sản phẩm, gia tăng tỷ lệ bán chéo sản phẩm phụ kiện kèm theo.
-- Báo cáo doanh thu & phân tích số liệu kinh doanh hàng ngày, hỗ trợ ban lãnh đạo đưa ra chiến lược tối ưu.
+- Quản lý và điều phối toàn bộ hoạt động kinh doanh hằng ngày tại cửa hàng, đảm bảo doanh thu duy trì tăng trưởng ổn định.
+- Trực tiếp tư vấn sản phẩm và hỗ trợ chu đáo nhu cầu của khách tại quầy, giúp gia tăng tỷ lệ khách hàng tin tưởng quay lại mua hàng.
+- Quản lý ca làm việc và trực tiếp đào tạo đội ngũ **10+ nhân viên**, nâng cao hiệu suất bán hàng và chất lượng phục vụ khách hàng.
+- Kiểm soát chặt lượng hàng tồn kho, sắp xếp trưng bày sản phẩm gọn đẹp và đẩy mạnh tư vấn bán kèm phụ kiện trên mỗi đơn hàng.
+- Tổng hợp báo cáo doanh thu và phân tích số liệu bán hàng hằng ngày, cung cấp thông tin kịp thời hỗ trợ Ban lãnh đạo điều chỉnh kế hoạch kinh doanh hiệu quả.
 
 ---
 
@@ -112,9 +112,9 @@
 
 ## 🏆 GIẢI THƯỞNG & THÀNH TÍCH
 
-- **Dẫn đầu KPI Toàn quốc (Top 1):** Giám đốc Kinh doanh Khu vực Xuất sắc FPT Long Châu *(T12/2022 & T01/2023)*.
+- **Top KPI Miền Bắc:** Giám đốc Kinh doanh Khu vực Xuất sắc FPT Long Châu *(tháng 12/2022 & 01/2023)*.
 - **Giải thưởng "Người Dẫn Lối":** Trao tặng 3 năm liên tiếp tại 30Shine *(2017 – 2020)*.
-- **Văn hóa Phục vụ Xuất sắc:** Tăng tỷ lệ khách hàng quay lại chuỗi sau 21–30 ngày đạt **33%**.
+- **Văn hóa Phục vụ Xuất sắc:** Nâng tỷ lệ khách hàng quay lại sau 21 ngày đạt **~43% cho toàn khu vực**.
 - **Thành tích:** Trực tiếp thiết lập & đưa vào vận hành chuẩn **40+ điểm bán** toàn quốc.
 
 ---

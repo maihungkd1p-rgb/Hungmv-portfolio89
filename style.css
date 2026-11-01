@@ -633,7 +633,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 14%;
     transition: var(--transition-smooth);
 }
 
@@ -682,6 +682,11 @@ img {
 .stat-number.highlight-emerald { color: var(--accent-emerald); }
 .stat-number.highlight-amber { color: var(--accent-amber); }
 .stat-number.highlight-purple { color: var(--accent-indigo); }
+.bento-stat-box .stat-number.highlight-purple {
+    font-size: 1.48rem;
+    line-height: 1.37;
+    white-space: nowrap;
+}
 
 .stat-label {
     font-size: 0.88rem;
