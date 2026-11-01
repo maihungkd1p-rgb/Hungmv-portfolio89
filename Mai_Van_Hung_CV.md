@@ -114,7 +114,7 @@
 
 - **Top KPI Miền Bắc:** Giám đốc Kinh doanh Khu vực Xuất sắc FPT Long Châu *(tháng 12/2022 & 01/2023)*.
 - **Giải thưởng "Người Dẫn Lối":** Trao tặng 3 năm liên tiếp tại 30Shine *(2017 – 2020)*.
-- **Văn hóa Phục vụ Xuất sắc:** Nâng tỷ lệ khách hàng quay lại sau 21 ngày đạt **~43% cho toàn khu vực**.
+- **Văn hóa Phục vụ Xuất sắc:** Nâng tỷ lệ khách hàng quay lại tại 30Shine sau 21 ngày đạt **~43% cho toàn khu vực**.
 - **Thành tích:** Trực tiếp thiết lập & đưa vào vận hành chuẩn **40+ điểm bán** toàn quốc.
 
 ---
