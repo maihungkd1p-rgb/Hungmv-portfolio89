@@ -58,7 +58,7 @@
 
 ---
 
-### 05/2015 - 03/2022: Công ty CP TM–DV 30Shine
+### 05/2015 - 03/2022: Công ty CP TM–DV 30Shine (Hệ thống Linh Trung Tín)
 **Quản Lý Khu Vực & Phát Triển Hệ Thống**  
 *Chuỗi Cắt tóc nam với 100+ Cửa hàng trên toàn quốc*
 - **Giải thưởng "Người Dẫn Lối":** Được vinh danh **3 năm liên tiếp (2017 – 2020)** ghi nhận năng lực dẫn dắt, kèm cặp và gắn kết đội ngũ nhân sự.
