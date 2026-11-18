@@ -15,8 +15,8 @@
 
 ## 🎯 TÓM TẮT NĂNG LỰC ĐIỀU HÀNH
 
-- **13+ năm kinh nghiệm** điều hành chuỗi bán lẻ đa ngành (*FPT Long Châu, 5S Fashion, 30Shine*), trực tiếp quản lý mạng lưới **15+ showroom/cửa hàng**, dẫn dắt đội ngũ **50–100+ nhân sự**, chịu trách nhiệm doanh số khu vực **08 – 12 tỷ VNĐ/tháng**.
-- Sở hữu năng lực **chuẩn hóa quy trình tiêu chuẩn (SOP)**, thiết lập hệ thống kiểm tra chất lượng Store Audit định kỳ đạt tỷ lệ tuân thủ **>90% toàn chuỗi**, thành tích trực tiếp tham gia setup hình ảnh quầy kệ (VM) và đưa vào vận hành chuẩn **40+ điểm bán mới** trên toàn quốc.
+- **15+ năm kinh nghiệm** quản trị & điều hành chuỗi bán lẻ đa ngành (*FPT Long Châu, 5S Fashion, 30Shine*), trực tiếp quản lý mạng lưới **15+ showroom/cửa hàng**, dẫn dắt đội ngũ **50–100+ nhân sự**, chịu trách nhiệm doanh số khu vực **08 – 12 tỷ VNĐ/tháng**.
+- Sở hữu năng lực **chuẩn hóa quy trình tiêu chuẩn (SOP)**, thiết lập hệ thống kiểm tra chất lượng Store Audit định kỳ đạt tỷ lệ tuân thủ **>95% toàn chuỗi**, kiểm soát chặt tồn kho – hàng cận date (GPP), thành tích trực tiếp tham gia setup hình ảnh quầy kệ (VM) và đưa vào vận hành chuẩn **40+ điểm bán mới** trên toàn quốc.
 - Đạt danh hiệu **Giám đốc Kinh doanh Khu vực Xuất sắc – Top KPI Miền Bắc FPT Long Châu** *(tháng 12/2022 & 01/2023)*. Tiên phong ứng dụng **AI & Automation** vào phân tích dữ liệu kinh doanh nhằm tối ưu hiệu quả vận hành và bứt phá doanh số.
 
 ---
@@ -104,7 +104,7 @@
 
 ## 🎓 HỌC VẤN & ĐÀO TẠO
 
-- **Trường Đào Tạo CNTT NIIT – Thăng Long**  
+- **Học Viện Đào Tạo CNTT Quốc Tế NIIT – Thăng Long**  
   *Tốt nghiệp Lập trình & Phần mềm Quốc tế Ấn Độ*  
   - Ứng dụng Trí tuệ nhân tạo (AI) & Tự động hóa trong quản trị chuỗi bán lẻ.
 
