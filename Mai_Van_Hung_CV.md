@@ -104,7 +104,7 @@
 
 ## 🎓 HỌC VẤN & ĐÀO TẠO
 
-- **Học Viện NIIT – Thăng Long**  
+- **Trường Đào Tạo CNTT NIIT – Thăng Long**  
   *Tốt nghiệp Lập trình & Phần mềm Quốc tế Ấn Độ*  
   - Ứng dụng Trí tuệ nhân tạo (AI) & Tự động hóa trong quản trị chuỗi bán lẻ.
 
