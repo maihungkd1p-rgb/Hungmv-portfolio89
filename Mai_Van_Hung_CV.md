@@ -24,7 +24,7 @@
 ## 💼 KINH NGHIỆM LÀM VIỆC CHI TIẾT
 
 ### 03/2025 - Hiện tại: Công ty Cổ Phần Lifetech (Hợp đồng Tư vấn Độc lập)
-**Chuyên Gia Tư Vấn Vận Hành (Freelance Consultant)**  
+**Tư Vấn Vận Hành (Freelance Consultant)**  
 *Giải pháp cung cấp khí tươi & không khí sạch cho ngôi nhà Việt*
 - **Điều hành vận hành & dự án:** Trực tiếp điều phối hoạt động chung, sắp xếp nhân sự, ngân sách, thiết bị và theo sát tiến độ cho **100% dự án**, đảm bảo bàn giao đúng hẹn và đạt chuẩn kỹ thuật, chất lượng công trình.
 - **Kiểm soát chi phí thi công:** Quản lý chặt mức sử dụng vật tư thực tế tại công trình, giữ tỷ lệ hao hụt luôn nằm dưới định mức quy định.
