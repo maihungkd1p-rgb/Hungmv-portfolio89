@@ -687,7 +687,7 @@ img {
     line-height: 1.37;
     white-space: nowrap;
 }
-.cert-img-rounded { border-radius: 12px; }
+.cert-img-rounded { border-radius: 50%; }
 
 .stat-label {
     font-size: 0.88rem;
@@ -1219,8 +1219,8 @@ img {
    -------------------------------------------------------------------------- */
 .credentials-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
 .cert-card {
@@ -1260,6 +1260,7 @@ img {
     width: auto;
     height: auto;
     object-fit: contain;
+    mix-blend-mode: multiply;
     transition: var(--transition-smooth);
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.04));
 }

@@ -121,12 +121,12 @@
 
 ## 📜 CHỨNG CHỈ CHUYÊN MÔN
 
-- **2025:** Google Introduction AI – Kiến thức cơ bản về AI.
-- **2024 – 2025:** AI Mastery AI Prompt & Chatbot Mastery – Tối ưu vận hành, content MKT, kịch bản CSKH...
-- **2020:** Học Viện Agile Đào tạo Quản lý cấp trung theo phương pháp Agile.
-- **2019:** PLC Nâng tầm Dịch vụ khách hàng chuyên nghiệp.
-- **2017 – 2020:** VTI Integrity Đào tạo Năng lực Quản lý cấp trung.
-- **2018:** Đào Tạo Nhân Việt Kỹ Năng Bán Hàng & Sales.
+- **2025:** Google Introduction to AI – Ứng dụng AI tạo sinh trong phân tích & vận hành.
+- **2024 – 2025:** AI Mastery – AI Prompt & Chatbot Mastery (Tự động hóa báo cáo vận hành, nội dung & kịch bản CSKH).
+- **2020:** Học Viện Agile – Quản lý Cấp Trung theo Agile (Điều phối mục tiêu linh hoạt & cải tiến hiệu suất đội ngũ).
+- **2017 – 2020:** VTI Integrity – Đào tạo Năng lực Quản lý Cấp Trung (Lập kế hoạch khu vực, giao việc & kèm cặp Cửa hàng trưởng).
+- **2019:** PLC – Nâng tầm Dịch vụ Khách hàng (Chuẩn hóa quy trình trải nghiệm & giữ chân khách tại quầy).
+- **2018:** Đào Tạo Nhân Việt – Kỹ năng Bán hàng & Tư vấn Thực chiến (Huấn luyện kịch bản tư vấn & nâng tỷ lệ chốt đơn điểm bán).
 
 ---
 
