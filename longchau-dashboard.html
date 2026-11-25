@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="vi" data-template="mda_softblue">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FPT Long Châu (2017–Q3/2026) — Báo Cáo Chiến Lược &amp; Đối Sánh Tam Mã</title>
+<style>
+  :root {
+    --bg-main: #fbfbf9;
+    --text-main: #1c1b18;
+    --text-secondary: #475569;
+    --nav-surface: #0f3d8a;
+    --nav-active: #1e73be;
+    --page-surface: #cbddf7;
+    --box-surface: #ffffff;
+    --strip-surface: transparent;
+    --strip-ink: #0f3d8a;
+    --banner-surface: #ffffff;
+    --banner-ink: #0f3d8a;
+    --bar-tone: #1e73be;
+  }
+  :root[data-template="mda_softblue"] {
+    --nav-surface: #0f3d8a; --nav-active: #1e73be; --page-surface: #cbddf7;
+    --box-surface: #ffffff; --strip-surface: transparent; --strip-ink: #0f3d8a;
+    --banner-surface: #ffffff; --banner-ink: #0f3d8a; --bar-tone: #1e73be;
+  }
+  :root[data-template="ecommerce"] {
+    --nav-surface: #0f1e3e; --nav-active: #1967d2; --page-surface: #f1f4f9;
+    --box-surface: #fbfbf9; --strip-surface: transparent; --strip-ink: #0f172a;
+    --banner-surface: #fbfbf9; --banner-ink: #0f172a; --bar-tone: #1967d2;
+  }
+  :root[data-template="csat_navy"] {
+    --nav-surface: #0b2559; --nav-active: #1d4ed8; --page-surface: #eef2f6;
+    --box-surface: #fbfbf9; --strip-surface: #0b2559; --strip-ink: #f8fafc;
+    --banner-surface: #0b2559; --banner-ink: #f8fafc; --bar-tone: #0b2559;
+  }
+  :root[data-template="warehouse_brown"] {
+    --nav-surface: #5c300e; --nav-active: #854d0e; --page-surface: #f5f2eb;
+    --box-surface: #fbfbf9; --strip-surface: #6b3a12; --strip-ink: #f8fafc;
+    --banner-surface: #6b3a12; --banner-ink: #f8fafc; --bar-tone: #6b3a12;
+  }
+  :root[data-template="zero_paper"] {
+    --nav-surface: #1e293b; --nav-active: #0f766e; --page-surface: #fbfbf9;
+    --box-surface: transparent; --strip-surface: transparent; --strip-ink: #1c1b18;
+    --banner-surface: transparent; --banner-ink: #1c1b18; --bar-tone: #0f766e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background: var(--page-surface); color: var(--text-main); font-size: 14px; line-height: 1.55;
+  }
+  .template-switcher {
+    background: #090d16; color: #f8fafc; padding: 8px 20px; display: flex;
+    justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+    border-bottom: 2px solid #1e73be;
+  }
+  .template-switcher .lbl { font-size: 12px; font-weight: 600; color: #cbd5e1; }
+  .tpl-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tpl-btn {
+    background: #1e293b; color: #e2e8f0; border: 1px solid #475569; padding: 5px 11px;
+    border-radius: 6px; font-size: 11.5px; font-weight: 600; cursor: pointer;
+  }
+  .tpl-btn.active { background: #1e73be; color: #f8fafc; border-color: #60a5fa; font-weight: 700; }
+  .app-shell { display: grid; grid-template-columns: 230px 1fr; min-height: calc(100vh - 42px); }
+  :root[data-template="warehouse_brown"] .app-shell { grid-template-columns: 1fr; }
+  :root[data-template="warehouse_brown"] .left-sidebar { display: none; }
+  @media (max-width: 1180px) { .app-shell { grid-template-columns: 1fr; } .left-sidebar { display: none; } }
+  .left-sidebar {
+    background: var(--nav-surface); color: #f8fafc; padding: 18px 14px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .brand-logo {
+    display: flex; align-items: center; gap: 10px; padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.14); margin-bottom: 14px;
+  }
+  .brand-logo svg { width: 34px; height: 34px; flex-shrink: 0; }
+  .brand-logo .t1 { font-size: 14px; font-weight: 700; }
+  .brand-logo .t2 { font-size: 10.5px; color: #93c5fd; letter-spacing: 0.03em; }
+  .nav-list { list-style: none; margin-bottom: 18px; }
+  .nav-item {
+    display: flex; align-items: center; gap: 8px; padding: 9px 11px; border-radius: 7px;
+    color: #cbd5e1; font-weight: 600; font-size: 13px; margin-bottom: 4px; cursor: pointer;
+  }
+  .nav-item:hover { background: rgba(255,255,255,0.08); color: #f8fafc; }
+  .nav-item.active { background: var(--nav-active); color: #f8fafc; font-weight: 700; }
+  .sidebar-summary-box {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px; padding: 12px; margin-top: auto;
+  }
+  .sidebar-summary-box h4 {
+    font-size: 11px; text-transform: uppercase; color: #93c5fd; margin-bottom: 8px; letter-spacing: 0.03em;
+  }
+  .mini-stat {
+    display: flex; justify-content: space-between; padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 11.5px;
+  }
+  .mini-stat:last-child { border-bottom: none; }
+  .main-canvas { background: var(--page-surface); padding: 16px 20px 28px; display: flex; flex-direction: column; gap: 14px; }
+  :root[data-template="mda_softblue"] .main-canvas {
+    background: #ffffff; margin: 14px; border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(15,61,138,0.10); padding: 18px 22px 26px;
+  }
+  .top-header-bar {
+    background: var(--banner-surface); color: var(--banner-ink); padding: 12px 18px; border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(15,23,42,0.06); display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: nowrap; gap: 14px;
+  }
+  @media (max-width: 980px) { .top-header-bar { flex-wrap: wrap; } }
+  :root[data-template="zero_paper"] .top-header-bar { border: 1px solid #cbd5e1; box-shadow: none; }
+  :root[data-template="mda_softblue"] .top-header-bar { border-bottom: 1px solid #e2e8f0; border-radius: 0; box-shadow: none; padding: 4px 2px 12px; }
+  .top-header-bar h1 { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; }
+  .top-header-bar p { font-size: 12.5px; color: var(--banner-ink); opacity: 0.85; margin-top: 3px; }
+  .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; flex-wrap: wrap; }
+  .pill-badge {
+    display: inline-block; padding: 5px 11px; border-radius: 999px;
+    background: #eff6ff; color: #0f3d8a; border: 1px solid #bfdbfe;
+    font-size: 11.5px; font-weight: 600;
+  }
+  .mda-tabs-bar {
+    display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+    background: #ffffff; padding: 6px; border-radius: 10px; border: 1px solid #e2e8f0;
+  }
+  :root[data-template="zero_paper"] .mda-tabs-bar { background: transparent; border-color: #cbd5e1; }
+  :root[data-template="mda_softblue"] .mda-tabs-bar { background: #f3f5f9; border: 1px solid #dbeafe; border-radius: 999px; padding: 5px 8px; }
+  .mda-tab-btn {
+    border: none; background: transparent; color: #334155; padding: 8px 14px; border-radius: 7px;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+  }
+  .mda-tab-btn:hover { background: #e2e8f0; color: #0f172a; }
+  .mda-tab-btn.active { background: var(--bar-tone); color: #ffffff; font-weight: 700; }
+  :root[data-template="mda_softblue"] .mda-tab-btn { border-radius: 999px; }
+  .mda-panel { display: none; flex-direction: column; gap: 14px; }
+  .mda-panel.active { display: flex; }
+  .kpi-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  @media (max-width: 1400px) { .kpi-row { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 768px) { .kpi-row { grid-template-columns: 1fr; } }
+  .kpi-box {
+    border-radius: 10px; padding: 13px 15px; display: flex; flex-direction: column; justify-content: space-between;
+    box-shadow: 0 2px 6px rgba(15,23,42,0.06);
+  }
+  :root[data-template="ecommerce"] .kpi-box { background: #ffffff; color: #0f172a; border: 1px solid #e2e8f0; border-top-width: 4px; }
+  :root[data-template="ecommerce"] .kpi-box.c1,
+  :root[data-template="ecommerce"] .kpi-box.c2 { border-top-color: #1967d2; }
+  :root[data-template="ecommerce"] .kpi-box.c3,
+  :root[data-template="ecommerce"] .kpi-box.c4 { border-top-color: #0f766e; }
+  :root[data-template="ecommerce"] .kpi-box.c5,
+  :root[data-template="ecommerce"] .kpi-box.c6 { border-top-color: #475569; }
+  :root[data-template="csat_navy"] .kpi-box,
+  :root[data-template="warehouse_brown"] .kpi-box { background: #fbfbf9; color: #0f172a; border: 1px solid #e2e8f0; }
+  :root[data-template="zero_paper"] .kpi-box { background: transparent; color: #1c1b18; border: 1px solid #cbd5e1; box-shadow: none; }
+  :root[data-template="mda_softblue"] .kpi-box { background: transparent; color: #0f172a; border: 1px solid #e2e8f0; box-shadow: none; }
+  .kpi-box .k-lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; opacity: 0.85; }
+  .kpi-box .k-val { font-size: 24px; font-weight: 700; margin: 4px 0; line-height: 1.15; font-variant-numeric: tabular-nums; }
+  .kpi-box .k-sub { font-size: 12px; font-weight: 500; opacity: 0.88; line-height: 1.35; }
+  .grid-2col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .grid-4col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  @media (max-width: 1180px) { .grid-2col, .grid-3col, .grid-4col { grid-template-columns: 1fr; } }
+  .chart-card {
+    background: var(--box-surface); border-radius: 10px; border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 4px rgba(15,23,42,0.05); overflow: hidden; display: flex; flex-direction: column;
+  }
+  :root[data-template="zero_paper"] .chart-card { border-color: #cbd5e1; box-shadow: none; }
+  :root[data-template="mda_softblue"] .chart-card { border: 1px solid #e2e8f0; box-shadow: none; background: #ffffff; }
+  .card-head {
+    background: var(--strip-surface); color: var(--strip-ink); padding: 11px 16px; font-size: 14px;
+    font-weight: 700; letter-spacing: 0; border-bottom: 1px solid #e2e8f0; line-height: 1.35;
+    display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  }
+  .card-body { padding: 14px 16px; flex: 1; }
+  .clean-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .clean-table th { background: #f1f5f9; padding: 8px 10px; text-align: left; font-weight: 700; color: #334155; }
+  .clean-table td { padding: 8px 10px; border-bottom: 1px solid #f1f5f9; vertical-align: top; line-height: 1.45; }
+  .clean-table td.num, .clean-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .story-box {
+    background: #f8fafc; border-left: 4px solid #1e73be; padding: 11px 14px; border-radius: 6px;
+    font-size: 13px; color: #1e293b; line-height: 1.55;
+  }
+  :root[data-template="zero_paper"] .story-box { background: transparent; border: 1px solid #cbd5e1; border-left: 4px solid #0f766e; }
+  .analysis-band { display: flex; flex-direction: column; gap: 10px; }
+  .decision-box {
+    background: #eff6ff; border-left: 4px solid #0f3d8a; padding: 12px 15px; border-radius: 8px;
+    font-size: 13.5px; color: #0f172a; line-height: 1.55; border-top: 1px solid #dbeafe; border-right: 1px solid #dbeafe; border-bottom: 1px solid #dbeafe;
+  }
+  :root[data-template="zero_paper"] .decision-box { background: transparent; border: 1px solid #94a3b8; border-left: 4px solid #0f3d8a; }
+  .glossary-box {
+    background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 11px 14px;
+    font-size: 13px; color: #1e293b; line-height: 1.5;
+  }
+  .glossary-box summary { font-weight: 700; color: #0f3d8a; cursor: pointer; }
+  .glossary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 16px; margin-top: 10px; }
+  @media (max-width: 900px) { .glossary-grid { grid-template-columns: 1fr; } }
+  .insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  @media (max-width: 900px) { .insight-grid { grid-template-columns: 1fr; } }
+  .insight-card {
+    background: #f8fafc; border: 1px solid #cbd5e1; border-top: 3px solid #1e73be;
+    border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #0f172a; line-height: 1.55;
+  }
+  .insight-card h5 { font-size: 13.5px; font-weight: 700; color: #0f3d8a; margin-bottom: 5px; }
+  .mx-tbl { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 8px; }
+  .mx-tbl th { background: #f1f5f9; color: #1e293b; padding: 7px 9px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700; }
+  .mx-tbl td { padding: 7px 9px; border: 1px solid #cbd5e1; text-align: center; font-variant-numeric: tabular-nums; }
+  .mx-red { background: #fee2e2; color: #7f1d1d; font-weight: 700; }
+  .mx-amber { background: #fef3c7; color: #78350f; font-weight: 700; }
+  .mx-green { background: #dcfce7; color: #14532d; font-weight: 700; }
+  .mx-active { outline: 2.5px solid #0f3d8a; outline-offset: -2px; }
+  .btn-refresh {
+    background: #0f3d8a; color: #ffffff; border: 1px solid #0f3d8a; padding: 5px 12px;
+    border-radius: 999px; font-size: 11px; font-weight: 700; cursor: pointer; margin-left: 8px;
+  }
+  .btn-refresh:hover { background: #1e73be; }
+  .modal-backdrop {
+    display: none; position: fixed; inset: 0; background: rgba(15,23,42,0.55); z-index: 999;
+    align-items: center; justify-content: center; padding: 16px;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal-card {
+    background: #ffffff; color: #0f172a; border-radius: 12px; max-width: 580px; width: 100%;
+    padding: 18px 20px; box-shadow: 0 20px 45px rgba(15,23,42,0.28); font-size: 12.2px; line-height: 1.5;
+  }
+  .modal-card h3 { font-size: 15px; font-weight: 800; color: #0f3d8a; margin-bottom: 8px; }
+  .sim-grid { display: grid; grid-template-columns: 360px 1fr; gap: 16px; align-items: start; }
+  @media (max-width: 1100px) { .sim-grid { grid-template-columns: 1fr; } }
+  .slider-grp { margin-bottom: 14px; }
+  .slider-grp label { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; margin-bottom: 4px; }
+  .slider-grp input[type="range"] { width: 100%; accent-color: #1e73be; }
+  .preset-btn {
+    display: block; width: 100%; text-align: left; padding: 8px 10px; margin-bottom: 6px;
+    border-radius: 7px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a;
+    font-size: 11.5px; font-weight: 700; cursor: pointer;
+  }
+  .preset-btn:hover { background: #eff6ff; border-color: #1e73be; }
+  .alert-banner { padding: 10px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; margin-top: 10px; }
+  .alert-ok { background: #dcfce7; color: #14532d; border: 1px solid #86efac; }
+  .alert-risk { background: #fee2e2; color: #7f1d1d; border: 1px solid #fca5a5; }
+  .general-footer {
+    display: flex; justify-content: space-between; align-items: center; font-size: 11px;
+    color: #475569; padding-top: 8px; border-top: 1px solid #e2e8f0; flex-wrap: wrap; gap: 8px;
+  }
+  .filter-bar {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 8px 12px; margin-bottom: 14px; box-shadow: 0 2px 6px rgba(15,23,42,0.03);
+  }
+  .flt-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .flt-lbl { font-size: 11px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; }
+  .flt-seg {
+    display: inline-flex; align-items: center; gap: 2px;
+    background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 7px; padding: 2px;
+  }
+  .flt-btn {
+    padding: 4px 10px; border-radius: 5px; border: 1px solid transparent;
+    background: transparent; color: #334155; font-size: 11.5px; font-weight: 600; cursor: pointer;
+    transition: all 0.12s ease;
+  }
+  .flt-btn:hover:not(:disabled) { background: #e2e8f0; color: #0f3d8a; }
+  .flt-btn.active { background: #0f3d8a; color: #ffffff; border-color: #0f3d8a; font-weight: 700; }
+  .flt-btn:disabled { background: #e2e8f0; color: #475569; cursor: not-allowed; }
+  .flt-select {
+    padding: 5px 10px; border-radius: 7px; border: 1px solid #cbd5e1;
+    background: #ffffff; color: #0f172a; font-size: 11.5px; font-weight: 600; cursor: pointer;
+  }
+  .flt-select:focus { outline: 2px solid #93c5fd; border-color: #1e73be; }
+  .flt-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 4px 10px; border-radius: 999px; border: 1px solid #cbd5e1;
+    background: #ffffff; color: #475569; font-size: 11.5px; font-weight: 600; cursor: pointer;
+    transition: all 0.12s ease;
+  }
+  .flt-chip:hover { border-color: #1e73be; color: #0f3d8a; }
+  .flt-chip.active { background: #eff6ff; color: #0f3d8a; border-color: #93c5fd; font-weight: 700; }
+  .flt-toggle {
+    padding: 4px 10px; border-radius: 6px; border: 1px solid #cbd5e1;
+    background: #f8fafc; color: #1e293b; font-size: 11.5px; font-weight: 600; cursor: pointer;
+  }
+  .flt-toggle.active { background: #0f3d8a; color: #ffffff; border-color: #0f3d8a; font-weight: 700; }
+  .flt-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+  .flt-count {
+    font-size: 11.5px; font-weight: 700; color: #0f3d8a;
+    background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 999px; padding: 3px 9px;
+  }
+  .flt-reset {
+    padding: 4px 10px; border-radius: 6px; border: 1px solid #cbd5e1;
+    background: #ffffff; color: #334155; font-size: 11.5px; font-weight: 700; cursor: pointer;
+  }
+  .flt-reset:hover { background: #fef2f2; border-color: #fca5a5; color: #991b1b; }
+  .app-shell.sidebar-collapsed { grid-template-columns: 1fr; }
+  .app-shell.sidebar-collapsed .left-sidebar { display: none; }
+  .header-left-wrap { display: flex; align-items: flex-start; gap: 10px; min-width: 0; }
+  .btn-menu-toggle {
+    display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 8px;
+    border: 1px solid #cbd5e1; background: #ffffff; color: #0f3d8a; font-size: 12px; font-weight: 700;
+    cursor: pointer; flex-shrink: 0; white-space: nowrap; min-height: 34px;
+  }
+  .btn-menu-toggle:hover { background: #eff6ff; border-color: #1e73be; }
+  .sidebar-head-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.14); margin-bottom: 14px;
+  }
+  .sidebar-head-row .brand-logo { padding-bottom: 0; border-bottom: none; margin-bottom: 0; }
+  .sidebar-close-btn {
+    background: rgba(255,255,255,0.18); color: #f8fafc; border: 1px solid rgba(255,255,255,0.34);
+    border-radius: 7px; width: 30px; height: 30px; font-size: 14px; font-weight: 700; cursor: pointer;
+    flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+  }
+  .sidebar-close-btn:hover { background: rgba(255,255,255,0.3); }
+  .sidebar-backdrop {
+    display: none; position: fixed; inset: 0; background: rgba(15,23,42,0.52); z-index: 1190;
+  }
+  .sidebar-backdrop.drawer-open { display: block; }
+  :root[data-template="warehouse_brown"] .left-sidebar.drawer-open {
+    display: flex !important; position: fixed; top: 0; left: 0; bottom: 0; width: 272px; max-width: 84vw;
+    z-index: 1200; overflow-y: auto; box-shadow: 8px 0 28px rgba(15,23,42,0.35);
+  }
+  .table-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .donut-wrap { display: grid; grid-template-columns: 165px 1fr; gap: 14px; align-items: center; }
+  .mobile-scroll-hint {
+    display: none; font-size: 11px; font-weight: 600; color: #334155; background: #f8fafc;
+    border: 1px dashed #cbd5e1; border-radius: 6px; padding: 4px 8px; margin-bottom: 6px; text-align: center;
+  }
+  @media (max-width: 1180px) {
+    .left-sidebar {
+      display: none; position: fixed; top: 0; left: 0; bottom: 0; width: 272px; max-width: 84vw;
+      z-index: 1200; overflow-y: auto; box-shadow: 8px 0 28px rgba(15,23,42,0.35);
+    }
+    .left-sidebar.drawer-open { display: flex !important; }
+  }
+  @media (max-width: 768px) {
+    :root[data-template="mda_softblue"] .main-canvas {
+      margin: 0; border-radius: 0; padding: 10px 12px 24px; box-shadow: none;
+    }
+    .main-canvas { padding: 10px 12px 24px; gap: 10px; }
+    .template-switcher {
+      padding: 6px 10px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+      gap: 8px; scrollbar-width: none;
+    }
+    .template-switcher .lbl { display: none; }
+    .tpl-btns { flex-wrap: nowrap; }
+    .tpl-btn { white-space: nowrap; flex-shrink: 0; padding: 5px 10px; font-size: 11px; }
+    .top-header-bar { padding: 8px 10px 10px; gap: 8px; }
+    .header-left-wrap { width: 100%; align-items: center; }
+    .top-header-bar h1 { font-size: 16px; line-height: 1.3; }
+    .top-header-bar p { font-size: 11.5px; }
+    .header-actions { width: 100%; justify-content: space-between; }
+    .mda-tabs-bar {
+      flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+      border-radius: 10px !important; padding: 5px !important; scrollbar-width: none;
+    }
+    .mda-tab-btn { white-space: nowrap; flex-shrink: 0; padding: 7px 12px; font-size: 12px; min-height: 36px; }
+    .kpi-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .kpi-box { padding: 10px 11px; }
+    .kpi-box .k-lbl { font-size: 10px; }
+    .kpi-box .k-val { font-size: 18px; }
+    .kpi-box .k-sub { font-size: 11px; }
+    .filter-bar { padding: 8px 10px; gap: 8px; }
+    .flt-group { width: 100%; justify-content: space-between; }
+    .flt-select { flex: 1; min-height: 36px; font-size: 12.5px; }
+    .flt-btn, .flt-chip, .flt-toggle, .flt-reset { min-height: 34px; font-size: 12px; }
+    .flt-right { width: 100%; margin-left: 0; justify-content: space-between; padding-top: 4px; border-top: 1px dashed #e2e8f0; }
+    .mobile-scroll-hint { display: block; }
+    .clean-table { min-width: 640px; font-size: 12px; }
+    .mx-tbl { min-width: 460px; font-size: 11.5px; }
+    .card-head { padding: 10px 12px; font-size: 13px; flex-wrap: wrap; }
+    .card-body { padding: 10px 12px; }
+    #chartLc9Y, #chartTop3Lines, #chartBreakeven, #chartVaccineCash, #chartCapex, #chartMarketSizeUsd, #simBarChart {
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+    }
+    #chartLc9Y svg { min-width: 540px; height: auto; }
+    #chartTop3Lines svg { min-width: 640px; height: auto; }
+    #chartBreakeven svg { min-width: 480px; height: auto; }
+    #chartVaccineCash svg, #chartCapex svg, #chartMarketSizeUsd svg, #simBarChart svg { min-width: 400px; height: auto; }
+    .donut-wrap { grid-template-columns: 1fr; justify-items: center; }
+    .modal-card { padding: 14px; max-height: 90vh; overflow-y: auto; }
+  }
+  @media (max-width: 350px) {
+    .kpi-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="template-switcher">
+  <div class="lbl">🎨 Chọn giao diện xem:</div>
+  <div class="tpl-btns">
+    <button class="tpl-btn active" data-tpl="mda_softblue" onclick="switchTemplate(this.dataset.tpl, this)">Mẫu 5: Sáng Thanh Lịch (Mặc định)</button>
+    <button class="tpl-btn" data-tpl="ecommerce" onclick="switchTemplate(this.dataset.tpl, this)">Mẫu 1: Bán Lẻ Nhấn Màu</button>
+    <button class="tpl-btn" data-tpl="csat_navy" onclick="switchTemplate(this.dataset.tpl, this)">Mẫu 2: Dải Xanh Đậm</button>
+    <button class="tpl-btn" data-tpl="warehouse_brown" onclick="switchTemplate(this.dataset.tpl, this)">Mẫu 3: Toàn Màn Hình</button>
+    <button class="tpl-btn" data-tpl="zero_paper" onclick="switchTemplate(this.dataset.tpl, this)">Mẫu 4: Nền Giấy Tối Giản</button>
+  </div>
+</div>
+
+<div class="app-shell" id="appShell">
+  <aside class="left-sidebar" id="leftSidebar">
+    <div>
+      <div class="sidebar-head-row">
+        <div class="brand-logo">
+          <svg viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="8" fill="#1e73be"/>
+            <path d="M18 8v20M8 18h20" stroke="#f8fafc" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <div class="t1">Chiến lược Dược phẩm</div>
+            <div class="t2">Long Châu 2017–2026</div>
+          </div>
+        </div>
+        <button class="sidebar-close-btn" id="btnCloseSidebar" type="button" title="Thu gọn thanh menu" aria-label="Thu gọn thanh menu" onclick="toggleSidebar(false)">✕</button>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item active" data-tab="tab_overview" onclick="switchTab(this.dataset.tab, this)">1. Toàn cảnh 9 năm Long Châu</li>
+        <li class="nav-item" data-tab="tab_top3" onclick="switchTab(this.dataset.tab, this)">2. So sánh 3 chuỗi lớn nhất</li>
+        <li class="nav-item" data-tab="tab_unit_econ" onclick="switchTab(this.dataset.tab, this)">3. Vốn mở shop &amp; Vaccine</li>
+        <li class="nav-item" data-tab="tab_market" onclick="switchTab(this.dataset.tab, this)">4. Dư địa thị trường 2026–2030</li>
+        <li class="nav-item" data-tab="tab_simulator" onclick="switchTab(this.dataset.tab, this)">5. Bảng tính thử lời lỗ</li>
+      </ul>
+    </div>
+    <div class="sidebar-summary-box">
+      <h4>Mốc đối chứng công khai</h4>
+      <div class="mini-stat"><span>Long Châu (BCTC Q3/2026)</span><strong>2.741 shop</strong></div>
+      <div class="mini-stat"><span>Thực tế hiện tại (T11/2026)</span><strong>~3.000 shop</strong></div>
+      <div class="mini-stat"><span>Trung tâm tiêm chủng</span><strong>244 trung tâm</strong></div>
+      <div class="mini-stat"><span>Pharmacity (2026)</span><strong>~1.118 shop</strong></div>
+      <div class="mini-stat"><span>An Khang (2024–2026)</span><strong>326–380 shop</strong></div>
+      <div class="mini-stat"><span>Hòa vốn An Khang</span><strong>550 triệu/tháng</strong></div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeSidebarDrawer()"></div>
+
+  <main class="main-canvas">
+    <header class="top-header-bar">
+      <div class="header-left-wrap">
+        <button class="btn-menu-toggle" id="btnToggleSidebar" type="button" aria-expanded="true" onclick="toggleSidebar()">☰ Ẩn menu</button>
+        <div>
+          <h1>FPT Long Châu (2017–Q3/2026) — Cuộc đua chuỗi nhà thuốc Việt Nam</h1>
+          <p>🟢 Số liệu Báo cáo tài chính công bố • 🟡 Số ước lượng / quy đổi • Thẻ 5 là Bảng tính thử</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span class="pill-badge">🟢 BCTC &amp; 🟡 Ước lượng</span>
+        <button class="btn-refresh" id="btnOpenUpdate" onclick="toggleUpdateModal(true)">🔄 Cập nhật Quý mới</button>
+      </div>
+    </header>
+
+    <nav class="mda-tabs-bar">
+      <button class="mda-tab-btn active" data-tab="tab_overview" onclick="switchTab(this.dataset.tab, this)">1. Toàn cảnh 9 năm Long Châu</button>
+      <button class="mda-tab-btn" data-tab="tab_top3" onclick="switchTab(this.dataset.tab, this)">2. So sánh 3 chuỗi lớn nhất</button>
+      <button class="mda-tab-btn" data-tab="tab_unit_econ" onclick="switchTab(this.dataset.tab, this)">3. Vốn mở shop &amp; Vaccine</button>
+      <button class="mda-tab-btn" data-tab="tab_market" onclick="switchTab(this.dataset.tab, this)">4. Dư địa thị trường 2026–2030</button>
+      <button class="mda-tab-btn" data-tab="tab_simulator" onclick="switchTab(this.dataset.tab, this)">5. Bảng tính thử lời lỗ</button>
+    </nav>
+
+    <section class="kpi-row" id="headlineKpiRow"></section>
+
+    <!-- TAB 1: LONG CHAU 9-YEAR OVERVIEW -->
+    <div id="tab_overview" class="mda-panel active">
+      <div class="filter-bar" id="tab1FilterBar"></div>
+      <section class="grid-2col">
+        <div class="chart-card">
+          <div class="card-head"><span id="cardHeadTab1Left">Từ 4 lên 2.741 shop (hiện chạm mốc ~3.000): Doanh thu 9 tháng 2026 đạt 33.408 tỷ (+35%)</span></div>
+          <div class="card-body" id="chartLc9Y"></div>
+        </div>
+        <div class="chart-card">
+          <div class="card-head"><span id="cardHeadTab1Right">Long Châu trở thành trụ cột chiếm 69% doanh thu FPT Retail</span></div>
+          <div class="card-body" id="chartFrtShare"></div>
+        </div>
+      </section>
+      <section class="analysis-band">
+        <div class="decision-box" id="decTab1"></div>
+        <div class="insight-grid" id="insTab1"></div>
+      </section>
+      <div class="chart-card">
+        <div class="card-head"><span id="cardHeadTab1Table">Diễn biến 5 giai đoạn phát triển của FPT Long Châu (2017 – Q3/2026)</span><span style="font-size:12px;font-weight:500;color:#475569;">Nguồn: BCTC FRT</span></div>
+        <div class="card-body">
+          <div class="mobile-scroll-hint">← Vuốt ngang để xem đủ các cột bảng →</div>
+          <div class="table-scroll">
+            <table class="clean-table">
+              <thead id="tblLcHead">
+                <tr><th>Năm / Kỳ</th><th>Giai đoạn</th><th class="num">Số shop</th><th class="num">Trung tâm tiêm chủng</th><th class="num">Doanh thu (Tỷ)</th><th class="num">% FRT</th><th class="num">Doanh thu / shop / tháng</th><th>Lãi/Lỗ &amp; Cột mốc chính</th><th>Độ tin cậy nguồn</th></tr>
+              </thead>
+              <tbody id="tblLcTimeline"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: TOP 3 COMPARISON -->
+    <div id="tab_top3" class="mda-panel">
+      <div class="filter-bar" id="tab2FilterBar"></div>
+      <div class="chart-card">
+        <div class="card-head"><span id="cardHeadTab2Chart">Ba lối đi đối lập: Long Châu mở 1 chiều, Pharmacity hồi sinh chữ V, An Khang thu gọn giữ ngưỡng hòa vốn</span></div>
+        <div class="card-body" id="chartTop3Lines"></div>
+      </div>
+      <section class="analysis-band">
+        <div class="decision-box" id="decTab2"></div>
+        <div id="insTab2"></div>
+      </section>
+      <div class="chart-card">
+        <div class="card-head"><span id="cardHeadTab2Table">So sánh 8 chỉ số cốt lõi của 3 chuỗi nhà thuốc lớn nhất Việt Nam</span></div>
+        <div class="card-body">
+          <div class="mobile-scroll-hint">← Vuốt ngang để xem đủ các cột bảng →</div>
+          <div class="table-scroll">
+            <table class="clean-table">
+              <thead id="tblTop3Head">
+                <tr><th>Tiêu chí so sánh</th><th>FPT Long Châu (FRT)</th><th>Pharmacity (Tư nhân)</th><th>An Khang (Thế Giới Di Động)</th><th>Nguồn số liệu</th></tr>
+              </thead>
+              <tbody id="tblTop3Matrix"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: UNIT ECONOMICS & VACCINE -->
+    <div id="tab_unit_econ" class="mda-panel">
+      <section class="grid-2col">
+        <div class="chart-card">
+          <div class="card-head"><span>Hiệu suất điểm bán: Long Châu gấp 2,36 lần ngưỡng hòa vốn An Khang</span></div>
+          <div class="card-body" id="chartBreakeven"></div>
+        </div>
+        <div class="chart-card">
+          <div class="card-head"><span>Đệm vốn lưu động 0% lãi vay: Tiền đặt trước Vaccine tăng lên 716,57 tỷ</span></div>
+          <div class="card-body" id="chartVaccineCash"></div>
+        </div>
+      </section>
+      <section class="analysis-band">
+        <div class="decision-box" id="decTab3"></div>
+        <div class="insight-grid" id="insTab3"></div>
+      </section>
+      <section class="grid-2col">
+        <div class="chart-card">
+          <div class="card-head"><span>Vốn mở mới 1 shop (400 triệu – dưới 1 tỷ): Hơn nửa nằm ở tồn kho</span></div>
+          <div class="card-body">
+            <div class="mobile-scroll-hint">← Vuốt ngang để xem đủ các cột bảng →</div>
+            <div class="table-scroll">
+              <table class="clean-table">
+                <thead><tr><th>Hạng mục chi phí mở shop</th><th class="num">Tối thiểu (triệu)</th><th class="num">Tối đa (triệu)</th><th class="num">Tỷ trọng</th></tr></thead>
+                <tbody id="tblCapex"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="card-head"><span>Chuẩn vận hành 1 shop: 40–50 m², 3–5 Dược sĩ, hoàn vốn từ 6 tháng</span></div>
+          <div class="card-body" id="boxUnitBench"></div>
+        </div>
+      </section>
+      <section class="grid-2col">
+        <div class="chart-card">
+          <div class="card-head"><span>Tồn kho &amp; dòng tiền FRT Q3/2026 (15.577 tỷ): Chu kỳ tiền mặt CCC &amp; chỉ số GMROI</span></div>
+          <div class="card-body" id="chartInventoryFlow"></div>
+        </div>
+        <div class="chart-card">
+          <div class="card-head"><span>Hóa đơn ẩn 13%/năm (Chi phí giữ tồn kho — chuẩn bán lẻ)</span></div>
+          <div class="card-body" id="boxCarryingCost"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- TAB 4: MARKET SIZING & 2026-2030 OUTLOOK -->
+    <div id="tab_market" class="mda-panel">
+      <section class="grid-2col">
+        <div class="chart-card">
+          <div class="card-head"><span>Dư địa lớn: Chuỗi hiện đại mới chiếm 8,0% số điểm bán (Long Châu 4,6%)</span></div>
+          <div class="card-body" id="chartMarketShare"></div>
+        </div>
+        <div class="chart-card">
+          <div class="card-head"><span>Thị trường dược phẩm Việt Nam tăng 10%–15%/năm, tiến mốc 10 tỷ USD</span></div>
+          <div class="card-body" id="chartMarketSizeUsd"></div>
+        </div>
+      </section>
+      <div class="decision-box" id="decTab4"></div>
+      <div class="chart-card">
+        <div class="card-head"><span>Ba động lực giúp chuỗi hiện đại giành thị phần (2026 – 2030)</span></div>
+        <div class="card-body" id="boxMarketDrivers"></div>
+      </div>
+    </div>
+
+    <!-- TAB 5: BOARDROOM WHAT-IF SIMULATOR -->
+    <div id="tab_simulator" class="mda-panel">
+      <div class="sim-grid">
+        <div class="chart-card">
+          <div class="card-head"><span>Chỉnh 4 thông số kinh doanh để thử kịch bản</span></div>
+          <div class="card-body">
+            <div class="slider-grp">
+              <label><span>1. Tổng số shop</span><strong id="lblSimStores">2.741 shop</strong></label>
+              <input type="range" id="simStores" min="200" max="4000" step="1" value="2741" oninput="runSim()">
+            </div>
+            <div class="slider-grp">
+              <label><span>2. Doanh thu bình quân / shop / tháng</span><strong id="lblSimRev">1,30 tỷ đ</strong></label>
+              <input type="range" id="simRevStore" min="0.40" max="1.60" step="0.05" value="1.30" oninput="runSim()">
+            </div>
+            <div class="slider-grp">
+              <label><span>3. Biên lợi nhuận gộp (%)</span><strong id="lblSimMargin">23,5%</strong></label>
+              <input type="range" id="simMargin" min="18.0" max="30.0" step="0.5" value="23.5" oninput="runSim()">
+            </div>
+            <div class="slider-grp">
+              <label><span>4. Số trung tâm tiêm chủng</span><strong id="lblSimVaccine">244 trung tâm</strong></label>
+              <input type="range" id="simVaccine" min="0" max="450" step="1" value="244" oninput="runSim()">
+            </div>
+            <div style="margin-top:12px;border-top:1px solid #e2e8f0;padding-top:10px;">
+              <div style="font-size:12px;font-weight:700;color:#475569;margin-bottom:6px;">Chọn nhanh 4 kịch bản mẫu:</div>
+              <div id="simPresetsBox"></div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="card-head"><span>Kết quả lời lỗ dự kiến 1 năm (tự tính khi kéo thanh trượt)</span></div>
+          <div class="card-body">
+            <section class="grid-4col" id="simOutputsRow"></section>
+            <div id="simAlertBox"></div>
+            <div id="simBridgeSvg" style="margin-top:14px;"></div>
+            <div id="simSafetyMatrix" style="margin-top:14px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="decision-box" id="decTab5"></div>
+    </div>
+
+    <div class="modal-backdrop" id="updateModal" onclick="if(event.target===this)toggleUpdateModal(false)">
+      <div class="modal-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <h3 style="margin:0;">🔄 Cập Nhật Số Liệu Báo Cáo Tài Chính Quý Mới</h3>
+          <button onclick="toggleUpdateModal(false)" style="border:1px solid #cbd5e1;background:#f8fafc;padding:3px 9px;border-radius:6px;cursor:pointer;font-weight:700;">✕ Đóng</button>
+        </div>
+        <p style="margin-bottom:10px;color:#334155;">Vì lý do bảo mật của trình duyệt, trang HTML mở trực tiếp từ ổ cứng không thể tự bấm chạy tệp <code>.bat</code>. Bạn dùng 1 trong 2 cách gọn dưới đây:</p>
+        <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:10px 12px;margin-bottom:10px;">
+          <strong>Cách 1 — Xem thử ngay trên trình duyệt:</strong> Chọn tệp <code>longchau_public_verified_metrics.json</code> mới để nạp dữ liệu trực tiếp lên bảng này:<br>
+          <input type="file" id="jsonFileInput" accept=".json" onchange="loadJsonPreview(this)" style="margin-top:6px;">
+          <div id="jsonLoadStatus" style="font-size:11px;font-weight:700;color:#0f3d8a;margin-top:4px;"></div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:10px 12px;margin-bottom:10px;">
+          <strong>Cách 2 — Cập nhật đồng bộ HTML + Excel + Word theo Quý:</strong><br>
+          1. Bấm nút dưới để chép câu lệnh gửi AI tìm BCTC Quý mới và ghi vào tệp JSON.<br>
+          2. Bấm đúp tệp <code>CapNhat_Va_KiemTra.bat</code> tại thư mục <code>40_FPT_LongChau_CaseStudy</code> để tự xuất lại cả 3 tệp và chạy kiểm định.
+          <button class="preset-btn" style="margin-top:8px;" onclick="copyQuarterPrompt()">📋 Chép câu lệnh mẫu nhờ AI cập nhật BCTC Quý mới</button>
+          <div id="copyStatus" style="font-size:11px;font-weight:700;color:#15803d;"></div>
+        </div>
+      </div>
+    </div>
+
+    <details class="glossary-box" id="glossaryBox">
+      <summary>📖 Tra nhanh 10 thuật ngữ tài chính &amp; ngành dược trong báo cáo (Bấm để mở/thu gọn)</summary>
+      <div class="glossary-grid" id="glossaryGrid"></div>
+    </details>
+
+    <footer class="general-footer">
+      <span>FPT Long Châu (2017–Quý 3/2026) • Pharmacity • An Khang — Nguồn đối chứng: 00_DATA_SOURCES_AND_PROVENANCE.md</span>
+      <span>Phân tầng rõ 🟢 BCTC Công bố vs 🟡 Ước lượng • Bảng tính thử tách riêng</span>
+    </footer>
+  </main>
+</div>
+
+<script>
+let CASE_DATA = {"metadata": {"entity_name": "FPT Long Châu (2017–Q3/2026)", "branch_name": "Case Study Chiến Lược 9 Năm (2017 – Q3/2026)", "report_period": "2017 – Q3/2026", "industry_domain": "Bán lẻ Dược phẩm & Tiêm chủng Vaccine", "currency": "VNĐ (Tỷ / Triệu)", "data_source_file": "00_DATA_SOURCES_AND_PROVENANCE.md (Báo cáo tài chính FRT, Thế Giới Di Động, Pharmacity)", "generated_at": "2026-11-25 11:35:00", "data_governance": "🟢 Số liệu Báo cáo tài chính công bố • 🟡 Số ước lượng / quy đổi • Thẻ 5 là Bảng tính thử"}, "ui_config": {"domain_title": "Báo cáo Chiến lược Dược", "theme_title": "Cuộc đua chuỗi nhà thuốc Việt Nam", "default_template": "mda_softblue"}, "headline_kpis": [{"id": "stores_q3_2026", "label": "SHOP NHÀ THUỐC (Q3/2026)", "value": "2.741", "sub": "BCTC Q3/2026 (+244 tiêm chủng = 2.985) • Thực tế T11/2026: ~3.000 shop", "cls": "c1"}, {"id": "vaccine_centers", "label": "TRUNG TÂM TIÊM CHỦNG", "value": "244", "sub": "2024: 126 → 2025: 223 → Q3/2026: 244", "cls": "c2"}, {"id": "rev_9m_2026", "label": "DOANH THU 9 THÁNG 2026", "value": "33.408 tỷ", "sub": "Tăng +35% • Chiếm 69% FPT Retail", "cls": "c3"}, {"id": "rev_per_store_2026", "label": "DOANH THU / SHOP / THÁNG", "value": "1,30 tỷ", "sub": "Gấp 2,36 lần hòa vốn An Khang (550 triệu)", "cls": "c4"}, {"id": "deferred_rev_vaccine", "label": "TIỀN ĐẶT TRƯỚC VACCINE", "value": "716,6 tỷ", "sub": "Đệm vốn 0% lãi vay (30/09/2026)", "cls": "c5"}, {"id": "customers_scale", "label": "KHÁCH HÀNG", "value": "33 triệu", "sub": "Tích hợp Sổ sức khỏe VNeID", "cls": "c6"}], "longchau_timeline": [{"year": "2017-18", "chapter": "1. Khởi đầu", "stores": 20, "vaccine_centers": 0, "revenue_bn": null, "revenue_note": "Chưa tách thuyết minh riêng", "frt_share_pct": null, "avg_rev_store_bn": null, "lc_profit_note": "Đầu tư hạ tầng ban đầu", "frt_pbt_bn": null, "data_tier": "🟡 Số shop công khai (chưa tách doanh thu)", "milestone": "FRT mua lại 4 shop nhà thuốc TP.HCM (2017), lập CTCP FPT Long Châu vốn 100 tỷ (2018)"}, {"year": "2019", "chapter": "1. Khởi đầu", "stores": 32, "vaccine_centers": 0, "revenue_bn": null, "revenue_note": "Chưa tách thuyết minh riêng", "frt_share_pct": null, "avg_rev_store_bn": null, "lc_profit_note": "Chưa có lãi", "frt_pbt_bn": null, "data_tier": "🟡 Số shop công khai (chưa tách doanh thu)", "milestone": "Mở rộng sang Đồng Nai và chính thức tiến ra Hà Nội (tháng 12/2019)"}, {"year": "2020", "chapter": "2. Tăng tốc phủ điểm bán", "stores": 200, "vaccine_centers": 0, "revenue_bn": 1150, "short_rev": "~1.150 tỷ (Ước)", "revenue_note": "~1.100–1.200 tỷ (Ước lượng)", "frt_share_pct": 8.0, "avg_rev_store_bn": 0.95, "lc_profit_note": "Đầu tư mở rộng", "frt_pbt_bn": null, "data_tier": "🟡 Ước lượng báo chí / Nhà đầu tư", "milestone": "Vượt mốc 200 shop tại khoảng 50 tỉnh thành giữa đại dịch"}, {"year": "2021", "chapter": "2. Hòa vốn lịch sử", "stores": 400, "vaccine_centers": 0, "revenue_bn": 3977, "short_rev": "~3.977 tỷ (Suy ngược)", "revenue_note": "~3.977 tỷ (Suy ngược từ mốc 2022)", "frt_share_pct": 17.7, "avg_rev_store_bn": 1.0, "lc_profit_note": "Bắt đầu có lãi nhẹ (~5 tỷ)", "frt_pbt_bn": null, "data_tier": "🟡 Suy ngược từ Báo cáo tài chính 2022", "milestone": "Đạt 400 shop tại 53 tỉnh; chuỗi hiện đại hiếm hoi có lãi sớm"}, {"year": "2022", "chapter": "3. Bùng nổ 63 tỉnh thành", "stores": 1000, "vaccine_centers": 0, "revenue_bn": 9596, "short_rev": "9.596 tỷ (×2,4)", "revenue_note": "9.596 tỷ (gấp 2,4 lần năm 2021)", "frt_share_pct": 31.8, "avg_rev_store_bn": 1.05, "lc_profit_note": "Lãi ~52 tỷ (tăng 10 lần)", "frt_pbt_bn": null, "data_tier": "🟢 Công bố Báo cáo tài chính FRT", "milestone": "Cán mốc 1.000 shop, phủ đủ 63/63 tỉnh thành (tháng 12/2022)"}, {"year": "2023", "chapter": "3. Vượt FPT Shop", "stores": 1497, "vaccine_centers": 10, "revenue_bn": 15888, "short_rev": "15.888 tỷ (+66%)", "revenue_note": "15.888 tỷ (tăng +66%)", "frt_share_pct": 50.0, "avg_rev_store_bn": 1.1, "lc_profit_note": "Có lãi ròng mỏng tại chuỗi", "frt_pbt_bn": -294, "data_tier": "🟢 Công bố Báo cáo tài chính FRT", "milestone": "Chính thức vượt FPT Shop, đóng góp 50% tổng doanh thu FPT Retail"}, {"year": "2024", "chapter": "4. Hệ sinh thái y tế", "stores": 1943, "vaccine_centers": 126, "revenue_bn": 25320, "short_rev": "25.320 tỷ (+59%)", "revenue_note": "25.320 tỷ (tăng +59%)", "frt_share_pct": 63.0, "avg_rev_store_bn": 1.2, "lc_profit_note": "Trụ cột kéo tập đoàn có lãi", "frt_pbt_bn": 527, "data_tier": "🟢 Công bố Báo cáo tài chính FRT", "milestone": "Mở 126 trung tâm tiêm chủng, kết nối VNeID (12/2024); FRT hồi phục lãi 527 tỷ"}, {"year": "2025", "chapter": "4. Kỷ lục doanh thu", "stores": 2417, "vaccine_centers": 223, "revenue_bn": 34501, "short_rev": "34.501 tỷ (+36%)", "revenue_note": "34.501 tỷ (tăng +36%)", "frt_share_pct": 68.0, "avg_rev_store_bn": 1.2, "lc_profit_note": "Biên lãi ròng ~2,0%–2,9%", "frt_pbt_bn": 1219, "data_tier": "🟢 Công bố Báo cáo tài chính FRT", "milestone": "2.640 điểm bán, 33 triệu khách hàng, tiền đặt trước vaccine đạt 466,8 tỷ"}, {"year": "9T/2026", "chapter": "5. Tối ưu & Y tế số", "stores": 2741, "vaccine_centers": 244, "revenue_bn": 33408, "period_months": 9, "revenue_annualized_bn": 44544, "short_rev": "33.408 tỷ (+35%)", "revenue_note": "33.408 tỷ (9 tháng +35% | Quy đổi cả năm ~44.544 tỷ)", "frt_share_pct": 69.0, "avg_rev_store_bn": 1.3, "lc_profit_note": "Lãi trước thuế FPT Retail 9 tháng: 1.724 tỷ", "frt_pbt_bn": 1724, "data_tier": "🟢 Công bố Báo cáo tài chính 9T/2026 FRT", "milestone": "Bình quân 1,30 tỷ/shop/tháng; tiền đặt trước vaccine 716,57 tỷ (30/09/2026); tổng 2.985 điểm bán (thực tế T11/2026 chạm mốc ~3.000 shop)"}], "quarterly_provenance_note": "Chuỗi 11 quý (Q1/2024–Q3/2026) khóa theo BCTC hợp nhất FRT. Q1 lấy trực tiếp từ BCTC Q1; Q2 = Lũy kế 6T − Q1; Q3 = Lũy kế 9T − Lũy kế 6T; Q4 = Cả năm 12T − Lũy kế 9T. Tổng cộng từng năm đối soát khớp 100% đến từng tỷ đồng (2024: 25.320 tỷ; 2025: 34.501 tỷ; 9T/2026: 33.408 tỷ).", "longchau_quarterly": [{"quarter": "Q1/2024", "year": 2024, "stores": 1587, "vaccine_centers": 51, "revenue_bn": 5534, "frt_total_rev_bn": 9042, "frt_share_pct": 61.2, "avg_rev_store_bn": 1.2, "frt_pbt_bn": 89, "derivation": "BCTC Q1/2024 trực tiếp", "data_tier": "🟢 Công bố BCTC Q1/2024 FRT"}, {"quarter": "Q2/2024", "year": 2024, "stores": 1706, "vaccine_centers": 87, "revenue_bn": 5987, "frt_total_rev_bn": 9239, "frt_share_pct": 64.8, "avg_rev_store_bn": 1.2, "frt_pbt_bn": 72, "derivation": "Lũy kế 6T/2024 (11.521) − Q1 (5.534)", "data_tier": "🟢 Công bố BCTC 6T/2024 FRT"}, {"quarter": "Q3/2024", "year": 2024, "stores": 1849, "vaccine_centers": 115, "revenue_bn": 6485, "frt_total_rev_bn": 10376, "frt_share_pct": 62.5, "avg_rev_store_bn": 1.2, "frt_pbt_bn": 197, "derivation": "Lũy kế 9T/2024 (18.006) − 6T (11.521)", "data_tier": "🟢 Công bố BCTC 9T/2024 FRT"}, {"quarter": "Q4/2024", "year": 2024, "stores": 1943, "vaccine_centers": 126, "revenue_bn": 7314, "frt_total_rev_bn": 11447, "frt_share_pct": 63.9, "avg_rev_store_bn": 1.2, "frt_pbt_bn": 169, "derivation": "Cả năm 2024 (25.320) − 9T (18.006)", "data_tier": "🟢 Công bố BCTC 2024 FRT"}, {"quarter": "Q1/2025", "year": 2025, "stores": 2022, "vaccine_centers": 144, "revenue_bn": 8054, "frt_total_rev_bn": 11670, "frt_share_pct": 69.0, "avg_rev_store_bn": 1.3, "frt_pbt_bn": 273, "derivation": "BCTC Q1/2025 trực tiếp", "data_tier": "🟢 Công bố BCTC Q1/2025 FRT"}, {"quarter": "Q2/2025", "year": 2025, "stores": 2191, "vaccine_centers": 178, "revenue_bn": 8024, "frt_total_rev_bn": 11390, "frt_share_pct": 70.4, "avg_rev_store_bn": 1.2, "frt_pbt_bn": 206, "derivation": "Lũy kế 6T/2025 (16.078) − Q1 (8.054)", "data_tier": "🟢 Công bố BCTC 6T/2025 FRT"}, {"quarter": "Q3/2025", "year": 2025, "stores": 2317, "vaccine_centers": 203, "revenue_bn": 8726, "frt_total_rev_bn": 13110, "frt_share_pct": 66.6, "avg_rev_store_bn": 1.2, "frt_pbt_bn": 325, "derivation": "Lũy kế 9T/2025 (24.804) − 6T (16.078)", "data_tier": "🟢 Công bố BCTC 9T/2025 FRT"}, {"quarter": "Q4/2025", "year": 2025, "stores": 2417, "vaccine_centers": 223, "revenue_bn": 9697, "frt_total_rev_bn": 14913, "frt_share_pct": 65.0, "avg_rev_store_bn": 1.2, "frt_pbt_bn": 415, "derivation": "Cả năm 2025 (34.501) − 9T (24.804)", "data_tier": "🟢 Công bố BCTC 2025 FRT"}, {"quarter": "Q1/2026", "year": 2026, "stores": 2517, "vaccine_centers": 228, "revenue_bn": 10343, "frt_total_rev_bn": 15117, "frt_share_pct": 68.4, "avg_rev_store_bn": 1.3, "frt_pbt_bn": 472, "derivation": "BCTC Q1/2026 trực tiếp", "data_tier": "🟢 Công bố BCTC Q1/2026 FRT"}, {"quarter": "Q2/2026", "year": 2026, "stores": 2639, "vaccine_centers": 236, "revenue_bn": 11105, "frt_total_rev_bn": 15626, "frt_share_pct": 71.1, "avg_rev_store_bn": 1.3, "frt_pbt_bn": 566, "derivation": "Lũy kế 6T/2026 (21.448) − Q1 (10.343)", "data_tier": "🟢 Công bố BCTC 6T/2026 FRT"}, {"quarter": "Q3/2026", "year": 2026, "stores": 2741, "vaccine_centers": 244, "revenue_bn": 11960, "frt_total_rev_bn": 17530, "frt_share_pct": 68.2, "avg_rev_store_bn": 1.3, "frt_pbt_bn": 686, "derivation": "Lũy kế 9T/2026 (33.408) − 6T (21.448)", "data_tier": "🟢 Công bố BCTC 9T/2026 FRT"}], "top3_store_trajectories": {"years": ["2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"], "provenance_note": "Lưu ý nguồn: Các mốc kiểm chứng từ báo cáo tài chính/thông cáo gồm Long Châu (2019–Q3/2026 chốt 2.741 shop, thực tế T11/2026 chạm ~3.000 shop), Pharmacity (1.118 đỉnh 2022 → 898 cuối 2024 → 1.049 cuối 2025 → ~1.118 năm 2026) và An Khang (527 đỉnh 2023 → 326 cuối 2024 → ~350–380 năm 2025–2026); các năm đệm 2019–2021 và 2023 của Pharmacity là ước lượng nối chuỗi để thấy rõ xu hướng.", "series": [{"name": "FPT Long Châu", "color": "#1967d2", "counts": [32, 200, 400, 1000, 1497, 1943, 2417, 2741], "strategy_tag": "Mở rộng 1 chiều • Phủ 63 tỉnh + Trung tâm Tiêm chủng"}, {"name": "Pharmacity", "color": "#0f766e", "counts": [250, 500, 750, 1118, 1050, 898, 1049, 1118], "strategy_tag": "Đỉnh 1.118 → Cắt gọn 898 (2024) → Phục hồi ~1.118 & Có lãi từ Quý 4/2025"}, {"name": "An Khang (MWG)", "color": "#b91c1c", "counts": [20, 67, 178, 500, 527, 326, 350, 380], "strategy_tag": "Đỉnh 527 → Đóng hơn 200 shop về 326 (2024) để giữ ngưỡng hòa vốn 550 triệu/tháng"}]}, "competitor_comparison": [{"group": "scale", "metric": "Số lượng shop nhà thuốc (2024 → 2026)", "longchau": "1.943 → 2.417 → 2.741 shop (Quý 3/2026; T11/2026: ~3.000 shop)", "pharmacity": "898 → 1.049 → 1.067–1.118 shop (2026)", "ankhang": "326 → ~350–380 shop (từ đỉnh 527 năm 2023)", "source_tag": "Báo cáo tài chính & Thông cáo"}, {"group": "scale", "metric": "Mảng mở rộng & Pháp nhân", "longchau": "244 trung tâm tiêm chủng vaccine (Quý 3/2026)", "pharmacity": "Tập trung nhà thuốc & hàng chăm sóc sức khỏe (Opella)", "ankhang": "Tách riêng pháp nhân Đầu tư Thiện Tâm (vốn 2.200 tỷ)", "source_tag": "Công bố chính thức"}, {"group": "finance", "metric": "Doanh thu chuỗi gần nhất", "longchau": "34.501 tỷ (2025) | 33.408 tỷ (9 tháng 2026, +35%)", "pharmacity": "Chưa công bố: N/A (Công ty tư nhân) • 9 tháng 2025 tăng +32%", "ankhang": "Chưa đóng góp lớn sau khi đóng 40% số shop", "source_tag": "FRT niêm yết / Công ty tư nhân"}, {"group": "finance", "metric": "Doanh thu bình quân / shop / tháng", "longchau": "1,20 tỷ (2024–2025) → 1,30 tỷ/tháng (9 tháng 2026)", "pharmacity": "~450 triệu (2023–2024) → Vượt hòa vốn từ Quý 4/2025", "ankhang": "450–500 triệu (2024) → 540–550 triệu/tháng (sát hòa vốn)", "source_tag": "Báo cáo FRT / Thế Giới Di Động"}, {"group": "finance", "metric": "Biên lãi gộp & Tình hình Lãi/Lỗ", "longchau": "Biên lãi gộp ~22–24%; biên ròng ~2,0–2,9%; có lãi từ 2021", "pharmacity": "Biên lãi gộp ~28,5% sau tái cấu trúc; có lãi từ Quý 4/2025", "ankhang": "Ngưỡng hòa vốn > 550 triệu/tháng; lỗ lũy kế > 1.115 tỷ (2025)", "source_tag": "Báo cáo tài chính / CEO"}, {"group": "strategy", "metric": "Danh mục sản phẩm & Cơ cấu hàng", "longchau": "> 20.000 mã sản phẩm; dẫn đầu thuốc kê đơn bệnh viện", "pharmacity": "Giảm giá > 1.000 mã; chuyển từ hàng tiêu dùng nhanh sang thuốc & thực phẩm chức năng", "ankhang": "55% Thuốc / 45% Thực phẩm chức năng & thiết bị y tế", "source_tag": "Công bố doanh nghiệp"}, {"group": "strategy", "metric": "Tệp khách hàng & Số hóa", "longchau": "33 triệu khách; tiên phong liên kết Sổ sức khỏe điện tử VNeID", "pharmacity": "~13 triệu thành viên tích điểm; dùng AI đọc đơn thuốc", "ankhang": "Tối ưu vận hành nội bộ trong hệ sinh thái Thế Giới Di Động", "source_tag": "Công bố doanh nghiệp"}, {"group": "strategy", "metric": "Dòng tiền & Nguồn vốn chiến lược", "longchau": "716,57 tỷ tiền khách đặt trước vaccine (0% lãi vay, 30/09/2026); quỹ Creador", "pharmacity": "Gọi vốn 50–80 triệu USD từ LeapFrog (2026), SK, Mekong", "ankhang": "Được Tập đoàn Thế Giới Di Động rót vốn 2.200 tỷ", "source_tag": "Báo cáo tài chính / Tin đầu tư"}], "unit_economics_capex": {"store_area_m2": "30 – 60 m² (Tối ưu 40 – 50 m²; chuẩn tối thiểu nhà thuốc 15 m²)", "pharmacists_per_store": "3 – 5 Dược sĩ mỗi shop (1 Dược sĩ Đại học đứng tên chuyên môn)", "capex_total_range": "400 triệu – dưới 1 tỷ VNĐ mỗi shop mở mới", "dio_days_benchmark": "45 – 75 ngày quay vòng tồn kho (hàng tại shop 300 – 600 triệu VNĐ)", "payback_store_level": "Khoảng 6 tháng (vị trí tốt chuẩn Long Châu) đến 12–18 tháng", "capex_breakdown": [{"item": "Tồn kho thuốc & thực phẩm chức năng ban đầu", "min_m": 250, "max_m": 500, "share_pct": 56}, {"item": "Sửa mặt bằng, quầy kệ, tủ lạnh bảo quản, phần mềm", "min_m": 100, "max_m": 200, "share_pct": 23}, {"item": "Đặt cọc & trả trước tiền thuê nhà (3–6 tháng)", "min_m": 30, "max_m": 120, "share_pct": 14}, {"item": "Giấy phép kinh doanh, thẩm định chuẩn nhà thuốc & khác", "min_m": 20, "max_m": 80, "share_pct": 7}], "vaccine_cashflow_engine": [{"period": "Cuối 2025", "centers": 223, "deferred_bn": 466.8, "note": "Doanh thu nhận trước ngắn hạn đạt 466,80 tỷ VNĐ (BCTC 31/12/2025)"}, {"period": "Quý 2/2026", "centers": 236, "deferred_bn": 592.98, "note": "Tăng lên 592,98 tỷ VNĐ (BCTC 30/06/2026) — +27% sau 6 tháng"}, {"period": "Quý 3/2026", "centers": 244, "deferred_bn": 716.57, "note": "Đạt 716,57 tỷ VNĐ (BCTC 30/09/2026) — vốn lưu động 0% lãi vay"}], "vaccine_provenance_note": "Lưu ý: Cuối 2024 Long Châu có 126 trung tâm tiêm chủng nhưng FRT chưa tách thuyết minh riêng khoản tiền đặt trước vaccine; biểu đồ hiển thị 3 mốc có số liệu báo cáo tài chính công bố (466,80 → 592,98 → 716,57 tỷ, tăng +54% sau 9 tháng)."}, "market_sizing": {"vietnam_pharma_market_usd_bn": [{"year": "2024", "value_usd_bn": 7.7, "note": "7,4 – 8,0 tỷ USD (Kênh bán lẻ thuốc không kê đơn ~8,9 tỷ theo IMARC)"}, {"year": "2025", "value_usd_bn": 8.8, "note": "8,5 – 9,0 tỷ USD (Tăng trưởng 10% – 15%/năm)"}, {"year": "2026 (Dự báo)", "value_usd_bn": 10.2, "note": "Dự báo 10 – 16,1 tỷ USD (BMI/Fitch tính gộp bệnh viện + bán lẻ)"}], "channel_share": [{"label": "Nhà thuốc truyền thống (~55.200 điểm / khung 50–62k)", "pct": 92.0, "color": "#94a3b8"}, {"label": "FPT Long Châu (2.741 shop BCTC Q3/2026)", "pct": 4.6, "color": "#1967d2"}, {"label": "Pharmacity (~1.118 shop)", "pct": 1.9, "color": "#0f766e"}, {"label": "An Khang (~380) & Chuỗi khác (~561 shop)", "pct": 1.5, "color": "#b45309"}], "channel_share_note": "Tách rõ 2 cách tính: Theo số lượng điểm bán (~60.000 nhà thuốc cả nước), chuỗi hiện đại chiếm ~8,0% (riêng Long Châu 4,6% tính theo BCTC Q3/2026; thực tế T11/2026 đạt ~3.000 shop). Theo thị phần doanh thu bán lẻ, do doanh thu mỗi shop chuỗi cao gấp 2–3 lần nhà thuốc lẻ, kênh chuỗi chiếm ~11%–16% (dư địa hợp nhất > 80%).", "challenger_note": "Trung Sơn Pharma (ĐBSCL & TP.HCM): 140–200 shop → Mục tiêu 460 shop (2026) sau khi tập đoàn Dongwha (Hàn Quốc) mua 51% với giá 30 triệu USD.", "consolidation_drivers": ["1. Chuẩn hóa Y tế số & VNeID: Định danh người mua thuốc kê đơn, liên kết Sổ sức khỏe điện tử giữ chân bệnh nhân mãn tính.", "2. Dư địa rất lớn (> 80% thị trường còn thuộc nhà thuốc lẻ): Chuỗi hiện đại mới chiếm ~8,0% số điểm bán (~11%–16% doanh thu bán lẻ); chuỗi lớn có lợi thế đàm phán giá nhập từ hãng dược.", "3. Nâng biên lợi nhuận nhờ Thực phẩm chức năng & Vaccine: Tăng biên lãi gộp từ vùng 22–24% (Long Châu) tiến gần 28,5% (Pharmacity) kết hợp nguồn tiền khách trả trước vaccine."]}, "tab_decisions": {"tab1": "Long Châu mất 4 năm đầu để chạm điểm hòa vốn (mốc 400 shop năm 2021), rồi mới tăng tốc phủ toàn quốc lên 2.741 shop BCTC Q3/2026 (thực tế T11/2026 chạm ~3.000 shop). → Quyết định rút ra: Chỉ nên nhân rộng hàng loạt sau khi shop mẫu chứng minh hòa vốn ổn định, không mở ồ ạt bằng mọi giá.", "tab2": "Mở nhanh nhưng thiếu thuốc kê đơn dễ sập bẫy chi phí mặt bằng (An Khang phải đóng hơn 200 shop, Pharmacity từng lỗ nặng trước khi nâng biên lãi gộp lên ~28,5%). → Quyết định rút ra: Phải soi doanh thu từng shop và biên lãi gộp trước khi nhìn tổng số cửa hàng.", "tab3": "Vốn mở mới 1 shop chỉ khoảng 400 triệu – dưới 1 tỷ (hơn nửa nằm ở tồn kho thuốc), còn 244 trung tâm tiêm chủng hút về 716,57 tỷ tiền khách trả trước không tốn lãi vay (30/09/2026). → Quyết định rút ra: Ghép dịch vụ thu tiền trước (tiêm chủng, chăm sóc bệnh mãn tính) giúp giảm mạnh áp lực vay ngân hàng khi mở rộng.", "tab4": "Hơn 92% số điểm bán (~55.200 điểm) vẫn là nhà thuốc truyền thống; chuỗi hiện đại mới chiếm ~8,0% số điểm bán nhưng đã nắm 11%–16% doanh thu bán lẻ. → Quyết định rút ra: Cuộc đua 2026–2030 là giành thị phần từ nhà thuốc lẻ bằng giá nhập tốt, sổ sức khỏe số VNeID và hàng thực phẩm chức năng lãi cao.", "tab5": "Định phí mặt bằng + lương 3–5 Dược sĩ (~115 triệu/shop/tháng) là khoản phải trả đều dù shop bán chạy hay bán chậm. → Quyết định rút ra: Kéo 4 thanh trượt bên trái để kiểm tra ngưỡng doanh thu và biên lãi gộp an toàn trước khi duyệt ngân sách mở thêm shop."}, "glossary": [{"term": "Báo cáo tài chính (BCTC)", "plain": "Tài liệu doanh nghiệp niêm yết công bố định kỳ về doanh thu, lợi nhuận, tài sản và dòng tiền."}, {"term": "Biên lợi nhuận gộp (%)", "plain": "Phần trăm tiền lời còn lại sau khi lấy doanh thu trừ đi giá vốn nhập thuốc và hàng hóa."}, {"term": "Biên lợi nhuận ròng (%)", "plain": "Phần trăm tiền lãi thực sự mang về sau khi đã trừ hết giá vốn, tiền thuê nhà, lương nhân viên và thuế."}, {"term": "Vốn mở mới 1 shop (CAPEX)", "plain": "Toàn bộ tiền bỏ ra ban đầu để mở 1 shop nhà thuốc: nhập tồn kho đầu kỳ, sửa chữa quầy kệ, đặt cọc thuê nhà, giấy phép."}, {"term": "Chi phí vận hành (Định phí + Biến phí)", "plain": "Gồm Định phí cố định mỗi tháng (tiền nhà, lương Dược sĩ, điện lạnh) và Biến phí tăng giảm theo doanh số (giao hàng, kho tổng, trụ sở)."}, {"term": "Số ngày quay vòng tồn kho (DIO)", "plain": "Số ngày trung bình tính từ lúc nhập thuốc vào kho cho đến khi bán hết thu tiền về."}, {"term": "Chuẩn nhà thuốc (GPP / GSP)", "plain": "Bộ tiêu chuẩn bắt buộc của Bộ Y tế về bảo quản và bán thuốc đạt chất lượng, phải có Dược sĩ Đại học đứng tên."}, {"term": "Quy đổi cả năm (12 tháng)", "plain": "Lấy số liệu thực tế 9 tháng đầu năm nhân cho 12 rồi chia 9 để ước lượng nhịp độ cả năm khi so sánh với các năm tròn."}, {"term": "GMROI (Lãi gộp trên vốn tồn kho)", "plain": "Cho biết mỗi 1 đồng tiền vốn chôn trong hàng tồn kho tạo ra bao nhiêu đồng lợi nhuận gộp mỗi năm; chuẩn chuỗi bán lẻ khỏe thường đạt từ 2,0 lần trở lên."}, {"term": "Chi phí giữ tồn kho (13%/năm)", "plain": "Tổng chi phí ẩn phải trả chỉ vì giữ hàng nằm trong kho (gồm 10% chi phí vốn tài chính, 2% kho bãi điện lạnh, 0,5% giảm giá thất thoát và 0,5% vận chuyển bốc xếp)."}], "deep_insights": [{"id": "ins_frt_lifeline", "tab": "tab1", "title": "1. Phao cứu sinh lợi nhuận toàn FPT Retail (2023 → 9T/2026)", "body": "Năm 2023 khi FShop gặp chu kỳ giảm kéo cả FPT Retail lỗ trước thuế -294 tỷ, Long Châu vẫn tăng doanh thu +66% (15.888 tỷ, chiếm 50% FRT), rồi kéo FRT đảo chiều lãi 527 tỷ (2024) → 1.219 tỷ (2025) → 1.724 tỷ chỉ trong 9 tháng 2026."}, {"id": "ins_scale_vs_sssg", "tab": "tab1", "title": "2. Mở thêm 798 shop mà doanh thu bình quân vẫn tăng (kèm lưu ý shop cũ)", "body": "Từ cuối 2024 đến Quý 3/2026, Long Châu mở thêm 798 shop (+41%) nhưng doanh thu bình quân toàn chuỗi vẫn tăng từ 1,20 lên 1,30 tỷ/shop/tháng. Lưu ý phản biện: số công khai chưa tách tăng trưởng riêng của nhóm shop cũ mở trên 12 tháng (SSSG), nên các quý tới cần tiếp tục giám sát rủi ro các shop gần nhau chia bớt khách ở đô thị lớn."}, {"id": "ins_margin_tradeoff", "tab": "tab2", "title": "3. Khoảng cách ~5% biên lãi gộp với Pharmacity & điểm đánh đổi cần lưu ý", "body": "Pharmacity đạt biên lãi gộp ~28,5% nhờ tỷ trọng thực phẩm chức năng cao hơn mức ~22–24% của Long Châu. Trên quy mô doanh thu quy đổi ~44.544 tỷ/năm, mỗi +2% biên lãi gộp tạo dư địa lãi gộp tối đa khoảng +890 tỷ/năm trước khi trừ chi phí tư vấn & bán hàng bổ sung, với điều kiện không làm giảm sức hút giá thuốc kê đơn (động cơ kéo 1,30 tỷ/shop)."}, {"id": "ins_vaccine_float", "tab": "tab3", "title": "4. 716,57 tỷ tiền đặt trước Vaccine: Đệm vốn lưu động không tốn lãi vay", "body": "Về kế toán, 716,57 tỷ tại ngày 30/09/2026 (tăng từ 466,8 tỷ cuối 2025 và 592,98 tỷ cuối Q2/2026) là doanh thu nhận trước ngắn hạn (nợ phải trả bằng dịch vụ tiêm chủng cho các mũi kế tiếp, không phải lợi nhuận hay vốn chủ). Tuy nhiên quy mô đệm dòng tiền 0% lãi vay này tương đương suất đầu tư mở mới khoảng ~1.020 shop (bình quân ~700 triệu/shop), giúp giảm mạnh áp lực vay ngắn hạn ngân hàng."}, {"id": "ins_inventory_cash_paradox", "tab": "tab3", "title": "5. Nghịch lý FRT 9T/2026: Lãi 1.724 tỷ nhưng dòng tiền kinh doanh âm 1.356 tỷ vì tồn kho", "body": "BCTC hợp nhất FRT Q3/2026 ghi nhận tồn kho vọt lên 15.577 tỷ (+3.650 tỷ so với đầu năm) để nạp hàng mở mới hàng trăm shop và mùa cao điểm, khiến dòng tiền kinh doanh 9 tháng âm -1.356 tỷ dù lãi cao. Tính theo chuẩn chi phí giữ tồn 13%/năm, khối tồn kho này tốn khoảng 2.025 tỷ/năm; chỉ cần rút ngắn 10 ngày tồn kho toàn hệ thống sẽ giải phóng khoảng 1.559 tỷ tiền mặt và tiết kiệm thêm khoảng 203 tỷ/năm."}], "inventory_cashflow_frt": {"scope_note": "Phạm vi hợp nhất toàn FPT Retail (gồm Long Châu + FShop + kho tổng) theo BCTC Q3/2026 vì FRT không tách riêng tồn kho từng chuỗi.", "inventory_q3_2026_bn": 15577, "inventory_provision_q3_2026_bn": 123.36, "inventory_ytd_increase_bn": 3650, "revenue_q3_2026_bn": 17530, "cogs_q3_2026_bn": 14031, "gross_profit_q3_2026_bn": 3499, "payables_q3_2026_bn": 6428, "cfo_9m_2026_bn": -1356, "pbt_9m_2026_bn": 1724, "short_debt_q3_2026_bn": 14229, "dso_est_days": 3, "carrying_cost_pct": 13.0, "carrying_cost_breakdown": [{"item": "Tài chính (vốn nằm trong hàng / lãi vay)", "pct": 10.0, "color": "#0f3d8a"}, {"item": "Kho bãi (mặt bằng, điện lạnh GSP, nhân sự trông kho)", "pct": 2.0, "color": "#1e73be"}, {"item": "Giảm giá, thất thoát, hàng cận hạn / lỗi mốt", "pct": 0.5, "color": "#d97706"}, {"item": "Vận chuyển, bốc xếp điều chuyển nội bộ", "pct": 0.5, "color": "#0f766e"}], "retail_3co_benchmark_note": "Ví dụ chuẩn bán lẻ (Nguyễn Duy Linh — cùng doanh số 100 tỷ, giá vốn 80 tỷ): Công ty A tồn 18 tỷ (81 ngày, phí 2,34 tỷ) vs Công ty C tồn 22 tỷ (99 ngày, phí 2,86 tỷ) → chênh 520 triệu/năm (0,52% doanh số) mà khách không thấy thêm giá trị.", "quick_formula_note": "Kiểm nhanh mỗi tháng: Số ngày tồn = (Tồn kho cuối tháng ÷ Giá vốn tháng) × 30. Quản trị tồn kho trả lời đúng 2 câu: Khi nào đặt (ROP) và Đặt bao nhiêu (OTB / FEFO)."}, "simulator_defaults": {"stores": 2741, "rev_per_store_bn": 1.3, "gross_margin_pct": 23.5, "vaccine_centers": 244, "fixed_opex_per_store_m": 115, "variable_opex_pct": 11.5, "breakeven_floor_m": 550, "deferred_per_center_bn": 2.937, "safety_matrix_config": {"margins": [21.0, 23.5, 26.0], "revs_m": [550, 900, 1100, 1300]}, "presets": [{"id": "lc_2026", "label": "Mức chốt BCTC Q3/2026 (2.741 shop • 1,30 tỷ/tháng)", "stores": 2741, "rev_per_store_bn": 1.3, "gross_margin_pct": 23.5, "vaccine_centers": 244}, {"id": "lc_2027_scale", "label": "Kịch bản mốc 3.000 shop cuối 2026 (Biên gộp 25,5%)", "stores": 3000, "rev_per_store_bn": 1.3, "gross_margin_pct": 25.5, "vaccine_centers": 280}, {"id": "ankhang_floor", "label": "Thử áp lực ngưỡng hòa vốn An Khang (350 shop • 550 triệu/tháng)", "stores": 350, "rev_per_store_bn": 0.55, "gross_margin_pct": 21.0, "vaccine_centers": 0}, {"id": "retail_300_opt", "label": "Mô hình chuỗi 300 shop tối ưu (900 triệu/tháng • Biên gộp 27%)", "stores": 300, "rev_per_store_bn": 0.9, "gross_margin_pct": 27.0, "vaccine_centers": 20}]}};
+
+let SIDEBAR_COLLAPSED_DESKTOP = false;
+let SIDEBAR_DRAWER_OPEN = false;
+
+function isOverlaySidebarMode() {
+  const w = (typeof window !== 'undefined' && typeof window.innerWidth === 'number') ? window.innerWidth : 1440;
+  const tpl = (document.documentElement && document.documentElement.getAttribute)
+    ? document.documentElement.getAttribute('data-template')
+    : 'mda_softblue';
+  return w <= 1180 || tpl === 'warehouse_brown';
+}
+
+function _setClassFlag(el, cls, on) {
+  if (el && el.classList && el.classList.toggle) {
+    el.classList.toggle(cls, !!on);
+  }
+}
+
+function syncSidebarUI() {
+  const shell = document.getElementById('appShell');
+  const sb = document.getElementById('leftSidebar');
+  const bd = document.getElementById('sidebarBackdrop');
+  const btn = document.getElementById('btnToggleSidebar');
+  if (isOverlaySidebarMode()) {
+    _setClassFlag(shell, 'sidebar-collapsed', false);
+    _setClassFlag(sb, 'drawer-open', SIDEBAR_DRAWER_OPEN);
+    _setClassFlag(bd, 'drawer-open', SIDEBAR_DRAWER_OPEN);
+    if (btn) {
+      btn.textContent = SIDEBAR_DRAWER_OPEN ? '✕ Đóng menu' : '☰ Menu';
+      if (btn.setAttribute) btn.setAttribute('aria-expanded', SIDEBAR_DRAWER_OPEN ? 'true' : 'false');
+    }
+  } else {
+    SIDEBAR_DRAWER_OPEN = false;
+    _setClassFlag(sb, 'drawer-open', false);
+    _setClassFlag(bd, 'drawer-open', false);
+    _setClassFlag(shell, 'sidebar-collapsed', SIDEBAR_COLLAPSED_DESKTOP);
+    if (btn) {
+      btn.textContent = SIDEBAR_COLLAPSED_DESKTOP ? '☰ Hiện menu' : '☰ Ẩn menu';
+      if (btn.setAttribute) btn.setAttribute('aria-expanded', SIDEBAR_COLLAPSED_DESKTOP ? 'false' : 'true');
+    }
+  }
+}
+
+function toggleSidebar(forceOpen) {
+  if (isOverlaySidebarMode()) {
+    SIDEBAR_DRAWER_OPEN = (typeof forceOpen === 'boolean') ? forceOpen : !SIDEBAR_DRAWER_OPEN;
+  } else {
+    SIDEBAR_COLLAPSED_DESKTOP = (typeof forceOpen === 'boolean') ? !forceOpen : !SIDEBAR_COLLAPSED_DESKTOP;
+    try {
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('lc_sidebar_collapsed', SIDEBAR_COLLAPSED_DESKTOP ? '1' : '0');
+      }
+    } catch (e) {}
+  }
+  syncSidebarUI();
+}
+
+function closeSidebarDrawer() {
+  if (SIDEBAR_DRAWER_OPEN) {
+    SIDEBAR_DRAWER_OPEN = false;
+    syncSidebarUI();
+  }
+}
+
+function switchTemplate(tplName, btnEl) {
+  document.documentElement.setAttribute('data-template', tplName);
+  document.querySelectorAll('.tpl-btn').forEach(function(b) { b.classList.remove('active'); });
+  if (btnEl) btnEl.classList.add('active');
+  syncSidebarUI();
+}
+
+let ACTIVE_TAB = 'tab_overview';
+let TAB1_FLT = { grain: 'year', period: 'all', tier: 'all', mode2026: 'both' };
+let TAB2_FLT = { chains: { 'FPT Long Châu': true, 'Pharmacity': true, 'An Khang (MWG)': true }, period: '2019_2026', group: 'all', zoomY: false };
+
+function switchTab(tabId, btnEl) {
+  ACTIVE_TAB = tabId;
+  document.querySelectorAll('.mda-panel').forEach(function(p) {
+    p.classList.toggle('active', p.id === tabId);
+  });
+  document.querySelectorAll('.mda-tab-btn, .nav-item').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-tab') === tabId);
+  });
+  renderHeadlines();
+  closeSidebarDrawer();
+}
+
+function getTab1FilteredRows() {
+  const allRows = CASE_DATA.longchau_timeline || [];
+  let rows = allRows.slice();
+  if (TAB1_FLT.period === '2017_2021') {
+    rows = rows.filter(function(r) { return ['2017-18', '2019', '2020', '2021'].indexOf(r.year) !== -1; });
+  } else if (TAB1_FLT.period === '2022_2026') {
+    rows = rows.filter(function(r) { return ['2022', '2023', '2024', '2025', '9T/2026'].indexOf(r.year) !== -1; });
+  } else if (TAB1_FLT.period === '2024_2026') {
+    rows = rows.filter(function(r) { return ['2024', '2025', '9T/2026'].indexOf(r.year) !== -1; });
+  }
+  if (TAB1_FLT.tier === 'bctc') {
+    rows = rows.filter(function(r) { return (r.data_tier || '').indexOf('🟢') !== -1; });
+  }
+  if (rows.length === 0) {
+    rows = allRows.filter(function(r) { return ['2022', '2023', '2024', '2025', '9T/2026'].indexOf(r.year) !== -1; });
+  }
+  return rows;
+}
+
+function getTab1FilteredQuarters() {
+  const allQ = CASE_DATA.longchau_quarterly || [];
+  let qRows = allQ.slice();
+  if (TAB1_FLT.period === 'y2024') {
+    qRows = qRows.filter(function(q) { return q.year === 2024; });
+  } else if (TAB1_FLT.period === 'y2025') {
+    qRows = qRows.filter(function(q) { return q.year === 2025; });
+  } else if (TAB1_FLT.period === 'y2026') {
+    qRows = qRows.filter(function(q) { return q.year === 2026; });
+  } else if (TAB1_FLT.period === 'last4') {
+    qRows = qRows.slice(-4);
+  }
+  return qRows.length > 0 ? qRows : allQ;
+}
+
+function setTab1Filter(key, val) {
+  if (key === 'grain') {
+    TAB1_FLT.grain = (val === 'quarter') ? 'quarter' : 'year';
+    TAB1_FLT.period = 'all';
+    TAB1_FLT.tier = 'all';
+    TAB1_FLT.mode2026 = 'both';
+  } else if (key === 'period') {
+    TAB1_FLT.period = val;
+    if (TAB1_FLT.grain === 'year') {
+      TAB1_FLT.tier = (val === '2022_2026') ? 'bctc' : 'all';
+      if (val === '2017_2021') {
+        TAB1_FLT.mode2026 = 'both';
+      }
+    }
+  } else if (key === 'tier') {
+    TAB1_FLT.tier = (val === 'bctc') ? 'bctc' : 'all';
+    if (TAB1_FLT.tier === 'bctc' && (TAB1_FLT.period === '2017_2021' || TAB1_FLT.period === 'all')) {
+      TAB1_FLT.period = '2022_2026';
+    }
+  } else if (key === 'mode2026') {
+    TAB1_FLT.mode2026 = val;
+  }
+  renderTab1FilterBar();
+  renderHeadlines();
+  renderTab1();
+}
+
+function resetTab1Filter() {
+  TAB1_FLT = { grain: 'year', period: 'all', tier: 'all', mode2026: 'both' };
+  renderTab1FilterBar();
+  renderHeadlines();
+  renderTab1();
+}
+
+function formatYearRev(row) {
+  if (!row || row.revenue_bn == null) return 'Chưa tách';
+  const isEst = (row.data_tier || '').indexOf('🟡') !== -1;
+  return (isEst ? '~' : '') + row.revenue_bn.toLocaleString('vi-VN') + ' tỷ';
+}
+
+function cleanChapter(ch) {
+  return (ch || '').replace(/^\d+\.\s*/, '');
+}
+
+function renderTab1FilterBar() {
+  const el = document.getElementById('tab1FilterBar');
+  if (!el) return;
+  const isQ = TAB1_FLT.grain === 'quarter';
+  let h = '';
+  h += '<div class="flt-group"><span class="flt-lbl">Xem theo:</span><div class="flt-seg">';
+  h += '<button class="flt-btn' + (!isQ ? ' active' : '') + '" onclick="setTab1Filter(\'grain\',\'year\')">Theo Năm</button>';
+  h += '<button class="flt-btn' + (isQ ? ' active' : '') + '" onclick="setTab1Filter(\'grain\',\'quarter\')">Theo Quý (11 quý)</button>';
+  h += '</div></div>';
+
+  if (isQ) {
+    const qOpts = [
+      ['all', 'Tất cả 11 quý BCTC (Q1/2024–Q3/2026)'],
+      ['y2024', 'Năm 2024 (4 quý)'],
+      ['y2025', 'Năm 2025 (4 quý)'],
+      ['y2026', '9T/2026 (3 quý)'],
+      ['last4', '4 quý gần nhất (Q4/2025–Q3/2026)']
+    ];
+    h += '<div class="flt-group"><span class="flt-lbl">Giai đoạn:</span><select class="flt-select" onchange="setTab1Filter(\'period\',this.value)">';
+    qOpts.forEach(function(o) {
+      h += '<option value="' + o[0] + '"' + (TAB1_FLT.period === o[0] ? ' selected' : '') + '>' + o[1] + '</option>';
+    });
+    h += '</select></div>';
+    const qCount = getTab1FilteredQuarters().length;
+    h += '<div class="flt-right"><span class="flt-count">' + qCount + ' quý • 🟢 BCTC</span><button class="flt-reset" onclick="resetTab1Filter()">↺ Đặt lại</button></div>';
+  } else {
+    const yOpts = [
+      ['all', 'Tất cả 9 năm (2017–2026)'],
+      ['2022_2026', 'Chỉ BCTC công bố (2022–2026)'],
+      ['2024_2026', 'Giai đoạn tăng tốc (2024–2026)'],
+      ['2017_2021', 'Giai đoạn sơ khai (2017–2021 • Ước lượng)']
+    ];
+    h += '<div class="flt-group"><span class="flt-lbl">Giai đoạn:</span><select class="flt-select" onchange="setTab1Filter(\'period\',this.value)">';
+    yOpts.forEach(function(o) {
+      h += '<option value="' + o[0] + '"' + (TAB1_FLT.period === o[0] ? ' selected' : '') + '>' + o[1] + '</option>';
+    });
+    h += '</select></div>';
+
+    if (TAB1_FLT.period !== '2017_2021') {
+      const mOpts = [
+        ['both', 'Cả 2 (9T + Quy đổi 12T)'],
+        ['actual', 'Chỉ thực tế 9T (33.408 tỷ)'],
+        ['annualized', 'Chỉ quy đổi 12T (~44.544 tỷ)']
+      ];
+      h += '<div class="flt-group"><span class="flt-lbl">Năm 2026:</span><select class="flt-select" onchange="setTab1Filter(\'mode2026\',this.value)">';
+      mOpts.forEach(function(o) {
+        h += '<option value="' + o[0] + '"' + (TAB1_FLT.mode2026 === o[0] ? ' selected' : '') + '>' + o[1] + '</option>';
+      });
+      h += '</select></div>';
+    }
+    const yRows = getTab1FilteredRows();
+    const tierTag = TAB1_FLT.period === '2017_2021' ? '🟡 Ước lượng' : (TAB1_FLT.period === 'all' ? '🟢+🟡' : '🟢 BCTC');
+    h += '<div class="flt-right"><span class="flt-count">' + yRows.length + ' mốc • ' + tierTag + '</span><button class="flt-reset" onclick="resetTab1Filter()">↺ Đặt lại</button></div>';
+  }
+  el.innerHTML = h;
+}
+
+function renderHeadlines() {
+  const baseItems = CASE_DATA.headline_kpis || [];
+  let items = baseItems.map(function(k) { return Object.assign({}, k); });
+  const isDefaultTab1 = (TAB1_FLT.grain === 'year' && TAB1_FLT.period === 'all' && TAB1_FLT.tier === 'all' && TAB1_FLT.mode2026 === 'both');
+  if (ACTIVE_TAB === 'tab_overview' && !isDefaultTab1 && items.length >= 6) {
+    if (TAB1_FLT.grain === 'quarter') {
+      const qRows = getTab1FilteredQuarters();
+      const firstQ = qRows[0];
+      const lastQ = qRows[qRows.length - 1];
+      const sumRev = qRows.reduce(function(acc, r) { return acc + (r.revenue_bn || 0); }, 0);
+      items[0].label = 'SHOP NHÀ THUỐC (' + lastQ.quarter + ')';
+      items[0].value = lastQ.stores.toLocaleString('vi-VN');
+      items[0].sub = 'Lọc ' + qRows.length + ' quý (' + firstQ.quarter + ' → ' + lastQ.quarter + ')';
+      items[1].label = 'TRUNG TÂM TIÊM CHỦNG';
+      items[1].value = lastQ.vaccine_centers.toLocaleString('vi-VN');
+      items[1].sub = 'Cuối kỳ ' + lastQ.quarter + ' • BCTC FRT';
+      items[2].label = 'LŨY KẾ DT (' + qRows.length + ' QUÝ)';
+      items[2].value = sumRev.toLocaleString('vi-VN') + ' tỷ';
+      items[2].sub = lastQ.quarter + ': ' + lastQ.revenue_bn.toLocaleString('vi-VN') + ' tỷ (' + lastQ.frt_share_pct.toFixed(1).replace('.', ',') + '% FRT)';
+      items[3].label = 'DOANH THU / SHOP / THÁNG';
+      items[3].value = lastQ.avg_rev_store_bn.toFixed(2).replace('.', ',') + ' tỷ';
+      items[3].sub = 'Bình quân ' + lastQ.quarter + ' • Hòa vốn An Khang 550 triệu';
+    } else {
+      const yRows = getTab1FilteredRows();
+      const firstY = yRows[0];
+      const lastY = yRows[yRows.length - 1];
+      const isEst = (lastY.data_tier || '').indexOf('🟡') !== -1;
+      items[0].label = 'SHOP NHÀ THUỐC (' + lastY.year + ')';
+      items[0].value = lastY.stores.toLocaleString('vi-VN');
+      items[0].sub = 'Lọc ' + yRows.length + ' mốc (' + firstY.year + ' → ' + lastY.year + ')';
+      items[1].label = 'TRUNG TÂM TIÊM CHỦNG';
+      items[1].value = lastY.vaccine_centers.toLocaleString('vi-VN');
+      items[1].sub = 'Cuối kỳ ' + lastY.year;
+      if (lastY.year === '9T/2026' && TAB1_FLT.mode2026 === 'annualized') {
+        const annRev = Math.round(lastY.revenue_annualized_bn || (lastY.revenue_bn * 12 / 9));
+        items[2].label = 'QUY ĐỔI 12 THÁNG 2026';
+        items[2].value = '~' + annRev.toLocaleString('vi-VN') + ' tỷ';
+        items[2].sub = 'Từ thực tế 9 tháng: 33.408 tỷ (+35% YoY)';
+      } else {
+        items[2].label = 'DOANH THU ' + lastY.year;
+        items[2].value = formatYearRev(lastY);
+        items[2].sub = lastY.frt_share_pct != null
+          ? ('Chiếm ' + lastY.frt_share_pct.toFixed(1).replace('.', ',') + '% FRT • ' + (isEst ? 'Suy ngược • ' : '') + cleanChapter(lastY.chapter))
+          : cleanChapter(lastY.chapter);
+      }
+      items[3].label = 'DOANH THU / SHOP / THÁNG';
+      items[3].value = lastY.avg_rev_store_bn != null ? (lastY.avg_rev_store_bn.toFixed(2).replace('.', ',') + ' tỷ') : 'Ước lượng';
+      items[3].sub = 'Mốc ' + lastY.year + ' • Hòa vốn An Khang 550 triệu';
+    }
+    items[4].sub = 'Đệm vốn 0% lãi vay (chốt 30/09/2026)';
+    items[5].sub = 'Tích hợp VNeID (chốt Q3/2026)';
+  }
+  document.getElementById('headlineKpiRow').innerHTML = items.map(function(k) {
+    return '<div class="kpi-box ' + k.cls + '"><div class="k-lbl">' + k.label + '</div><div class="k-val">' + k.value + '</div><div class="k-sub">' + k.sub + '</div></div>';
+  }).join('');
+}
+
+function renderTab1() {
+  if (TAB1_FLT.grain === 'quarter') {
+    renderTab1Quarterly();
+    return;
+  }
+  const rows = getTab1FilteredRows();
+  const hLeft = document.getElementById('cardHeadTab1Left');
+  const hRight = document.getElementById('cardHeadTab1Right');
+  const hTbl = document.getElementById('cardHeadTab1Table');
+  const firstY = rows[0], lastY = rows[rows.length - 1];
+  const isEarlyOnly = (TAB1_FLT.period === '2017_2021');
+  if (hLeft) {
+    if (rows.length === 9 && TAB1_FLT.mode2026 === 'both') {
+      hLeft.textContent = 'Từ 4 lên 2.741 shop (hiện chạm mốc ~3.000): Doanh thu 9 tháng 2026 đạt 33.408 tỷ (+35%)';
+    } else if (lastY.year === '9T/2026' && TAB1_FLT.mode2026 === 'annualized') {
+      const annRev = Math.round(lastY.revenue_annualized_bn || (lastY.revenue_bn * 12 / 9));
+      hLeft.textContent = 'Giai đoạn ' + firstY.year + ' → 9T/2026: 2.741 shop • Quy đổi 12T ~' + annRev.toLocaleString('vi-VN') + ' tỷ';
+    } else {
+      const isEst = (lastY.data_tier || '').indexOf('🟡') !== -1;
+      hLeft.textContent = 'Giai đoạn ' + firstY.year + ' → ' + lastY.year + ': ' + lastY.stores.toLocaleString('vi-VN') + ' shop • Doanh thu ' + formatYearRev(lastY) + (isEst ? ' (suy ngược)' : '');
+    }
+  }
+  if (hRight) {
+    if (lastY.frt_share_pct != null && lastY.frt_share_pct < 50) {
+      hRight.textContent = 'Tỷ trọng Long Châu trong FRT mới đạt ' + lastY.frt_share_pct.toFixed(1).replace('.', ',') + '% (FShop chiếm ' + (100 - lastY.frt_share_pct).toFixed(1).replace('.', ',') + '%)';
+    } else {
+      hRight.textContent = 'Long Châu trở thành trụ cột chiếm ' + (lastY.frt_share_pct != null ? lastY.frt_share_pct.toFixed(0) : '69') + '% doanh thu FPT Retail';
+    }
+  }
+  if (hTbl) {
+    hTbl.textContent = 'Diễn biến phát triển FPT Long Châu (' + firstY.year + ' – ' + lastY.year + ', ' + rows.length + ' mốc)';
+  }
+  const tHead = document.getElementById('tblLcHead');
+  if (tHead) {
+    tHead.innerHTML = '<tr><th>Năm / Kỳ</th><th>Giai đoạn</th><th class="num">Số shop</th><th class="num">Trung tâm tiêm chủng</th><th class="num">Doanh thu (Tỷ)</th><th class="num">% FRT</th><th class="num">Doanh thu / shop / tháng</th><th>Lãi/Lỗ &amp; Cột mốc chính</th><th>Độ tin cậy nguồn</th></tr>';
+  }
+
+  const W = 640, H = 265, pL = 56, pR = 132, pT = 34, pB = 34;
+  const plotW = W - pL - pR, plotH = H - pT - pB;
+  const maxStores = isEarlyOnly ? 500 : 3200;
+  const maxRev = isEarlyOnly ? 6000 : 64000;
+  let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="100%" height="250">';
+  [0, 0.5, 1].forEach(function(r) {
+    const y = pT + plotH - r * plotH;
+    svg += '<line x1="' + pL + '" y1="' + y + '" x2="' + (W - pR) + '" y2="' + y + '" stroke="#e2e8f0" stroke-width="1"/>';
+    svg += '<text x="' + (pL - 6) + '" y="' + (y + 4) + '" text-anchor="end" fill="#475569" font-size="10.5">' + Math.round(maxStores * r).toLocaleString('vi-VN') + '</text>';
+  });
+  svg += '<text x="' + pL + '" y="16" text-anchor="start" fill="#1e73be" font-size="10.5" font-weight="700">' + (isEarlyOnly ? 'Số shop (thang 0–500)' : 'Số shop nhà thuốc') + '</text>';
+  svg += '<text x="' + (W - pR + 8) + '" y="16" text-anchor="start" fill="#0f766e" font-size="10.5" font-weight="700">Doanh thu (tỷ)</text>';
+
+  let fullRevPts = [];
+  let lastFullPt = null;
+  let partial9mPt = null;
+  rows.forEach(function(row, i) {
+    const x = pL + (i + 0.5) * (plotW / rows.length);
+    const yS = pT + plotH - (row.stores / maxStores) * plotH;
+    svg += '<line x1="' + x.toFixed(1) + '" y1="' + (pT + plotH) + '" x2="' + x.toFixed(1) + '" y2="' + yS.toFixed(1) + '" stroke="#1e73be" stroke-width="3.2"/>';
+    svg += '<circle cx="' + x.toFixed(1) + '" cy="' + yS.toFixed(1) + '" r="4.8" fill="#1e73be" stroke="#ffffff" stroke-width="1.2"/>';
+    svg += '<text x="' + x.toFixed(1) + '" y="' + (yS - 11).toFixed(1) + '" text-anchor="middle" fill="#0f3d8a" font-size="10.5" font-weight="700">' + row.stores.toLocaleString('vi-VN') + '</text>';
+    svg += '<text x="' + x.toFixed(1) + '" y="' + (H - 10) + '" text-anchor="middle" fill="#334155" font-size="10.5" font-weight="600">' + row.year + '</text>';
+    if (row.revenue_bn != null && !row.period_months) {
+      const yR = pT + plotH - (row.revenue_bn / maxRev) * plotH;
+      const pt = { x: x, y: yR, rev: row.revenue_bn, yr: row.year };
+      fullRevPts.push(pt);
+      lastFullPt = pt;
+    } else if (row.period_months === 9 && row.revenue_bn != null) {
+      const yActual9 = pT + plotH - (row.revenue_bn / maxRev) * plotH;
+      const annRev = row.revenue_annualized_bn || (row.revenue_bn * 12 / 9);
+      const yAnn = pT + plotH - (annRev / maxRev) * plotH;
+      partial9mPt = { x: x, yActual: yActual9, rev9: row.revenue_bn, yAnn: yAnn, revAnn: annRev };
+    }
+  });
+  if (fullRevPts.length > 0) {
+    svg += '<polyline fill="none" stroke="#0f766e" stroke-width="2.6" points="' + fullRevPts.map(function(p) { return p.x.toFixed(1) + ',' + p.y.toFixed(1); }).join(' ') + '"/>';
+    fullRevPts.forEach(function(p) {
+      svg += '<circle cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="4" fill="#0f766e" stroke="#ffffff" stroke-width="1"/>';
+      if (isEarlyOnly && (p.yr === '2020' || p.yr === '2021')) {
+        const pillX = p.x + 8;
+        const pillY = p.y - 8;
+        const lbl = '~' + (Math.round(p.rev / 100) / 10).toFixed(1).replace('.', ',') + 'k';
+        svg += '<rect x="' + pillX.toFixed(1) + '" y="' + pillY.toFixed(1) + '" width="42" height="16" rx="4" fill="#fffbeb" stroke="#fcd34d" stroke-width="0.9"/>';
+        svg += '<text x="' + (pillX + 21).toFixed(1) + '" y="' + (pillY + 11.5).toFixed(1) + '" text-anchor="middle" fill="#92400e" font-size="10" font-weight="700">' + lbl + '</text>';
+      } else if (p.yr === '2022' || p.yr === '2024' || p.yr === '2025') {
+        const pillX = p.x + 6;
+        const pillY = p.y + 5;
+        const lbl = (p.rev / 1000).toFixed(1).replace('.', ',') + 'k';
+        svg += '<rect x="' + pillX.toFixed(1) + '" y="' + pillY.toFixed(1) + '" width="34" height="16" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>';
+        svg += '<text x="' + (pillX + 17).toFixed(1) + '" y="' + (pillY + 11.5).toFixed(1) + '" text-anchor="middle" fill="#0f766e" font-size="10" font-weight="700">' + lbl + '</text>';
+      }
+    });
+  }
+  if (lastFullPt && partial9mPt) {
+    if (TAB1_FLT.mode2026 === 'both' || TAB1_FLT.mode2026 === 'annualized') {
+      svg += '<line x1="' + lastFullPt.x.toFixed(1) + '" y1="' + lastFullPt.y.toFixed(1) + '" x2="' + partial9mPt.x.toFixed(1) + '" y2="' + partial9mPt.yAnn.toFixed(1) + '" stroke="#0f766e" stroke-width="2.6" stroke-dasharray="5,4"/>';
+      svg += '<circle cx="' + partial9mPt.x.toFixed(1) + '" cy="' + partial9mPt.yAnn.toFixed(1) + '" r="4.6" fill="#ffffff" stroke="#0f766e" stroke-width="2.5"/>';
+      svg += '<rect x="' + (partial9mPt.x + 8).toFixed(1) + '" y="' + (partial9mPt.yAnn - 9).toFixed(1) + '" width="106" height="18" rx="5" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>';
+      svg += '<text x="' + (partial9mPt.x + 14).toFixed(1) + '" y="' + (partial9mPt.yAnn + 3.5).toFixed(1) + '" text-anchor="start" fill="#0f766e" font-size="10.5" font-weight="700">~' + (partial9mPt.revAnn / 1000).toFixed(1).replace('.', ',') + 'k (Cả năm)</text>';
+    }
+    if (TAB1_FLT.mode2026 === 'both' || TAB1_FLT.mode2026 === 'actual') {
+      svg += '<rect x="' + (partial9mPt.x - 4.5).toFixed(1) + '" y="' + (partial9mPt.yActual - 4.5).toFixed(1) + '" width="9" height="9" transform="rotate(45 ' + partial9mPt.x.toFixed(1) + ' ' + partial9mPt.yActual.toFixed(1) + ')" fill="#d97706" stroke="#ffffff" stroke-width="1"/>';
+      svg += '<rect x="' + (partial9mPt.x + 8).toFixed(1) + '" y="' + (partial9mPt.yActual - 9).toFixed(1) + '" width="102" height="18" rx="5" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>';
+      svg += '<text x="' + (partial9mPt.x + 14).toFixed(1) + '" y="' + (partial9mPt.yActual + 3.5).toFixed(1) + '" text-anchor="start" fill="#92400e" font-size="10.5" font-weight="700">' + (partial9mPt.rev9 / 1000).toFixed(1).replace('.', ',') + 'k (9 tháng)</text>';
+    }
+  }
+  svg += '</svg>';
+  const has9m = !!partial9mPt;
+  let legParts = [
+    '<span style="color:#1e73be;font-weight:700;">● Cột xanh: Số shop nhà thuốc</span>',
+    '<span style="color:#0f766e;font-weight:700;">— Nét liền: Doanh thu năm đủ 12 tháng</span>'
+  ];
+  if (has9m && TAB1_FLT.mode2026 !== 'actual') {
+    legParts.push('<span style="color:#0f766e;font-weight:700;">--- Nét đứt: Quy đổi cả năm 2026</span>');
+  }
+  if (has9m && TAB1_FLT.mode2026 !== 'annualized') {
+    legParts.push('<span style="color:#b45309;font-weight:700;">◆ Cam: Thực tế 9 tháng 2026</span>');
+  }
+  svg += '<div style="font-size:11.5px;color:#475569;margin-top:6px;line-height:1.5;">' + legParts.join(' &nbsp;|&nbsp; ') + '</div>';
+  const footTxt = has9m
+    ? 'Số cột 9T/2026 khóa theo BCTC Q3/2026 (2.741 shop + 244 trung tâm tiêm chủng = 2.985 điểm bán); thực tế T11/2026 đã chạm mốc ~3.000 shop.'
+    : 'Giai đoạn 2017–2021 chưa tách thuyết minh doanh thu riêng trên BCTC FRT; số 2020–2021 là ước lượng/suy ngược (🟡) — thang trục tự phóng to 0–500 shop để dễ quan sát đà tăng ×20 lần.';
+  svg += '<div style="font-size:11px;color:#475569;margin-top:4px;">' + footTxt + '</div>';
+  document.getElementById('chartLc9Y').innerHTML = svg;
+
+  let mixHtml = '';
+  const shareRows = rows.filter(function(row) { return row.frt_share_pct != null; });
+  shareRows.forEach(function(row) {
+    const p = row.frt_share_pct || 0;
+    const other = (100 - p).toFixed(1);
+    const revLabel = row.short_rev || row.revenue_note;
+    mixHtml += '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;gap:8px;font-size:12.5px;font-weight:600;margin-bottom:4px;"><span><strong>' + row.year + '</strong> • ' + revLabel + '</span><span>Long Châu ' + p.toFixed(1).replace('.', ',') + '% | FShop ' + other.replace('.', ',') + '%</span></div>';
+    mixHtml += '<div style="display:flex;height:20px;border-radius:6px;overflow:hidden;border:1px solid #cbd5e1;">';
+    mixHtml += '<div style="width:' + p + '%;background:#1e73be;color:#ffffff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">' + (p >= 12 ? p.toFixed(0) + '%' : '') + '</div>';
+    mixHtml += '<div style="width:' + other + '%;background:#e2e8f0;color:#334155;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">' + (100 - p >= 15 ? Math.round(100 - p) + '%' : '') + '</div>';
+    mixHtml += '</div></div>';
+  });
+  if (shareRows.length === 0) {
+    mixHtml += '<div style="font-size:12px;color:#475569;">Giai đoạn lọc chưa có tỷ trọng % FRT tách riêng.</div>';
+  }
+  mixHtml += '<div style="font-size:11.5px;color:#475569;margin-top:6px;">FShop gồm chuỗi FPT Shop và các mảng còn lại của FPT Retail.</div>';
+  document.getElementById('chartFrtShare').innerHTML = mixHtml;
+
+  document.getElementById('tblLcTimeline').innerHTML = rows.map(function(r) {
+    const shareTxt = r.frt_share_pct != null ? (r.frt_share_pct.toFixed(1).replace('.', ',') + '%') : '—';
+    const avgTxt = r.avg_rev_store_bn != null ? (r.avg_rev_store_bn.toFixed(2).replace('.', ',') + ' tỷ') : '—';
+    return '<tr><td><strong>' + r.year + '</strong></td><td>' + r.chapter + '</td><td class="num">' + r.stores.toLocaleString('vi-VN') + '</td><td class="num">' + r.vaccine_centers + '</td><td class="num"><strong>' + r.revenue_note + '</strong></td><td class="num">' + shareTxt + '</td><td class="num">' + avgTxt + '</td><td><strong>' + r.lc_profit_note + '</strong> • ' + r.milestone + '</td><td>' + (r.data_tier || '') + '</td></tr>';
+  }).join('');
+}
+
+function renderTab1Quarterly() {
+  const qRows = getTab1FilteredQuarters();
+  const firstQ = qRows[0], lastQ = qRows[qRows.length - 1];
+  const sumRev = qRows.reduce(function(acc, r) { return acc + r.revenue_bn; }, 0);
+  const hLeft = document.getElementById('cardHeadTab1Left');
+  const hRight = document.getElementById('cardHeadTab1Right');
+  const hTbl = document.getElementById('cardHeadTab1Table');
+  if (hLeft) {
+    hLeft.textContent = 'Nhịp tăng trưởng theo Quý (' + firstQ.quarter + ' → ' + lastQ.quarter + '): Lũy kế ' + sumRev.toLocaleString('vi-VN') + ' tỷ';
+  }
+  if (hRight) {
+    hRight.textContent = 'Tỷ trọng Long Châu / FRT theo Quý (' + firstQ.quarter + ' → ' + lastQ.quarter + ')';
+  }
+  if (hTbl) {
+    hTbl.textContent = 'Bảng dữ liệu ' + qRows.length + ' quý thực tế từ BCTC FRT (' + firstQ.quarter + ' – ' + lastQ.quarter + ')';
+  }
+  const tHead = document.getElementById('tblLcHead');
+  if (tHead) {
+    tHead.innerHTML = '<tr><th>Quý</th><th class="num">Năm</th><th class="num">Số shop</th><th class="num">TT tiêm chủng</th><th class="num">DT Long Châu (Tỷ)</th><th class="num">DT FRT (Tỷ)</th><th class="num">% FRT</th><th class="num">DT / shop / tháng</th><th class="num">Lãi TT FRT (Tỷ)</th><th>Phương pháp tách &amp; Nguồn</th></tr>';
+  }
+
+  const W = 640, H = 265, pL = 56, pR = 56, pT = 34, pB = 34;
+  const plotW = W - pL - pR, plotH = H - pT - pB;
+  const maxStores = 3200, maxRev = 16000;
+  let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="100%" height="250">';
+  [0, 0.5, 1].forEach(function(r) {
+    const y = pT + plotH - r * plotH;
+    svg += '<line x1="' + pL + '" y1="' + y + '" x2="' + (W - pR) + '" y2="' + y + '" stroke="#e2e8f0" stroke-width="1"/>';
+    svg += '<text x="' + (pL - 6) + '" y="' + (y + 4) + '" text-anchor="end" fill="#475569" font-size="10.5">' + Math.round(maxStores * r).toLocaleString('vi-VN') + '</text>';
+    svg += '<text x="' + (W - pR + 6) + '" y="' + (y + 4) + '" text-anchor="start" fill="#0f766e" font-size="10.5">' + (maxRev * r / 1000).toFixed(0) + 'k</text>';
+  });
+  svg += '<text x="' + pL + '" y="16" text-anchor="start" fill="#1e73be" font-size="10.5" font-weight="700">Số shop (Quý)</text>';
+  svg += '<text x="' + (W - pR) + '" y="16" text-anchor="end" fill="#0f766e" font-size="10.5" font-weight="700">DT Quý (tỷ)</text>';
+
+  let revPts = [];
+  qRows.forEach(function(row, i) {
+    const x = pL + (i + 0.5) * (plotW / qRows.length);
+    const yS = pT + plotH - (row.stores / maxStores) * plotH;
+    const yR = pT + plotH - (row.revenue_bn / maxRev) * plotH;
+    revPts.push({ x: x, y: yR, rev: row.revenue_bn, q: row.quarter });
+    svg += '<line x1="' + x.toFixed(1) + '" y1="' + (pT + plotH) + '" x2="' + x.toFixed(1) + '" y2="' + yS.toFixed(1) + '" stroke="#1e73be" stroke-width="3"/>';
+    svg += '<circle cx="' + x.toFixed(1) + '" cy="' + yS.toFixed(1) + '" r="4.4" fill="#1e73be" stroke="#ffffff" stroke-width="1.2"/>';
+    if (qRows.length <= 6 || i === 0 || i === qRows.length - 1 || row.quarter.indexOf('Q4') === 0) {
+      svg += '<text x="' + x.toFixed(1) + '" y="' + (yS - 10).toFixed(1) + '" text-anchor="middle" fill="#0f3d8a" font-size="10" font-weight="700">' + row.stores.toLocaleString('vi-VN') + '</text>';
+    }
+    const tickLbl = qRows.length > 6 ? row.quarter.replace('/20', '/') : row.quarter;
+    svg += '<text x="' + x.toFixed(1) + '" y="' + (H - 10) + '" text-anchor="middle" fill="#334155" font-size="' + (qRows.length > 8 ? '9.5' : '10.5') + '" font-weight="600">' + tickLbl + '</text>';
+  });
+  svg += '<polyline fill="none" stroke="#0f766e" stroke-width="2.6" points="' + revPts.map(function(p) { return p.x.toFixed(1) + ',' + p.y.toFixed(1); }).join(' ') + '"/>';
+  revPts.forEach(function(p, idx) {
+    svg += '<circle cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="4" fill="#0f766e" stroke="#ffffff" stroke-width="1"/>';
+    if (qRows.length <= 6 || idx === 0 || idx === revPts.length - 1 || p.q.indexOf('Q4') === 0) {
+      const lbl = (p.rev / 1000).toFixed(1).replace('.', ',') + 'k';
+      const pillW = 36;
+      const pillX = p.x - pillW / 2;
+      const pillY = p.y + 7;
+      svg += '<rect x="' + pillX.toFixed(1) + '" y="' + pillY.toFixed(1) + '" width="' + pillW + '" height="16" rx="4" fill="#f0fdfa" stroke="#5eead4" stroke-width="0.9"/>';
+      svg += '<text x="' + p.x.toFixed(1) + '" y="' + (pillY + 11.5).toFixed(1) + '" text-anchor="middle" fill="#0f766e" font-size="10" font-weight="700">' + lbl + '</text>';
+    }
+  });
+  svg += '</svg>';
+  svg += '<div style="font-size:11.5px;color:#475569;margin-top:6px;line-height:1.5;"><span style="color:#1e73be;font-weight:700;">● Cột xanh: Số shop cuối quý</span> &nbsp;|&nbsp; <span style="color:#0f766e;font-weight:700;">— Đường xanh ngọc: Doanh thu riêng từng quý (tỷ)</span></div>';
+  if (CASE_DATA.quarterly_provenance_note) {
+    svg += '<div style="font-size:11px;color:#0f3d8a;background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:6px 8px;margin-top:6px;">' + CASE_DATA.quarterly_provenance_note + '</div>';
+  }
+  document.getElementById('chartLc9Y').innerHTML = svg;
+
+  let mixHtml = '';
+  qRows.forEach(function(q) {
+    const p = q.frt_share_pct || 0;
+    const other = (100 - p).toFixed(1);
+    mixHtml += '<div style="margin-bottom:8px;"><div style="display:flex;justify-content:space-between;gap:8px;font-size:12px;font-weight:600;margin-bottom:3px;"><span><strong>' + q.quarter + '</strong> • ' + q.revenue_bn.toLocaleString('vi-VN') + ' / ' + q.frt_total_rev_bn.toLocaleString('vi-VN') + ' tỷ</span><span>LC ' + p.toFixed(1).replace('.', ',') + '% | FShop ' + other.replace('.', ',') + '%</span></div>';
+    mixHtml += '<div style="display:flex;height:18px;border-radius:5px;overflow:hidden;border:1px solid #cbd5e1;">';
+    mixHtml += '<div style="width:' + p + '%;background:#1e73be;color:#ffffff;font-size:10.5px;font-weight:700;display:flex;align-items:center;justify-content:center;">' + p.toFixed(1).replace('.', ',') + '%</div>';
+    mixHtml += '<div style="width:' + other + '%;background:#e2e8f0;color:#334155;font-size:10.5px;font-weight:700;display:flex;align-items:center;justify-content:center;">' + Math.round(100 - p) + '%</div>';
+    mixHtml += '</div></div>';
+  });
+  mixHtml += '<div style="font-size:11.5px;color:#475569;margin-top:6px;">Tỷ trọng doanh thu Long Châu tăng từ 61,2% (Q1/2024) lên đỉnh 71,1% (Q2/2026) và giữ 68,2% ở Q3/2026.</div>';
+  document.getElementById('chartFrtShare').innerHTML = mixHtml;
+
+  document.getElementById('tblLcTimeline').innerHTML = qRows.map(function(q) {
+    return '<tr><td><strong>' + q.quarter + '</strong></td><td class="num">' + q.year + '</td><td class="num">' + q.stores.toLocaleString('vi-VN') + '</td><td class="num">' + q.vaccine_centers + '</td><td class="num"><strong>' + q.revenue_bn.toLocaleString('vi-VN') + '</strong></td><td class="num">' + q.frt_total_rev_bn.toLocaleString('vi-VN') + '</td><td class="num">' + q.frt_share_pct.toFixed(1).replace('.', ',') + '%</td><td class="num">' + q.avg_rev_store_bn.toFixed(2).replace('.', ',') + ' tỷ</td><td class="num">' + q.frt_pbt_bn.toLocaleString('vi-VN') + '</td><td>' + q.derivation + ' • ' + q.data_tier + '</td></tr>';
+  }).join('');
+}
+
+function toggleTab2Chain(chainName) {
+  const keys = Object.keys(TAB2_FLT.chains);
+  const activeCount = keys.filter(function(k) { return TAB2_FLT.chains[k]; }).length;
+  if (TAB2_FLT.chains[chainName] && activeCount <= 1) {
+    return;
+  }
+  TAB2_FLT.chains[chainName] = !TAB2_FLT.chains[chainName];
+  renderTab2FilterBar();
+  renderTab2();
+}
+
+function setTab2Filter(key, val) {
+  if (key === 'period') {
+    TAB2_FLT.period = val;
+  } else if (key === 'group') {
+    TAB2_FLT.group = val;
+  } else if (key === 'zoomY') {
+    TAB2_FLT.zoomY = !!val;
+  }
+  renderTab2FilterBar();
+  renderTab2();
+}
+
+function resetTab2Filter() {
+  TAB2_FLT = { chains: { 'FPT Long Châu': true, 'Pharmacity': true, 'An Khang (MWG)': true }, period: '2019_2026', group: 'all', zoomY: false };
+  renderTab2FilterBar();
+  renderTab2();
+}
+
+function renderTab2FilterBar() {
+  const el = document.getElementById('tab2FilterBar');
+  if (!el) return;
+  const activeCount = Object.keys(TAB2_FLT.chains).filter(function(k) { return TAB2_FLT.chains[k]; }).length;
+  const chainDefs = [
+    { key: 'FPT Long Châu', label: 'Long Châu', col: '#1e73be' },
+    { key: 'Pharmacity', label: 'Pharmacity', col: '#0d9488' },
+    { key: 'An Khang (MWG)', label: 'An Khang', col: '#b91c1c' }
+  ];
+  let h = '<div class="flt-group"><span class="flt-lbl">Chuỗi:</span>';
+  chainDefs.forEach(function(cd) {
+    const on = !!TAB2_FLT.chains[cd.key];
+    const lockLast = on && activeCount <= 1;
+    h += '<button class="flt-chip' + (on ? ' active' : '') + '"' + (lockLast ? ' title="Giữ tối thiểu 1 chuỗi"' : '') + ' onclick="toggleTab2Chain(\'' + cd.key + '\')"><span style="color:' + cd.col + ';">●</span> ' + cd.label + '</button>';
+  });
+  h += '</div>';
+
+  h += '<div class="flt-group"><span class="flt-lbl">Giai đoạn:</span><select class="flt-select" onchange="setTab2Filter(\'period\',this.value)">';
+  [['2019_2026', '2019–2026'], ['2022_2026', '2022–2026'], ['2024_2026', '2024–2026']].forEach(function(o) {
+    h += '<option value="' + o[0] + '"' + (TAB2_FLT.period === o[0] ? ' selected' : '') + '>' + o[1] + '</option>';
+  });
+  h += '</select></div>';
+
+  h += '<div class="flt-group"><span class="flt-lbl">Chỉ số:</span><select class="flt-select" onchange="setTab2Filter(\'group\',this.value)">';
+  [['all', 'Tất cả (8 tiêu chí)'], ['scale', 'Quy mô & Mạng lưới'], ['finance', 'Tài chính & Lãi/Lỗ'], ['strategy', 'Khách hàng & Nguồn vốn']].forEach(function(o) {
+    h += '<option value="' + o[0] + '"' + (TAB2_FLT.group === o[0] ? ' selected' : '') + '>' + o[1] + '</option>';
+  });
+  h += '</select></div>';
+
+  h += '<button class="flt-toggle' + (TAB2_FLT.zoomY ? ' active' : '') + '" onclick="setTab2Filter(\'zoomY\',!TAB2_FLT.zoomY)">🔍 Phóng to trục Y</button>';
+  h += '<div class="flt-right"><span class="flt-count">' + activeCount + '/3 chuỗi</span><button class="flt-reset" onclick="resetTab2Filter()">↺ Đặt lại</button></div>';
+  el.innerHTML = h;
+}
+
+function renderTab2() {
+  const traj = CASE_DATA.top3_store_trajectories || {};
+  const allYrs = traj.years || [];
+  let startIdx = 0;
+  if (TAB2_FLT.period === '2022_2026') {
+    const idx22 = allYrs.indexOf('2022');
+    startIdx = idx22 >= 0 ? idx22 : 3;
+  } else if (TAB2_FLT.period === '2024_2026') {
+    const idx24 = allYrs.indexOf('2024');
+    startIdx = idx24 >= 0 ? idx24 : 5;
+  }
+  const yrs = allYrs.slice(startIdx);
+  const allSers = traj.series || [];
+  const sers = allSers.filter(function(s) { return !!TAB2_FLT.chains[s.name]; });
+  const W = 920, H = 260, pL = 54, pR = 215, pT = 26, pB = 30;
+
+  let maxC = 3000;
+  if (TAB2_FLT.zoomY) {
+    let peakVal = 0;
+    sers.forEach(function(sr) {
+      sr.counts.slice(startIdx).forEach(function(c) {
+        if (c > peakVal) peakVal = c;
+      });
+    });
+    maxC = Math.max(500, Math.ceil(peakVal / 500) * 500);
+  }
+  const ticks = maxC === 3000
+    ? [0, 500, 1000, 1500, 2000, 2500, 3000]
+    : [0, 0.25, 0.5, 0.75, 1].map(function(r) { return Math.round(maxC * r); });
+
+  let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="100%" height="248">';
+  ticks.forEach(function(v) {
+    const y = pT + (1 - v / maxC) * (H - pT - pB);
+    svg += '<line x1="' + pL + '" y1="' + y + '" x2="' + (W - pR) + '" y2="' + y + '" stroke="#e2e8f0" stroke-width="1"/>';
+    svg += '<text x="' + (pL - 6) + '" y="' + (y + 4) + '" text-anchor="end" fill="#475569" font-size="10.5">' + v.toLocaleString('vi-VN') + '</text>';
+  });
+  yrs.forEach(function(yr, i) {
+    const x = pL + (i / Math.max(1, yrs.length - 1)) * (W - pL - pR);
+    svg += '<text x="' + x.toFixed(1) + '" y="' + (H - 8) + '" text-anchor="middle" fill="#334155" font-size="11" font-weight="600">' + yr + '</text>';
+  });
+  sers.forEach(function(sr) {
+    const counts = sr.counts.slice(startIdx);
+    let pts = [];
+    counts.forEach(function(cnt, i) {
+      const x = pL + (i / Math.max(1, yrs.length - 1)) * (W - pL - pR);
+      const y = pT + (1 - cnt / maxC) * (H - pT - pB);
+      pts.push(x.toFixed(1) + ',' + y.toFixed(1));
+    });
+    svg += '<polyline fill="none" stroke="' + sr.color + '" stroke-width="3" points="' + pts.join(' ') + '"/>';
+    counts.forEach(function(cnt, i) {
+      const yrLbl = yrs[i];
+      const x = pL + (i / Math.max(1, yrs.length - 1)) * (W - pL - pR);
+      const y = pT + (1 - cnt / maxC) * (H - pT - pB);
+      svg += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="4" fill="' + sr.color + '" stroke="#ffffff" stroke-width="1.2"/>';
+      const isPeak = (sr.name === 'Pharmacity' && yrLbl === '2022') || (sr.name === 'An Khang (MWG)' && yrLbl === '2023');
+      const isTrough = (sr.name === 'Pharmacity' && yrLbl === '2024') || (sr.name === 'An Khang (MWG)' && yrLbl === '2024');
+      if (isPeak || isTrough) {
+        const pillY = isPeak ? (y - 23) : (y + 8);
+        const pillX = x - 20;
+        let bg = '#ffffff', brd = '#cbd5e1', txtCol = sr.color;
+        if (isTrough && sr.name === 'Pharmacity') { bg = '#f0fdfa'; brd = '#5eead4'; txtCol = '#0f766e'; }
+        if (isTrough && sr.name === 'An Khang (MWG)') { bg = '#fef2f2'; brd = '#fca5a5'; txtCol = '#991b1b'; }
+        svg += '<rect x="' + pillX.toFixed(1) + '" y="' + pillY.toFixed(1) + '" width="40" height="16" rx="4" fill="' + bg + '" stroke="' + brd + '" stroke-width="0.9"/>';
+        svg += '<text x="' + x.toFixed(1) + '" y="' + (pillY + 11.5).toFixed(1) + '" text-anchor="middle" fill="' + txtCol + '" font-size="10" font-weight="700">' + cnt.toLocaleString('vi-VN') + '</text>';
+      }
+    });
+    const lastY = pT + (1 - counts[counts.length - 1] / maxC) * (H - pT - pB);
+    const rightTxt = sr.name + ' (' + counts[counts.length - 1].toLocaleString('vi-VN') + ')';
+    if (sr.name === 'FPT Long Châu') {
+      svg += '<rect x="' + (W - pR + 6) + '" y="' + (lastY - 10).toFixed(1) + '" width="172" height="20" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>';
+      svg += '<text x="' + (W - pR + 14) + '" y="' + (lastY + 4).toFixed(1) + '" fill="#0f3d8a" font-size="11.5" font-weight="700">' + rightTxt + '</text>';
+    } else {
+      svg += '<text x="' + (W - pR + 12) + '" y="' + (lastY + 4).toFixed(1) + '" fill="' + sr.color + '" font-size="11.5" font-weight="700">' + rightTxt + '</text>';
+    }
+  });
+  svg += '</svg>';
+  svg += '<div style="display:flex;gap:16px;flex-wrap:wrap;font-size:12px;margin-top:6px;">' + sers.map(function(s) {
+    return '<span><strong style="color:' + s.color + ';">● ' + s.name + ':</strong> ' + s.strategy_tag + '</span>';
+  }).join('') + '</div>';
+  if (traj.provenance_note) {
+    svg += '<div style="font-size:11.5px;color:#475569;margin-top:8px;padding-top:6px;border-top:1px dashed #e2e8f0;">' + traj.provenance_note + '</div>';
+  }
+  document.getElementById('chartTop3Lines').innerHTML = svg;
+
+  const hChart2 = document.getElementById('cardHeadTab2Chart');
+  if (hChart2) {
+    hChart2.textContent = 'Đồ thị mạng lưới ' + sers.map(function(s) { return s.name; }).join(' vs ') + ' (' + yrs[0] + '–' + yrs[yrs.length - 1] + ' • Trần trục Y: ' + maxC.toLocaleString('vi-VN') + ')';
+  }
+
+  const compRows = (CASE_DATA.competitor_comparison || []).filter(function(c) {
+    return TAB2_FLT.group === 'all' || c.group === TAB2_FLT.group;
+  });
+  const showLC = !!TAB2_FLT.chains['FPT Long Châu'];
+  const showPMC = !!TAB2_FLT.chains['Pharmacity'];
+  const showAK = !!TAB2_FLT.chains['An Khang (MWG)'];
+  const hTbl2 = document.getElementById('cardHeadTab2Table');
+  if (hTbl2) {
+    hTbl2.textContent = 'So sánh ' + compRows.length + ' chỉ số cốt lõi của các chuỗi đang chọn';
+  }
+  const headEl = document.getElementById('tblTop3Head');
+  if (headEl) {
+    headEl.innerHTML = '<tr><th>Tiêu chí so sánh</th>'
+      + (showLC ? '<th>FPT Long Châu (FRT)</th>' : '')
+      + (showPMC ? '<th>Pharmacity (Tư nhân)</th>' : '')
+      + (showAK ? '<th>An Khang (Thế Giới Di Động)</th>' : '')
+      + '<th>Nguồn số liệu</th></tr>';
+  }
+  document.getElementById('tblTop3Matrix').innerHTML = compRows.map(function(c) {
+    return '<tr><td><strong>' + c.metric + '</strong></td>'
+      + (showLC ? '<td style="color:#0f3d8a;font-weight:600;">' + c.longchau + '</td>' : '')
+      + (showPMC ? '<td>' + c.pharmacity + '</td>' : '')
+      + (showAK ? '<td>' + c.ankhang + '</td>' : '')
+      + '<td><span class="pill-badge">' + c.source_tag + '</span></td></tr>';
+  }).join('');
+}
+
+function renderTab3() {
+  // Breakeven Ladder SVG
+  const items = [
+    { lbl: 'An Khang (2024 trước tái cấu trúc)', val: 475, col: '#dc2626' },
+    { lbl: 'An Khang (Ngưỡng hòa vốn)', val: 550, col: '#b45309' },
+    { lbl: 'FPT Long Châu (2022–2023)', val: 1080, col: '#3b82f6' },
+    { lbl: 'FPT Long Châu (2024–2025)', val: 1200, col: '#1e73be' },
+    { lbl: 'FPT Long Châu (9 tháng 2026)', val: 1300, col: '#0f3d8a' }
+  ];
+  let bSvg = '<svg viewBox="0 0 595 198" width="100%" height="192">';
+  const xFloor = 215 + (550 / 1500) * 245;
+  bSvg += '<line x1="' + xFloor.toFixed(1) + '" y1="8" x2="' + xFloor.toFixed(1) + '" y2="174" stroke="#b91c1c" stroke-width="1.8" stroke-dasharray="4,3"/>';
+  bSvg += '<text x="' + xFloor.toFixed(1) + '" y="191" text-anchor="middle" fill="#b91c1c" font-size="10" font-weight="700">Ngưỡng hòa vốn: 550 triệu/tháng</text>';
+  items.forEach(function(it, i) {
+    const y = 16 + i * 31;
+    const w = (it.val / 1500) * 245;
+    const lblX = 215 + w + 8;
+    const valTxt = it.val.toLocaleString('vi-VN') + ' triệu/tháng';
+    let bg = '#ffffff', brd = '#e2e8f0', txtCol = '#334155', pW = 108;
+    if (i === 1) { bg = '#fffbeb'; brd = '#fcd34d'; txtCol = '#92400e'; }
+    if (i === 4) { bg = '#eff6ff'; brd = '#93c5fd'; txtCol = '#0f3d8a'; pW = 112; }
+    bSvg += '<text x="4" y="' + (y + 13) + '" fill="#1e293b" font-size="10.5" font-weight="600">' + it.lbl + '</text>';
+    bSvg += '<rect x="215" y="' + y + '" width="' + w.toFixed(1) + '" height="18" rx="4" fill="' + it.col + '"/>';
+    bSvg += '<rect x="' + (lblX - 3).toFixed(1) + '" y="' + y + '" width="' + pW + '" height="18" rx="5" fill="' + bg + '" stroke="' + brd + '" stroke-width="0.9"/>';
+    bSvg += '<text x="' + (lblX + 3).toFixed(1) + '" y="' + (y + 13) + '" fill="' + txtCol + '" font-size="10" font-weight="700">' + valTxt + '</text>';
+  });
+  bSvg += '</svg>';
+  document.getElementById('chartBreakeven').innerHTML = bSvg;
+
+  // Vaccine Cashflow SVG (verified BCTC milestones: 466,8 -> 592,98 -> 716,57 ty)
+  const ue = CASE_DATA.unit_economics_capex || {};
+  const vac = ue.vaccine_cashflow_engine || [];
+  const maxVac = vac.reduce(function(m, x) { return Math.max(m, x.deferred_bn || 0); }, 720) * 1.18;
+  let vSvg = '<svg viewBox="0 0 500 190" width="100%" height="186">';
+  vac.forEach(function(v, i) {
+    const x = vac.length === 2 ? (125 + i * 185) : (58 + i * 158);
+    const w = vac.length === 2 ? 84 : 68;
+    const h = (v.deferred_bn / maxVac) * 116;
+    const y = 145 - h;
+    const isLatest = (i === vac.length - 1);
+    const bg = isLatest ? '#f0fdfa' : '#ffffff';
+    const brd = isLatest ? '#5eead4' : '#cbd5e1';
+    const txtCol = isLatest ? '#0f766e' : '#334155';
+    const pillW = 76;
+    const pillX = x + (w - pillW) / 2;
+    const pillY = y - 24;
+    const valStr = Number(v.deferred_bn).toLocaleString('vi-VN', { minimumFractionDigits: 1, maximumFractionDigits: 2 });
+    vSvg += '<rect x="' + x + '" y="' + y.toFixed(1) + '" width="' + w + '" height="' + h.toFixed(1) + '" rx="5" fill="#0f766e"/>';
+    vSvg += '<rect x="' + pillX.toFixed(1) + '" y="' + pillY.toFixed(1) + '" width="' + pillW + '" height="20" rx="5" fill="' + bg + '" stroke="' + brd + '" stroke-width="1"/>';
+    vSvg += '<text x="' + (x + w / 2) + '" y="' + (pillY + 14).toFixed(1) + '" text-anchor="middle" fill="' + txtCol + '" font-size="10.5" font-weight="800">' + valStr + ' tỷ</text>';
+    vSvg += '<text x="' + (x + w / 2) + '" y="162" text-anchor="middle" fill="#334155" font-size="10" font-weight="700">' + v.period + '</text>';
+    vSvg += '<text x="' + (x + w / 2) + '" y="178" text-anchor="middle" fill="#0f766e" font-size="9.5" font-weight="700">(' + v.centers + ' trung tâm)</text>';
+  });
+  if (vac.length === 2) {
+    const pctJump = Math.round(((vac[1].deferred_bn - vac[0].deferred_bn) / vac[0].deferred_bn) * 100);
+    vSvg += '<rect x="218" y="34" width="84" height="22" rx="11" fill="#ecfeff" stroke="#0f766e" stroke-width="1.2"/>';
+    vSvg += '<text x="260" y="48" text-anchor="middle" fill="#0f766e" font-size="10" font-weight="800">+' + pctJump + '% / 6 tháng</text>';
+  } else if (vac.length >= 3) {
+    const pct9m = Math.round(((vac[vac.length - 1].deferred_bn - vac[0].deferred_bn) / vac[0].deferred_bn) * 100);
+    vSvg += '<rect x="44" y="10" width="136" height="22" rx="11" fill="#ecfeff" stroke="#0f766e" stroke-width="1.2"/>';
+    vSvg += '<text x="112" y="24" text-anchor="middle" fill="#0f766e" font-size="10" font-weight="800">+' + pct9m + '% sau 9 tháng</text>';
+  }
+  vSvg += '</svg>';
+  if (ue.vaccine_provenance_note) {
+    vSvg += '<div style="font-size:10.5px;color:#475569;margin-top:4px;">' + ue.vaccine_provenance_note + '</div>';
+  }
+  document.getElementById('chartVaccineCash').innerHTML = vSvg;
+
+  document.getElementById('tblCapex').innerHTML = (ue.capex_breakdown || []).map(function(c) {
+    return '<tr><td><strong>' + c.item + '</strong></td><td class="num">' + c.min_m + '</td><td class="num">' + c.max_m + '</td><td class="num"><strong>' + c.share_pct + '%</strong></td></tr>';
+  }).join('');
+
+  document.getElementById('boxUnitBench').innerHTML =
+    '<div class="story-box" style="margin-bottom:10px;">' +
+      '<div><strong>• Diện tích chuẩn:</strong> ' + (ue.store_area_m2 || '') + '</div>' +
+      '<div><strong>• Nhân sự chuyên môn:</strong> ' + (ue.pharmacists_per_store || '') + '</div>' +
+      '<div><strong>• Tổng vốn mở mới 1 shop:</strong> ' + (ue.capex_total_range || '') + '</div>' +
+      '<div><strong>• Quay vòng tồn kho (DIO):</strong> ' + (ue.dio_days_benchmark || '') + '</div>' +
+      '<div><strong>• Thời gian hoàn vốn 1 shop:</strong> ' + (ue.payback_store_level || '') + '</div>' +
+    '</div>';
+
+  // Inventory & Cash Conversion Cycle (FRT Q3/2026 Consolidated)
+  const inv = CASE_DATA.inventory_cashflow_frt || {};
+  const invBn = inv.inventory_q3_2026_bn || 15577;
+  const invInc = inv.inventory_ytd_increase_bn || 3650;
+  const cogsQ3 = inv.cogs_q3_2026_bn || 14031;
+  const gpQ3 = inv.gross_profit_q3_2026_bn || 3499;
+  const payQ3 = inv.payables_q3_2026_bn || 6428;
+  const dsoDays = inv.dso_est_days || 3;
+  const dioDays = (invBn / cogsQ3) * 90;
+  const dpoDays = (payQ3 / cogsQ3) * 90;
+  const cccDays = dioDays + dsoDays - dpoDays;
+  const gmroiAnn = (gpQ3 * 4) / invBn;
+  const carryPct = inv.carrying_cost_pct || 13.0;
+  const carryTotalBn = invBn * (carryPct / 100);
+  const cashFreed10d = (invBn / dioDays) * 10;
+  const carrySaved10d = cashFreed10d * (carryPct / 100);
+
+  let invHtml = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px;">' +
+    '<div style="background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:9px 11px;">' +
+      '<div style="font-size:11px;font-weight:700;color:#475569;">TỒN KHO HỢP NHẤT FRT (Q3/2026)</div>' +
+      '<div style="font-size:19px;font-weight:800;color:#0f3d8a;">' + invBn.toLocaleString('vi-VN') + ' tỷ</div>' +
+      '<div style="font-size:11.5px;color:#334155;">Tăng +' + invInc.toLocaleString('vi-VN') + ' tỷ so với đầu năm</div>' +
+    '</div>' +
+    '<div style="background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:9px 11px;">' +
+      '<div style="font-size:11px;font-weight:700;color:#92400e;">CHU KỲ TIỀN MẶT (CCC)</div>' +
+      '<div style="font-size:19px;font-weight:800;color:#92400e;">~' + Math.round(cccDays) + ' ngày</div>' +
+      '<div style="font-size:11.5px;color:#78350f;">Tồn ' + Math.round(dioDays) + ' + Thu ' + dsoDays + ' − Trả NCC ' + Math.round(dpoDays) + ' ngày</div>' +
+    '</div>' +
+    '<div style="background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:9px 11px;">' +
+      '<div style="font-size:11px;font-weight:700;color:#475569;">GMROI QUY ĐỔI NĂM (LÃI GỘP / TỒN)</div>' +
+      '<div style="font-size:19px;font-weight:800;color:#b91c1c;">~' + gmroiAnn.toFixed(2).replace('.', ',') + ' lần</div>' +
+      '<div style="font-size:11.5px;color:#334155;">Chuẩn khỏe ≥ 2,0 lần (hiện bị kéo xuống bởi hàng mở mới)</div>' +
+    '</div>' +
+    '<div style="background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;padding:9px 11px;">' +
+      '<div style="font-size:11px;font-weight:700;color:#991b1b;">NGHỊCH LÝ DÒNG TIỀN 9 THÁNG 2026</div>' +
+      '<div style="font-size:19px;font-weight:800;color:#991b1b;">CFO ' + (inv.cfo_9m_2026_bn || -1356).toLocaleString('vi-VN') + ' tỷ</div>' +
+      '<div style="font-size:11.5px;color:#7f1d1d;">Lãi trước thuế +' + (inv.pbt_9m_2026_bn || 1724).toLocaleString('vi-VN') + ' tỷ nhưng tiền kẹt vào tồn kho</div>' +
+    '</div>' +
+  '</div>';
+
+  // CCC Horizontal Bar SVG
+  const cccBars = [
+    { lbl: 'Số ngày tồn kho (DIO)', val: Math.round(dioDays), col: '#1e73be', pillBg: '#ffffff', pillBrd: '#cbd5e1', pillTxt: '#334155' },
+    { lbl: 'Trừ ngày nợ nhà cung cấp (DPO)', val: Math.round(dpoDays), col: '#0f766e', pillBg: '#ffffff', pillBrd: '#cbd5e1', pillTxt: '#334155' },
+    { lbl: 'Vốn tự có phải tài trợ (CCC)', val: Math.round(cccDays), col: '#b45309', pillBg: '#fffbeb', pillBrd: '#fcd34d', pillTxt: '#92400e' }
+  ];
+  let cSvg = '<svg viewBox="0 0 540 112" width="100%" height="108">';
+  cccBars.forEach(function(cb, idx) {
+    const y = 10 + idx * 32;
+    const bw = Math.min(220, (cb.val / 120) * 220);
+    const lx = 210 + bw + 8;
+    cSvg += '<text x="4" y="' + (y + 14) + '" fill="#1e293b" font-size="10.5" font-weight="600">' + cb.lbl + '</text>';
+    cSvg += '<rect x="210" y="' + y + '" width="' + bw.toFixed(1) + '" height="18" rx="4" fill="' + cb.col + '"/>';
+    cSvg += '<rect x="' + (lx - 3).toFixed(1) + '" y="' + y + '" width="76" height="18" rx="5" fill="' + cb.pillBg + '" stroke="' + cb.pillBrd + '" stroke-width="0.9"/>';
+    cSvg += '<text x="' + (lx + 35).toFixed(1) + '" y="' + (y + 13) + '" text-anchor="middle" fill="' + cb.pillTxt + '" font-size="10.5" font-weight="700">~' + cb.val + ' ngày</text>';
+  });
+  cSvg += '</svg>';
+  invHtml += cSvg;
+  invHtml += '<div style="font-size:11px;color:#475569;margin-top:4px;"><strong>Ranh giới số liệu:</strong> ' + (inv.scope_note || '') + ' Khác với tồn trên kệ 1 shop (45–75 ngày) vì gộp thêm FShop &amp; kho tổng.</div>';
+  document.getElementById('chartInventoryFlow').innerHTML = invHtml;
+
+  // Carrying Cost 13%/year Card
+  const brk = inv.carrying_cost_breakdown || [];
+  let ccHtml = '<div style="background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin-bottom:10px;font-size:12.5px;color:#78350f;">' +
+    '<strong>Chi phí giữ tồn kho chuẩn bán lẻ = ' + carryPct.toFixed(0) + '% / năm</strong> (mỗi 1 tỷ tồn thêm tốn ~130 triệu/năm). Với khối tồn <strong>' + invBn.toLocaleString('vi-VN') + ' tỷ</strong> của FRT, hóa đơn ẩn tương đương <strong>~' + Math.round(carryTotalBn).toLocaleString('vi-VN') + ' tỷ/năm</strong>.' +
+  '</div>';
+  ccHtml += brk.map(function(b) {
+    const shareBar = Math.max(8, (b.pct / carryPct) * 100);
+    return '<div style="margin-bottom:7px;"><div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin-bottom:2px;"><span>' + b.item + '</span><strong>' + b.pct.toFixed(1).replace('.', ',') + '%</strong></div>' +
+      '<div style="height:8px;background:#f1f5f9;border-radius:999px;overflow:hidden;"><div style="width:' + shareBar.toFixed(1) + '%;height:100%;background:' + b.color + ';"></div></div></div>';
+  }).join('');
+  ccHtml += '<div style="background:#f0fdfa;border:1px solid #5eead4;border-radius:8px;padding:9px 11px;margin:10px 0;font-size:12px;color:#115e59;">' +
+    '<strong>Đòn bẩy tối ưu 10 ngày tồn kho:</strong> Giải phóng ngay <strong>~' + Math.round(cashFreed10d).toLocaleString('vi-VN') + ' tỷ</strong> tiền mặt kẹt hàng &amp; tiết kiệm <strong>~' + Math.round(carrySaved10d).toLocaleString('vi-VN') + ' tỷ/năm</strong> chi phí giữ tồn.' +
+  '</div>';
+  ccHtml += '<div style="font-size:11.5px;color:#334155;line-height:1.5;border-top:1px dashed #cbd5e1;padding-top:8px;">' +
+    '<div>• ' + (inv.quick_formula_note || '') + '</div>' +
+    '<div style="margin-top:4px;">• ' + (inv.retail_3co_benchmark_note || '') + '</div>' +
+  '</div>';
+  document.getElementById('boxCarryingCost').innerHTML = ccHtml;
+}
+
+function renderDecisionsAndGlossary() {
+  const dec = CASE_DATA.tab_decisions || {};
+  const mapIds = [['decTab1', 'tab1'], ['decTab2', 'tab2'], ['decTab3', 'tab3'], ['decTab4', 'tab4'], ['decTab5', 'tab5']];
+  mapIds.forEach(function(pair) {
+    const el = document.getElementById(pair[0]);
+    if (el && dec[pair[1]]) {
+      const formatted = String(dec[pair[1]]).replace('→ Quyết định rút ra:', '<br><strong>👉 Quyết định rút ra:</strong>');
+      el.innerHTML = '<strong>💡 Điểm cần nhớ:</strong> ' + formatted;
+    }
+  });
+  const gl = CASE_DATA.glossary || [];
+  const gEl = document.getElementById('glossaryGrid');
+  if (gEl) {
+    gEl.innerHTML = gl.map(function(item) {
+      return '<div><strong>• ' + item.term + ':</strong> ' + item.plain + '</div>';
+    }).join('');
+  }
+}
+
+function renderInsights() {
+  const all = CASE_DATA.deep_insights || [];
+  const t1 = all.filter(function(x) { return x.tab === 'tab1'; });
+  const t2 = all.filter(function(x) { return x.tab === 'tab2'; });
+  const t3 = all.filter(function(x) { return x.tab === 'tab3'; });
+  const mkCard = function(item) {
+    return '<div class="insight-card"><h5>📌 ' + item.title + '</h5><div>' + item.body + '</div></div>';
+  };
+  const e1 = document.getElementById('insTab1');
+  const e2 = document.getElementById('insTab2');
+  const e3 = document.getElementById('insTab3');
+  if (e1) e1.innerHTML = t1.map(mkCard).join('');
+  if (e2) e2.innerHTML = t2.map(mkCard).join('');
+  if (e3) e3.innerHTML = t3.map(mkCard).join('');
+}
+
+function toggleUpdateModal(open) {
+  const m = document.getElementById('updateModal');
+  if (m) m.classList.toggle('open', Boolean(open));
+}
+
+function copyQuarterPrompt() {
+  const promptTxt = 'Hãy tra cứu BCTC Quý mới nhất của FRT (FPT Long Châu), MWG (An Khang) và thông cáo Pharmacity, cập nhật tệp longchau_public_verified_metrics.json rồi chạy build_longchau_case_study.py và pytest kiểm định.';
+  const st = document.getElementById('copyStatus');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(promptTxt).then(function() {
+      if (st) st.textContent = '✅ Đã chép câu lệnh! Hãy dán vào cửa sổ chat AI khi có BCTC Quý mới.';
+    }).catch(function() {
+      if (st) st.textContent = promptTxt;
+    });
+  } else if (st) {
+    st.textContent = promptTxt;
+  }
+}
+
+function loadJsonPreview(inputEl) {
+  const st = document.getElementById('jsonLoadStatus');
+  if (!inputEl || !inputEl.files || !inputEl.files[0]) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const parsed = JSON.parse(String(ev.target.result || ''));
+      if (!parsed.longchau_timeline || !parsed.simulator_defaults) {
+        if (st) st.textContent = '🔴 Tệp JSON không đúng cấu trúc báo cáo Long Châu.';
+        return;
+      }
+      CASE_DATA = parsed;
+      renderAll();
+      if (st) st.textContent = '✅ Đã nạp dữ liệu mới lên giao diện! Nhớ bấm đúp CapNhat_Va_KiemTra.bat để lưu đồng bộ ra HTML/Excel/Word.';
+    } catch (err) {
+      if (st) st.textContent = '🔴 Lỗi đọc JSON: ' + err.message;
+    }
+  };
+  reader.readAsText(inputEl.files[0], 'utf-8');
+}
+
+function renderTab4() {
+  const ms = CASE_DATA.market_sizing || {};
+  const slices = ms.channel_share || [];
+  const circ = 2 * Math.PI * 55;
+  let off = 0, dSvg = '<div class="donut-wrap"><svg viewBox="0 0 160 160" width="160" height="160">';
+  slices.forEach(function(s) {
+    const len = (s.pct / 100) * circ;
+    dSvg += '<circle cx="80" cy="80" r="55" fill="none" stroke="' + s.color + '" stroke-width="24" stroke-dasharray="' + len.toFixed(1) + ' ' + circ.toFixed(1) + '" stroke-dashoffset="' + (-off).toFixed(1) + '" transform="rotate(-90 80 80)"/>';
+    off += len;
+  });
+  dSvg += '<text x="80" y="76" text-anchor="middle" font-size="14" font-weight="800" fill="#0f172a">~8,0%</text><text x="80" y="92" text-anchor="middle" font-size="10" fill="#475569">Chuỗi theo số shop</text></svg>';
+  dSvg += '<ul style="list-style:none;font-size:11.5px;">' + slices.map(function(s) {
+    const isLc = s.label.indexOf('Long Châu') !== -1;
+    const pctHtml = isLc
+      ? '<strong style="background:#eff6ff;color:#0f3d8a;border:1px solid #93c5fd;border-radius:999px;padding:1px 8px;font-size:11px;">' + s.pct.toFixed(1).replace('.', ',') + '%</strong>'
+      : '<strong>' + s.pct.toFixed(1).replace('.', ',') + '%</strong>';
+    return '<li style="padding:5px 0;border-bottom:1px dashed #e2e8f0;display:flex;justify-content:space-between;align-items:center;"><span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:' + s.color + ';margin-right:6px;"></span>' + s.label + '</span>' + pctHtml + '</li>';
+  }).join('') + '</ul></div>';
+  if (ms.channel_share_note) {
+    dSvg += '<div style="font-size:11px;color:#334155;margin-top:10px;padding:8px 10px;background:#f8fafc;border-left:3px solid #1e73be;border-radius:4px;">' + ms.channel_share_note + '</div>';
+  }
+  document.getElementById('chartMarketShare').innerHTML = dSvg;
+
+  const usdArr = ms.vietnam_pharma_market_usd_bn || [];
+  let uSvg = '<svg viewBox="0 0 480 175" width="100%" height="172">';
+  usdArr.forEach(function(u, i) {
+    const x = 60 + i * 140;
+    const h = (u.value_usd_bn / 12.0) * 115;
+    const y = 140 - h;
+    const isForecast = (i === usdArr.length - 1);
+    const bg = isForecast ? '#eff6ff' : '#ffffff';
+    const brd = isForecast ? '#93c5fd' : '#cbd5e1';
+    const txtCol = isForecast ? '#0f3d8a' : '#334155';
+    const pillW = 90;
+    const pillX = x + 35 - pillW / 2;
+    const pillY = y - 24;
+    uSvg += '<rect x="' + x + '" y="' + y.toFixed(1) + '" width="70" height="' + h.toFixed(1) + '" rx="5" fill="#1e73be"/>';
+    uSvg += '<rect x="' + pillX.toFixed(1) + '" y="' + pillY.toFixed(1) + '" width="' + pillW + '" height="20" rx="5" fill="' + bg + '" stroke="' + brd + '" stroke-width="1"/>';
+    uSvg += '<text x="' + (x + 35) + '" y="' + (pillY + 14).toFixed(1) + '" text-anchor="middle" fill="' + txtCol + '" font-size="11" font-weight="800">' + u.value_usd_bn.toFixed(1).replace('.', ',') + ' tỷ USD</text>';
+    uSvg += '<text x="' + (x + 35) + '" y="158" text-anchor="middle" fill="#334155" font-size="10.5" font-weight="700">' + u.year + '</text>';
+  });
+  uSvg += '</svg>';
+  document.getElementById('chartMarketSizeUsd').innerHTML = uSvg;
+
+  const drv = ms.consolidation_drivers || [];
+  document.getElementById('boxMarketDrivers').innerHTML =
+    '<div class="story-box" style="margin-bottom:10px;"><strong>Đối thủ mới nổi khu vực phía Nam:</strong> ' + (ms.challenger_note || '') + '</div>' +
+    drv.map(function(d) { return '<div style="padding:6px 0;border-bottom:1px solid #f1f5f9;font-size:12px;">' + d + '</div>'; }).join('');
+}
+
+function initSimulator() {
+  const presets = (CASE_DATA.simulator_defaults || {}).presets || [];
+  document.getElementById('simPresetsBox').innerHTML = presets.map(function(p) {
+    return '<button class="preset-btn" data-preset="' + p.id + '" onclick="applyPreset(this.dataset.preset)">▶ ' + p.label + '</button>';
+  }).join('');
+  runSim();
+}
+
+function applyPreset(presetId) {
+  const presets = (CASE_DATA.simulator_defaults || {}).presets || [];
+  const p = presets.find(function(x) { return x.id === presetId; });
+  if (!p) return;
+  document.getElementById('simStores').value = p.stores;
+  document.getElementById('simRevStore').value = p.rev_per_store_bn;
+  document.getElementById('simMargin').value = p.gross_margin_pct;
+  document.getElementById('simVaccine').value = p.vaccine_centers;
+  runSim();
+}
+
+function runSim() {
+  const def = CASE_DATA.simulator_defaults || {};
+  const rawStores = document.getElementById('simStores').value;
+  const rawRev = document.getElementById('simRevStore').value;
+  const rawMargin = document.getElementById('simMargin').value;
+  const rawVac = document.getElementById('simVaccine').value;
+  const stores = (rawStores !== '' && rawStores !== undefined) ? Number(rawStores) : (def.stores || 2741);
+  const revPerStore = (rawRev !== '' && rawRev !== undefined) ? Number(rawRev) : (def.rev_per_store_bn || 1.3);
+  const marginPct = (rawMargin !== '' && rawMargin !== undefined) ? Number(rawMargin) : (def.gross_margin_pct || 23.5);
+  const vaccine = (rawVac !== '' && rawVac !== undefined) ? Number(rawVac) : (def.vaccine_centers || 244);
+
+  document.getElementById('lblSimStores').textContent = stores.toLocaleString('vi-VN') + ' shop';
+  document.getElementById('lblSimRev').textContent = revPerStore.toFixed(2).replace('.', ',') + ' tỷ đ';
+  document.getElementById('lblSimMargin').textContent = marginPct.toFixed(1).replace('.', ',') + '%';
+  document.getElementById('lblSimVaccine').textContent = vaccine.toLocaleString('vi-VN') + ' trung tâm';
+
+  const fixedPerStoreM = def.fixed_opex_per_store_m || 115;
+  const varOpexPct = def.variable_opex_pct || 11.5;
+  const annualRevBn = stores * revPerStore * 12;
+  const grossProfitBn = annualRevBn * (marginPct / 100);
+  const fixedOpexBn = stores * (fixedPerStoreM / 1000) * 12;
+  const varOpexBn = annualRevBn * (varOpexPct / 100);
+  const opexBn = fixedOpexBn + varOpexBn;
+  const opexRatioPct = annualRevBn > 0 ? (opexBn / annualRevBn * 100) : 0;
+  const storeContribBn = grossProfitBn - fixedOpexBn;
+  const netProfitBn = grossProfitBn - opexBn;
+  const netMarginPct = annualRevBn > 0 ? (netProfitBn / annualRevBn * 100) : 0;
+  const deferredBn = vaccine * (def.deferred_per_center_bn || 2.937);
+  const netSign = netProfitBn > 0 ? '+' : '';
+
+  document.getElementById('simOutputsRow').innerHTML =
+    '<div class="kpi-box" style="border:1px solid #cbd5e1;"><div class="k-lbl">DOANH THU DỰ KIẾN 1 NĂM</div><div class="k-val">' + Math.round(annualRevBn).toLocaleString('vi-VN') + ' tỷ</div><div class="k-sub">' + stores.toLocaleString('vi-VN') + ' shop × ' + revPerStore.toFixed(2).replace('.', ',') + ' tỷ × 12 tháng</div></div>' +
+    '<div class="kpi-box" style="border:1px solid #cbd5e1;"><div class="k-lbl">LỢI NHUẬN GỘP 1 NĂM</div><div class="k-val">' + Math.round(grossProfitBn).toLocaleString('vi-VN') + ' tỷ</div><div class="k-sub">Biên lãi gộp: ' + marginPct.toFixed(1).replace('.', ',') + '%</div></div>' +
+    '<div class="kpi-box" style="border:1px solid #cbd5e1;"><div class="k-lbl">LỢI NHUẬN RÒNG ƯỚC TÍNH</div><div class="k-val" style="color:' + (netProfitBn > 0 ? '#15803d' : '#b91c1c') + ';">' + netSign + Math.round(netProfitBn).toLocaleString('vi-VN') + ' tỷ</div><div class="k-sub">Biên ròng: ' + netMarginPct.toFixed(2).replace('.', ',') + '% | Chi phí vận hành: ' + opexRatioPct.toFixed(1).replace('.', ',') + '%</div></div>' +
+    '<div class="kpi-box" style="border:1px solid #cbd5e1;"><div class="k-lbl">TIỀN ĐẶT TRƯỚC VACCINE</div><div class="k-val" style="color:#0f766e;">' + Math.round(deferredBn).toLocaleString('vi-VN') + ' tỷ</div><div class="k-sub">' + vaccine + ' trung tâm tiêm chủng</div></div>';
+
+  const revM = revPerStore * 1000;
+  const floorM = def.breakeven_floor_m || 550;
+  let alertCls = 'alert-ok';
+  let alertMsg = '';
+  if (netProfitBn > 0 && revM > floorM) {
+    alertCls = 'alert-ok';
+    alertMsg = '🟢 KINH DOANH CÓ LÃI BỀN VỮNG: Doanh thu ' + Math.round(revM) + ' triệu/shop/tháng vượt xa ngưỡng hòa vốn (' + floorM + ' triệu), đủ trả tiền nhà + lương Dược sĩ (' + fixedPerStoreM + ' triệu/shop) và chi phí kho tổng (' + varOpexPct.toFixed(1).replace('.', ',') + '%), tạo lãi ròng +' + Math.round(netProfitBn).toLocaleString('vi-VN') + ' tỷ/năm.';
+  } else if (netProfitBn <= 0 && storeContribBn >= 0) {
+    alertCls = 'alert-risk';
+    alertMsg = '🟡 HÒA VỐN TẠI SHOP NHƯNG LỖ TOÀN CHUỖI: Doanh thu ' + Math.round(revM) + ' triệu/shop/tháng chỉ đủ trả tiền nhà &amp; Dược sĩ (' + fixedPerStoreM + ' triệu/shop), chưa đủ gánh chi phí kho tổng &amp; trụ sở (' + varOpexPct.toFixed(1).replace('.', ',') + '%) → Lỗ ròng ước tính ' + Math.round(netProfitBn).toLocaleString('vi-VN') + ' tỷ/năm (đúng bài toán An Khang).';
+  } else {
+    alertCls = 'alert-risk';
+    alertMsg = '🔴 LỖ NGAY TẠI SHOP (DƯỚI NGƯỠNG HÒA VỐN): Tiền lãi gộp tại shop không đủ trả tiền thuê nhà + lương 3–5 Dược sĩ (' + fixedPerStoreM + ' triệu/shop/tháng) → Lỗ ròng ước tính ' + Math.round(netProfitBn).toLocaleString('vi-VN') + ' tỷ/năm, rủi ro lỗ lũy kế nặng.';
+  }
+  document.getElementById('simAlertBox').innerHTML =
+    '<div class="alert-banner ' + alertCls + '">' + alertMsg + '</div>';
+
+  const maxB = Math.max(1000, annualRevBn, opexBn) * 1.1;
+  const W = 660, H = 180;
+  const hRev = (annualRevBn / maxB) * 115;
+  const hGp = (grossProfitBn / maxB) * 115;
+  const hFix = (fixedOpexBn / maxB) * 115;
+  const hVar = (varOpexBn / maxB) * 115;
+  const hNet = Math.max(4, (Math.abs(netProfitBn) / maxB) * 115);
+  let bSvg = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="100%" height="175">';
+  const bars = [
+    { lbl: 'Doanh thu năm', val: Math.round(annualRevBn), h: hRev, col: '#1e73be' },
+    { lbl: 'Lãi gộp', val: Math.round(grossProfitBn), h: hGp, col: '#0f766e' },
+    { lbl: 'Định phí shop', val: Math.round(fixedOpexBn), h: hFix, col: '#b45309' },
+    { lbl: 'Biến phí kho tổng', val: Math.round(varOpexBn), h: hVar, col: '#d97706' },
+    { lbl: (netProfitBn >= 0 ? 'Lãi ròng ước tính' : 'Lỗ ròng ước tính'), val: Math.round(netProfitBn), h: hNet, col: (netProfitBn > 0 ? '#15803d' : '#b91c1c') }
+  ];
+  bars.forEach(function(b, i) {
+    const x = 16 + i * 130;
+    const y = 135 - b.h;
+    const vTxt = (b.val > 0 && i === 4 ? '+' : '') + b.val.toLocaleString('vi-VN') + ' tỷ';
+    bSvg += '<rect x="' + x + '" y="' + y.toFixed(1) + '" width="92" height="' + b.h.toFixed(1) + '" rx="4" fill="' + b.col + '"/>';
+    bSvg += '<text x="' + (x + 46) + '" y="' + (y - 5).toFixed(1) + '" text-anchor="middle" fill="#0f172a" font-size="10.5" font-weight="800">' + vTxt + '</text>';
+    bSvg += '<text x="' + (x + 46) + '" y="156" text-anchor="middle" fill="#334155" font-size="10" font-weight="700">' + b.lbl + '</text>';
+  });
+  bSvg += '</svg>';
+  bSvg += '<div style="font-size:11px;color:#475569;margin-top:4px;">Định phí cố định <strong>' + fixedPerStoreM + ' triệu/shop/tháng</strong> (mặt bằng + 3–5 Dược sĩ + chuẩn bảo quản) + Biến phí kho tổng <strong>' + varOpexPct.toFixed(1).replace('.', ',') + '%</strong> doanh thu.</div>';
+  document.getElementById('simBridgeSvg').innerHTML = bSvg;
+
+  const mxCfg = def.safety_matrix_config || { margins: [21.0, 23.5, 26.0], revs_m: [550, 900, 1100, 1300] };
+  const mList = mxCfg.margins || [21.0, 23.5, 26.0];
+  const rList = mxCfg.revs_m || [550, 900, 1100, 1300];
+  let nearestM = mList[0], nearestR = rList[0], bestDist = 1e9;
+  mList.forEach(function(gM) {
+    rList.forEach(function(rM) {
+      const d = Math.abs(gM - marginPct) * 40 + Math.abs(rM - revM);
+      if (d < bestDist) { bestDist = d; nearestM = gM; nearestR = rM; }
+    });
+  });
+  let mxHtml = '<div style="font-size:12px;font-weight:700;color:#0f3d8a;">Ma trận vùng an toàn 3×4 (Lời/Lỗ năm theo ' + stores.toLocaleString('vi-VN') + ' shop — Đơn vị: tỷ VNĐ)</div>';
+  mxHtml += '<div class="mobile-scroll-hint" style="margin-top:6px;">← Vuốt ngang để xem ma trận an toàn →</div><div class="table-scroll"><table class="mx-tbl"><thead><tr><th>Biên gộp \ Doanh thu/shop</th>';
+  rList.forEach(function(rM) {
+    mxHtml += '<th>' + (rM >= 1000 ? (rM / 1000).toFixed(1).replace('.', ',') + ' tỷ/tháng' : rM + ' triệu/tháng') + '</th>';
+  });
+  mxHtml += '</tr></thead><tbody>';
+  mList.forEach(function(gM) {
+    mxHtml += '<tr><th>' + gM.toFixed(1).replace('.', ',') + '%</th>';
+    rList.forEach(function(rM) {
+      const cRev = stores * (rM / 1000) * 12;
+      const cNet = cRev * (gM / 100) - (stores * (fixedPerStoreM / 1000) * 12 + cRev * (varOpexPct / 100));
+      const cPct = cRev > 0 ? (cNet / cRev * 100) : 0;
+      const cls = cNet < 0 ? 'mx-red' : (cPct < 2.0 ? 'mx-amber' : 'mx-green');
+      const icon = cNet < 0 ? '🔴' : (cPct < 2.0 ? '🟡' : '🟢');
+      const act = (gM === nearestM && rM === nearestR) ? ' mx-active' : '';
+      const sgn = cNet > 0 ? '+' : '';
+      mxHtml += '<td class="' + cls + act + '">' + icon + ' ' + sgn + Math.round(cNet).toLocaleString('vi-VN') + ' tỷ</td>';
+    });
+    mxHtml += '</tr>';
+  });
+  mxHtml += '</tbody></table></div>';
+  document.getElementById('simSafetyMatrix').innerHTML = mxHtml;
+}
+
+function renderAll() {
+  try {
+    if (typeof localStorage !== 'undefined') {
+      SIDEBAR_COLLAPSED_DESKTOP = (localStorage.getItem('lc_sidebar_collapsed') === '1');
+    }
+  } catch (e) {}
+  syncSidebarUI();
+  renderTab1FilterBar();
+  renderTab2FilterBar();
+  renderHeadlines();
+  renderDecisionsAndGlossary();
+  renderInsights();
+  renderTab1();
+  renderTab2();
+  renderTab3();
+  renderTab4();
+  initSimulator();
+}
+
+if (typeof window !== 'undefined' && window.addEventListener) {
+  window.addEventListener('resize', syncSidebarUI);
+  window.addEventListener('keydown', function(e) {
+    if (e && e.key === 'Escape') closeSidebarDrawer();
+  });
+}
+
+renderAll();
+</script>
+</body>
+</html>

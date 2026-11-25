@@ -1300,6 +1300,75 @@ img {
     margin: 0;
 }
 
+.credentials-group-label {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 24px 0 14px 0;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent-blue);
+}
+
+.credentials-grid-mgmt {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.cert-verify-link {
+    margin-top: auto;
+    padding-top: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #0369a1;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cert-verify-link:hover {
+    text-decoration: underline;
+}
+
+.featured-case-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: var(--radius-xl);
+    padding: 24px 28px;
+    margin-top: 24px;
+    box-shadow: var(--shadow-sm);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 24px;
+}
+
+.featured-case-content h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 6px 0 8px 0;
+}
+
+.featured-case-content p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0 0 12px 0;
+}
+
+.featured-case-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    min-width: 240px;
+}
+
 /* --------------------------------------------------------------------------
    11. COMMITMENT 30-60-90 ROADMAP
    -------------------------------------------------------------------------- */
@@ -1692,8 +1761,12 @@ img {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    .credentials-grid {
+    .credentials-grid, .credentials-grid-mgmt {
         grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .featured-case-card {
+        grid-template-columns: 1fr;
         gap: 16px;
     }
     .compare-grid {
@@ -1958,9 +2031,16 @@ img {
         grid-template-columns: 1fr;
         gap: 10px;
     }
-    .credentials-grid {
+    .credentials-grid, .credentials-grid-mgmt {
         grid-template-columns: 1fr;
         gap: 14px;
+    }
+    .featured-case-card {
+        padding: 18px 16px;
+    }
+    .featured-case-cta {
+        min-width: 0;
+        width: 100%;
     }
     .cert-card {
         padding: 16px;
