@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'self'; form-action 'none'; object-src 'none'">
   <title>MAI VĂN HƯNG — Full CV Chi Tiết (3 Trang Executive)</title>
   <meta name="description" content="15+ năm kinh nghiệm điều hành chuỗi bán lẻ quy mô lớn & Tiên phong ứng dụng AI Workforce.">
   <meta property="og:type" content="website">
@@ -459,8 +461,8 @@
       <span class="exec-toolbar-info"><strong>Hồ sơ Điều hành Chuỗi — Mai Văn Hưng</strong> &nbsp;&middot;&nbsp; Bản Full Chi Tiết (3 trang A4 &middot; Executive Timeline)</span>
     </div>
     <div class="exec-toolbar-actions">
-      <button class="tb-btn tb-btn-print" type="button" onclick="window.print()">🖨️ In Chuẩn A4</button>
-      <a class="tb-btn tb-btn-pdf" href="assets/images/Quan_Ly_Khu_Vuc_Mai_Van_Hung_Chi_Tiet.pdf" target="_blank" download="Quan_Ly_Khu_Vuc_Mai_Van_Hung_Chi_Tiet.pdf">⬇ Tải PDF Chi Tiết</a>
+      <button id="btnPrintCv" class="tb-btn tb-btn-print" type="button">🖨️ In Chuẩn A4</button>
+      <a class="tb-btn tb-btn-pdf" href="assets/images/Quan_Ly_Khu_Vuc_Mai_Van_Hung_Chi_Tiet.pdf" target="_blank" rel="noopener noreferrer" download="Quan_Ly_Khu_Vuc_Mai_Van_Hung_Chi_Tiet.pdf">⬇ Tải PDF Chi Tiết</a>
     </div>
   </div>
 
@@ -647,7 +649,7 @@
       
         <div class="proj-item">
           <div class="proj-name">1. Dashboard Phân tích Chuỗi Nhà thuốc FPT Long Châu (2017 - 09/2026)</div>
-          <div class="proj-desc">Xây dựng báo cáo BI tương tác và mô hình Excel từ 11 quý BCTC công khai FPT Retail, so sánh 3 chuỗi lớn nhất, mô phỏng điểm hòa vốn cửa hàng và tối ưu vòng quay tồn kho - dòng tiền. <a href="longchau-dashboard.html" target="_blank" style="color:#0369a1;font-weight:600;text-decoration:none;">Xem Dashboard trực tuyến ↗</a></div>
+          <div class="proj-desc">Xây dựng báo cáo BI tương tác và mô hình Excel từ 11 quý BCTC công khai FPT Retail, so sánh 3 chuỗi lớn nhất, mô phỏng điểm hòa vốn cửa hàng và tối ưu vòng quay tồn kho - dòng tiền. <a href="longchau-dashboard.html" target="_blank" rel="noopener noreferrer" style="color:#0369a1;font-weight:600;text-decoration:none;">Xem Dashboard trực tuyến ↗</a></div>
         </div>
 
         <div class="proj-item">
@@ -772,5 +774,6 @@
       </div>
     </section>
   </main>
+  <script src="script.js"></script>
 </body>
 </html>

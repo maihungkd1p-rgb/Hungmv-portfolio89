@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initLightbox();
     initContactCopy();
     initSmoothScroll();
+    initPrintButton();
 });
 
 /* --------------------------------------------------------------------------
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
    -------------------------------------------------------------------------- */
 function initNavbar() {
     const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -52,14 +54,14 @@ function initNavbar() {
     if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            mobileToggle.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+            mobileToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
         });
 
         // Close on link click
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
-                mobileToggle.innerHTML = '☰';
+                mobileToggle.textContent = '☰';
             });
         });
     }
@@ -144,7 +146,8 @@ function initLightbox() {
     if (!modal || !modalImg) return;
 
     galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
+        item.addEventListener('click', (e) => {
+            if (e.target.closest('.cert-verify-link')) return;
             const img = item.querySelector('img');
             if (img) {
                 modalImg.src = img.src;
@@ -223,4 +226,11 @@ function initSmoothScroll() {
             }
         });
     });
+}
+
+function initPrintButton() {
+    const printBtn = document.getElementById('btnPrintCv');
+    if (printBtn) {
+        printBtn.addEventListener('click', () => window.print());
+    }
 }
