@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'self'; form-action 'none'; object-src 'none'">
-  <title>MAI VĂN HƯNG — Executive CV Chi Tiết (v2.9.1 • 2 Trang A4)</title>
+  <title>MAI VĂN HƯNG — Hồ Sơ Năng Lực (Bản Chuẩn A4 · 2 Trang)</title>
   <meta name="description" content="15+ năm kinh nghiệm điều hành chuỗi bán lẻ quy mô lớn & Tiên phong ứng dụng AI Workforce.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://maihungkd1p-rgb.github.io/Hungmv-portfolio89/cv_detail.html">
-  <meta property="og:title" content="Mai Văn Hưng — Executive CV Chi Tiết (v2.9.1)">
+  <meta property="og:title" content="Mai Văn Hưng — Hồ Sơ Năng Lực (Bản Chuẩn A4)">
   <meta property="og:description" content="15+ năm kinh nghiệm điều hành chuỗi bán lẻ quy mô lớn & Tiên phong ứng dụng AI Workforce.">
   <meta property="og:image" content="https://maihungkd1p-rgb.github.io/Hungmv-portfolio89/assets/images/profile.jpg">
   <meta property="og:image:width" content="600">
@@ -69,13 +69,24 @@
         color: #0f172a;
       }
       .exec-toolbar {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        position: sticky;
+        top: 8px;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(8px);
       }
-      .exec-toolbar-left, .exec-toolbar-actions {
+      .exec-toolbar-info {
+        font-size: 12.5px;
+        font-weight: 500;
+        color: #475569;
+        white-space: nowrap;
+      }
+      .exec-toolbar-actions {
         display: flex;
         align-items: center;
         gap: 8px;
-        flex-wrap: wrap;
+        flex-shrink: 0;
       }
       .tb-btn {
         display: inline-flex;
@@ -442,21 +453,25 @@
         padding-left: 0;
       }
       .exec-toolbar {
-        flex-direction: column;
-        align-items: stretch;
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 8px 12px;
+      }
+      .exec-toolbar-info {
+        display: none;
       }
     }
   </style>
 </head>
 <body>
   <div class="exec-toolbar">
-    <div class="exec-toolbar-left">
-      <a class="tb-btn tb-btn-back" href="index.html">← Về Portfolio</a>
-      <span class="exec-toolbar-info"><strong>Hồ sơ Điều hành Chuỗi — Mai Văn Hưng</strong> &nbsp;&middot;&nbsp; Bản Executive A4 v2.9.1 (2 trang &middot; Chuẩn In Ấn)</span>
-    </div>
+    <a class="tb-btn tb-btn-back" href="index.html">← Portfolio</a>
+    <span class="exec-toolbar-info">Bản chuẩn in A4 &middot; 2 trang</span>
     <div class="exec-toolbar-actions">
-      <button id="btnPrintCv" class="tb-btn tb-btn-print" type="button">🖨️ In Chuẩn A4</button>
-      <a class="tb-btn tb-btn-pdf" href="assets/images/Quan_Ly_Khu_Vuc_Mai_Van_Hung_Chi_Tiet.pdf" target="_blank" rel="noopener noreferrer" download="Mai_Van_Hung_CV_Executive_A4_2026.pdf">⬇ Tải PDF Executive A4</a>
+      <button id="btnPrintCv" class="tb-btn tb-btn-print" type="button">In A4</button>
+      <a class="tb-btn tb-btn-pdf" href="assets/images/Quan_Ly_Khu_Vuc_Mai_Van_Hung_Chi_Tiet.pdf" target="_blank" rel="noopener noreferrer" download="Mai_Van_Hung_CV_Executive_A4_2026.pdf">↓ Tải bản PDF</a>
     </div>
   </div>
   <main class="sheet">
